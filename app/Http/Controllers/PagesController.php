@@ -17,73 +17,61 @@ class PagesController extends Controller
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
         return view('website.home', compact('testimonials', 'publications', 'pageData'));
     }
-
     public function conditionsListing()
     {
         $pageData = WebPage::getPageData('conditions');
         $conditions = \App\Models\Condition::published()->ordered()->with(['contentTabs', 'contentSections'])->get();
         return view('website.conditions.listing', compact('conditions', 'pageData'));
     }
-
     public function conditionsDetail($slug)
     {
         $condition = \App\Models\Condition::where('slug', $slug)->published()->with(['contentTabs', 'contentSections', 'schema'])->firstOrFail();
         $related_expertises = Expertise::published()->inRandomOrder()->take(3)->get();
         return view('website.conditions.detail', compact('condition', 'related_expertises'));
     }
-
     public function expertiseListing()
     {
         $pageData = WebPage::getPageData('expertise');
         $expertises = \App\Models\Expertise::published()->ordered()->get();
         return view('website.expertise.listing', compact('expertises', 'pageData'));
     }
-
     public function expertiseDetail($slug)
     {
         $expertise = \App\Models\Expertise::where('slug', $slug)->published()->with(['contentTabs', 'contentSections', 'quickFacts', 'schema'])->firstOrFail();
         return view('website.expertise.detail', compact('expertise'));
     }
-
     public function publicationsListing()
     {
         $pageData = WebPage::getPageData('publications');
         return view('website.publications.listing', compact('pageData'));
     }
-
     public function publicationsDetail($slug)
     {
         $publication = \App\Models\Publication::where('slug', $slug)->published()->with(['contentTabs', 'contentSections', 'topics', 'type', 'schema'])->firstOrFail();
         $related_publications = Publication::where('id', '!=', $publication->id)->published()->latest()->take(3)->get();
         return view('website.publications.detail', compact('publication', 'related_publications'));
     }
-
     public function termsAndConditions()
     {
         $pageData = WebPage::getPageData('terms-and-conditions');
         return view('website.terms-and-conditions', compact('pageData'));
     }
-
     public function privacyPolicy()
     {
         $pageData = WebPage::getPageData('privacy-policy');
         return view('website.privacy-policy', compact('pageData'));
     }   
-
     public function aboutUs()
     {
         $pageData = WebPage::getPageData('about-us');
         return view('website.about-us', compact('pageData'));
     }
-
-
     public function contactUs()
     {
         $pageData = WebPage::getPageData('contact-us');
         // dd($pageData);
         return view('website.contact-us', compact('pageData'));
     }
-
     public function reviews()
     {
         $pageData = WebPage::getPageData('reviews');
@@ -113,5 +101,9 @@ class PagesController extends Controller
 
         // dd($count, $each_part, $testimonials_part_1, $testimonials_part_2, $testimonials_part_3);
         return view('website.reviews', compact('pageData', 'testimonials_part_1', 'testimonials_part_2', 'testimonials_part_3'));
+    }
+    public function properties()
+    {
+        return view('website.properties.index');
     }
 }

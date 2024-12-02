@@ -20,7 +20,7 @@
                             <a href="{{ route('about-us') }}" class="nav-link mouse_go">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link mouse_go">Properties</a>
+                            <a href="{{ route('properties') }}" class="nav-link mouse_go">Properties</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('publications') }}" class="nav-link mouse_go">Blogs</a>

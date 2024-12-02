@@ -460,18 +460,6 @@
                         @include('website.publications.card', ['publication' => $publication])
                     </div>
                     @endforeach   --}}
-                    <div class="box b-box"> 
-                        <a href="">
-                            <div href="" class="photo-link"> 
-                                <img alt="" src="{{asset('front/assets/img/blog_placeholder.webp')}}"> 
-                            </div> 
-                            <div class="details"> 
-                                <p class="sub">Lorem</p> 
-                                <a class="title" href="">Lorem ipsum dolor sit amet consectetur adipisicing.</a>
-                                <a class="button smaller button_secondary mb-0 stretched-link" href="">Read More</a> 
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-12 mt-4 text-center">

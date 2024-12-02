@@ -28,6 +28,9 @@ Route::get('/publications/{slug}', [PagesController::class, 'publicationsDetail'
 Route::get('/terms-and-conditions', [PagesController::class, 'termsAndConditions'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/reviews', [PagesController::class, 'reviews'])->name('reviews');
+
+Route::get('/properties', [PagesController::class, 'properties'])->name('properties');
+
 //-----------------------Website Routes End-----------------------//
 
 
