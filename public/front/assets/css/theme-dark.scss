@@ -1,0 +1,544 @@
+$blue-color: #0046c0;
+$white-color: #ffffff;
+$dark-color: #1d1d1d;
+$bg-color: #252525;
+$card-bg: #0e0e0e;
+
+.switch-box {
+    position: fixed;
+    bottom: 15px;
+    right: 120px;
+    z-index: 9999;
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 1.5px solid $white-color;
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 25px;
+            width: 25px;
+            left: 0px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2024203d;
+            background: white url('../img/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    input:checked + .slider {
+        background-color: transparent;
+        border: 1.5px solid $blue-color;
+    }
+      
+    input:focus + .slider {
+        box-shadow: 0 0 1px $blue-color;
+    }
+      
+    input:checked + .slider:before {
+        transform: translateX(24px);
+        background: white url('../img/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.theme-dark {
+    $grey-color: #ffffff;
+    $black-color: #ffffff;
+    h1, h2, h3, h4, h5, h6 {
+        color: $white-color; 
+    }
+    h3 {
+        color: $white-color; 
+        a {
+            color: $white-color;
+            transition: 0.7s;
+        }
+    }
+    p {
+        color: $white-color ; 
+    }
+    .content {
+        h3 {
+            color: $white-color;
+            a {
+                color: $white-color;
+            }
+        }
+        span {
+           color: $white-color;
+        }
+        .price-tag {
+            h4 {
+                del {
+                    color: $white-color;
+                }
+            }
+        }
+        .read-btn {
+            color: $white-color;
+        }
+    }
+    body {
+        background: $dark-color;
+        color: $white-color; 
+    }
+    .header-top {
+        background: $dark-color;
+    }
+    .header-top-item {
+        .header-top-left {
+            ul {
+                li {
+                    color: $white-color;
+                    a {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+    .main-nav {
+        background-color: $bg-color;
+        nav {
+            .navbar-nav  {
+                .nav-item {
+                    a {
+                        color: $white-color;
+                        i {
+                            color: $white-color;
+                        }
+                        &.active {
+                            color: $blue-color !important;
+                        }
+                        &:hover {
+                            color: $blue-color !important;
+                        }
+                    }
+                    .dropdown-menu {
+                        background-color: $bg-color !important;
+                        li {
+                            a {
+                                color: $white-color !important;
+                                &.active {
+                                    color: $blue-color !important;
+                                }
+                                &:hover {
+                                    color: $blue-color !important;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+    .location-item {
+        a {
+            color: $white-color;
+        }
+    }
+    .nav-srh {
+        .search-area {
+            background-color: $dark-color;
+            .src-input {
+                background-color: $card-bg;
+                color: $white-color;
+            }
+        }
+    }
+    .slider-item {
+        position: relative;
+        z-index: 1;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $card-bg;
+            opacity: 0.7;
+        }
+    }
+    .home-slider-two {
+        .slider-item {
+            .slider-text {
+                h1, p {
+                     color: $white-color;
+                }
+            }
+        }
+    }
+    .slider-item-three {
+        .slider-text {
+            span, h1 {
+                color: $white-color;
+            }
+        }
+    }
+    .page-title-area {
+        &:before {
+            background-color: $card-bg;
+            opacity: 0.8;
+        }
+    }
+   
+    .about-item {
+        ul {
+            li {
+                color: $white-color;
+            }
+        }
+    }
+    .hospital-item {
+        ul {
+            li {
+                color: $white-color;
+            }
+        }
+    }
+    .symptoms-content {
+        ul {
+            li {
+                span {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    .video-wrap {
+        .video-nav {
+            background-color: $bg-color;
+        }
+    }
+    .faq-area-two {
+        background-color: $card-bg;
+    }
+    .accordion {
+        li {
+            .faq-head {
+                color: $white-color;
+                border-color: $white-color;
+            }
+        }
+    }
+    .doctor-item {
+        background-color: $card-bg;
+        .doctor-bottom {
+            h3 {
+                a {
+                    color: $white-color;
+                    transition: 0.7s;
+                    &:hover {
+                        color: $blue-color;
+                    }
+                }
+            }
+        }
+    }
+    .doctor-btn {
+        a {
+            color: $white-color;
+        }
+    }
+    .doctor-search-wrap {
+        background-color: $bg-color;
+    }
+    .doctor-search-item {
+        .form-group {
+            .form-control {
+                background-color: $bg-color;
+                color: $white-color;
+            }
+        }
+    }
+    .doctor-search-item .form-group .form-control::-webkit-input-placeholder {
+        color: $white-color;
+    }
+    .doctor-search-item .form-group .form-control:-ms-input-placeholder {
+        color: $white-color;
+    }
+    .doctor-search-item .form-group .form-control::-ms-input-placeholder {
+        color: $white-color;
+    }
+    .doctor-search-item .form-group .form-control::placeholder {
+        color: $white-color;
+    }
+    .counter-bg {
+        background-color: $bg-color;
+    }
+    .main {
+        &:before {
+            background-color: $card-bg;
+        }
+    }
+    .slider-for {
+        div {
+            p {
+                color: $white-color;
+            }
+        }
+    }
+   
+    .testimonial-area {
+        &::before {
+            background-color: $card-bg;
+            opacity: 0.7;
+        }
+        .testimonial-wrap {
+            background-color: #363636;
+        }
+    }
+    .appointment-item {
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $card-bg;
+            opacity: 0.9;
+            border-radius: 10px;
+        }
+        .appointment-form {
+            .form-group {
+                label {
+                    color: $white-color;
+                }
+                .form-control {
+                    color: $white-color !important;
+                }
+            }
+        }
+    }
+    .appointment-item .appointment-form .form-group .form-control::-webkit-input-placeholder {
+        color: $white-color;
+    }
+    .appointment-item .appointment-form .form-group .form-control:-ms-input-placeholder {
+        color: $white-color;
+    }
+    .appointment-item .appointment-form .form-group .form-control::-ms-input-placeholder {
+        color: $white-color;
+    }
+    .appointment-item .appointment-form .form-group .form-control::placeholder {
+        color: $white-color;
+    }
+    .appointment-item-two-right {
+        .appointment-item-content {
+            background-color: $bg-color;
+        }
+    }
+    .blog-area {
+        background-color: $bg-color;
+    }
+    .blog-item {
+        background-color: $card-bg;
+        .blog-bottom {
+            h3 {
+                a {
+                    color: $white-color;
+                    transition: 0.7s;
+                    &:hover {
+                        color: $blue-color;
+                    }
+                }
+            }
+            p {
+                color: $white-color;
+            }
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            color: $white-color;
+                            i {
+                                color: $white-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+    .blog-details-item {
+        .blog-details-img {
+            h2 {
+                color: $white-color;
+            }
+        }
+        .blog-details-previous {
+            h3 {
+                color: $white-color;
+            }
+        }
+        .blog-details-search {
+            .form-control {
+                background-color: $bg-color;
+                color: $white-color;
+            }
+        }
+        .blog-details-recent {
+            ul {
+                li {
+                    a {
+                        color: $white-color;
+                        &:hover {
+                            color: $blue-color;
+                        }
+                    }
+                }
+            }
+        }
+        .blog-details-category {
+            ul {
+                li {
+                    a {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+        .blog-details-tags {
+            ul {
+                li {
+                    a {
+                        color: $white-color;
+                        background-color: $bg-color;
+                        transition: 0.7s;
+                        &:hover {
+                            background-color: $blue-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .blog-details-form {
+        .blog-details-form-wrap {
+            .form-group {
+                .form-control {
+                    background-color: $bg-color;
+                    color: $white-color;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .newsletter-wrap {
+        background-color: $card-bg;
+    }
+    .newsletter-item {
+        .newsletter-form {
+            .form-control {
+                background-color: $bg-color;
+                color: $white-color;
+            }
+        }
+    }
+    footer {
+        background-color: $card-bg;
+    }
+    .copyright-area {
+        background-color: $bg-color;
+    }
+    .location-wrap {
+        background-color: $bg-color;
+    }
+    .drop-img {
+        background-color: $bg-color;
+        background-image: none;
+    }
+    .drop-item {
+        .drop-left {
+            .form-group {
+                .form-control {
+                    background-color: $card-bg;
+                    color: $white-color;
+                }
+            }
+            label {
+                a {
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .signup-item {
+        .signup-head {
+            p {
+                a {
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+        .signup-form {
+            .form-group {
+                .form-control {
+                    background-color: $card-bg;
+                    color: $white-color;
+                }
+                .form-check {
+                    label {
+                        color: $white-color;
+                        a {
+                            &:hover {
+                                color: $white-color;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    .coming-item {
+        .coming-wrap {
+            .coming-inner {
+                background-color: $bg-color;
+                h3 {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

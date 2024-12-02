@@ -1,0 +1,132 @@
+body #magicMouseCursor {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #9a9a9a;
+    border-radius: 50%;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    transition: transform 0.07s, width 0.3s, height 0.3s;
+    pointer-events: none;
+}
+
+body #magicMouseCursor.cursor-square {
+    border-radius: 0;
+}
+
+body #magicPointer {
+    height: 8px;
+    width: 8px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 9999;
+    background: #daa520;
+    border-radius: 0%;
+    pointer-events: none;
+    transition: background 0.2s, width 0.2s, height 0.2s, box-shadow 0.2s;
+}
+
+body #magicPointer.is-hover {
+    height: 50px;
+    width: 50px;
+    mix-blend-mode: difference;
+    background: #dcdcdc;
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+body #magicPointer.pointer-blur {
+    height: 50px;
+    width: 50px;
+    background: none;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 15px -5px #c1c1c1;
+    z-index: 9999;
+}
+
+body #magicPointer.pointer-overlay {
+    height: 50px;
+    width: 50px;
+    mix-blend-mode: difference;
+    background: #dcdcdc;
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+body .magic-hover {
+    transition: all 0.1s;
+}
+
+body .magic-hover:hover {
+    cursor: none;
+}
+
+body #magicMouseCursor.go_cursor,
+body #magicMouseCursor.view_cursor {
+    border: 1px solid #dcaa2bd0;
+    background: #dcaa2bd0;
+    height: 80px !important;
+    width: 80px !important;
+}
+
+body #magicPointer.go_cursor,
+body #magicPointer.view_cursor {
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    background: none;
+}
+
+body #magicPointer.go_cursor:after,
+body #magicPointer.view_cursor:after {
+    content: 'view';
+    height: 20px;
+    width: 45px;
+    background: none;
+    color: #333;
+    position: absolute;
+    left: -2px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+}
+
+body #magicPointer.go_cursor:after {
+    content: 'Go!';
+}
+
+
+/* stars */
+
+#service_bg_stars {
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: transparent;
+    box-shadow: 232px 116px #ccc, 1129px 30px #f5f5f5, 395px 1682px #f5f5f5, 600px 300px #f5f5f5, 920px 900px #f5f5f5, 705px 282px #f5f5f5, 478px 846px #f5f5f5, 1568px 366px #f5f5f5, 1296px 1677px #f5f5f5, 23px 716px #f5f5f5, 52px 316px #ccc, 102px 1316px #ccc, 1398px 400px #f5f5f5, 1199px 1907px #f5f5f5, 1325px 1164px #f5f5f5, 39px 1027px #f5f5f5, 1183px 1749px #f5f5f5, 503px 709px #f5f5f5, 627px 1044px #ccc, 1357px 1180px #f5f5f5, 1517px 992px #f5f5f5, 357px 280px #f5f5f5;
+    animation: animStar 50s linear infinite;
+}
+
+#service_bg_stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 4px;
+    height: 90px;
+    background: transparent;
+    box-shadow: 232px 116px #ccc, 1129px 30px #f5f5f5, 395px 1682px #f5f5f5, 600px 300px #f5f5f5, 920px 900px #f5f5f5, 705px 282px #f5f5f5, 478px 846px #f5f5f5, 1568px 366px #f5f5f5, 1296px 1677px #f5f5f5, 23px 716px #f5f5f5, 52px 316px #ccc, 102px 1316px #ccc, 1398px 400px #f5f5f5, 1199px 1907px #f5f5f5, 1325px 1164px #f5f5f5, 39px 1027px #f5f5f5, 1183px 1749px #f5f5f5, 503px 709px #f5f5f5, 627px 1044px #ccc, 1357px 1180px #f5f5f5, 1517px 992px #f5f5f5, 357px 280px #f5f5f5;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(-2000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
