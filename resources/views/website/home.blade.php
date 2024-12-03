@@ -206,7 +206,7 @@
                     <div class="product-custom">
                         <div class="profile-widget">
                             <div class="doc-img">
-                                <a href="" class="property-img mouse_go">
+                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
                                     <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
                                 </a>
                                 <div class="product-amount">
@@ -218,11 +218,6 @@
                                             <span>Featured</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)">
-                                        <div class="favourite  selected">
-                                            <span><i class="fa-regular fa-heart"></i></span>
-                                        </div>
-                                    </a>
                                 </div>
                             </div>
                             <div class="pro-content">
@@ -237,7 +232,7 @@
                                     <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                                 </div>
                                 <h3 class="title">
-                                    <a href="buy-details.html" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
                                 </h3>
                                 <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">
@@ -258,7 +253,7 @@
                     <div class="product-custom">
                         <div class="profile-widget">
                             <div class="doc-img">
-                                <a href="" class="property-img mouse_go">
+                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
                                     <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
                                 </a>
                                 <div class="product-amount">
@@ -270,11 +265,6 @@
                                             <span>Featured</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)">
-                                        <div class="favourite  selected">
-                                            <span><i class="fa-regular fa-heart"></i></span>
-                                        </div>
-                                    </a>
                                 </div>
                             </div>
                             <div class="pro-content">
@@ -289,7 +279,7 @@
                                     <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                                 </div>
                                 <h3 class="title">
-                                    <a href="buy-details.html" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
                                 </h3>
                                 <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">
@@ -310,7 +300,7 @@
                     <div class="product-custom">
                         <div class="profile-widget">
                             <div class="doc-img">
-                                <a href="" class="property-img mouse_go">
+                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
                                     <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
                                 </a>
                                 <div class="product-amount">
@@ -322,11 +312,6 @@
                                             <span>Featured</span>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)">
-                                        <div class="favourite  selected">
-                                            <span><i class="fa-regular fa-heart"></i></span>
-                                        </div>
-                                    </a>
                                 </div>
                             </div>
                             <div class="pro-content">
@@ -341,7 +326,7 @@
                                     <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                                 </div>
                                 <h3 class="title">
-                                    <a href="buy-details.html" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
                                 </h3>
                                 <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">

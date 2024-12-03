@@ -48,16 +48,17 @@
                                 <h3>Quick Links</h3>
                                 <ul>
                                     <li>
+                                        <a href="{{ route('about-us') }}">Home</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('about-us') }}">About us</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('publications') }}">Publications</a>
+                                        <a href="{{ route('properties') }}">Properties</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('expertise') }}">Our Expertise</a>
+                                        <a href="{{ route('publications') }}">Blogs</a>
                                     </li>
-                                    
-                                    
                                     <li>
                                         <a href="{{ route('contact-us') }}">Contact us</a>
                                     </li>

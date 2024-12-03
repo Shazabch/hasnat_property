@@ -54,7 +54,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}">
             {{-- <h3 class="text-secondary">Dr. Irfan Malik</h3> --}}
-            <img src="{{asset('assets/media/bg/logo-white-gold-1.png')}}" alt="Mr. Irfan Malik Logo">
+            <img src="{{asset('assets/media/bg/hasnat-logo.svg')}}" alt="Mr. Irfan Malik Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>

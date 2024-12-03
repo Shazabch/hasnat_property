@@ -106,4 +106,8 @@ class PagesController extends Controller
     {
         return view('website.properties.index');
     }
+    public function propertiesDetail()
+    {
+        return view('website.properties.detail');
+    }
 }

@@ -522,3 +522,24 @@ $(document).ready(function () {
 	});
 	});
 });
+
+var swiper = new Swiper(".property-detail-slider", {
+	spaceBetween: 10,
+	slidesPerView: 6,
+	freeMode: true,
+	watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".property-detail-slider2", {
+	spaceBetween: 10,
+	navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+	},
+	pagination: {
+	el: ".swiper-pagination",
+	clickable: true,
+	},
+	thumbs: {
+	swiper: swiper,
+	},
+});

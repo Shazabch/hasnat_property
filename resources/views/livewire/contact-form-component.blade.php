@@ -48,8 +48,8 @@
                             required
                         >
                 
-                        <label class="form-check-label" for="gridCheck">
-                            Accept <a target="_blank" href="{{ route('terms-and-conditions') }}" class="text-dark">Terms & Conditions</a> And <a target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
+                        <label class="form-check-label text-white" for="gridCheck">
+                            Accept <a target="_blank" href="{{ route('terms-and-conditions') }}" class="text-secondary">Terms & Conditions</a> And <a class="text-secondary" target="_blank" href="{{ route('privacy-policy') }}">Privacy Policy.</a>
                         </label>
                         <div class="help-block with-errors gridCheck-error"></div>
                     </div>
@@ -65,7 +65,7 @@
                 <div class="alert alert-success text-center"><i class="fa-solid fa-check"></i> We have received your message successfully. We will get back to you soon.</div>
             @endif
             <div class="col-md-12 col-lg-12">
-                <button type="submit" class="button smaller">
+                <button type="submit" class="button smaller button_secondary">
                     Send <small wire:loading wire:target="save"><i class="fa-solid fa-spinner fa-spin"></i></small>
                 </button>
                 

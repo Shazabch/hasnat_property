@@ -23,13 +23,14 @@ Route::get('/conditions', [PagesController::class, 'conditionsListing'])->name('
 Route::get('/conditions/{slug}', [PagesController::class, 'conditionsDetail'])->name('conditions.detail');
 Route::get('/expertise', [PagesController::class, 'expertiseListing'])->name('expertise');
 Route::get('/expertise/{slug}', [PagesController::class, 'expertiseDetail'])->name('expertise.detail');
-Route::get('/publications', [PagesController::class, 'publicationsListing'])->name('publications');
-Route::get('/publications/{slug}', [PagesController::class, 'publicationsDetail'])->name('publications.detail');
+Route::get('/blogs', [PagesController::class, 'publicationsListing'])->name('publications');
+Route::get('/blogs/{slug}', [PagesController::class, 'publicationsDetail'])->name('publications.detail');
 Route::get('/terms-and-conditions', [PagesController::class, 'termsAndConditions'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/reviews', [PagesController::class, 'reviews'])->name('reviews');
 
 Route::get('/properties', [PagesController::class, 'properties'])->name('properties');
+Route::get('/properties/properties-detail', [PagesController::class, 'propertiesDetail'])->name('properties-detail');
 
 //-----------------------Website Routes End-----------------------//
 
