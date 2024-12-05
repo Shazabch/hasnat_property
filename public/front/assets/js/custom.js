@@ -524,11 +524,22 @@ $(document).ready(function () {
 });
 
 var swiper = new Swiper(".property-detail-slider", {
-	spaceBetween: 10,
-	slidesPerView: 6,
-	freeMode: true,
-	watchSlidesProgress: true,
+    spaceBetween: 10,
+    slidesPerView: 6,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+        // When window width is <= 768px
+        768: {
+            slidesPerView: 6, // Show 3 slides on tablets
+        },
+        // When window width is <= 480px
+        280: {
+            slidesPerView: 4, // Show 2 slides on mobile
+        },
+    },
 });
+
 var swiper2 = new Swiper(".property-detail-slider2", {
 	spaceBetween: 10,
 	navigation: {

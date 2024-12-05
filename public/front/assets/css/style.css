@@ -4713,3 +4713,29 @@ footer {
 .address-area-wrap iframe {
     border-radius: 10px;
 }
+
+@media only screen and (max-width:768px){
+    .home-banner .content_box_wrapper h1{
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width:575px){
+    .home-banner .content_box_wrapper h1{
+        font-size: 30px;
+    }
+    .home-banner .content_box_wrapper p{
+        font-size: 16px;
+    }
+    .pro-content h3 a{
+        font-size: 20px;
+    }
+    .product-custom .doc-img .property-img{
+        height: 250px;
+    }
+    .page-title h3{
+        font-size: 24px;
+    }
+    .property-detail-slider-wrap .property-detail-slider2 .swiper-slide{
+        height: 300px;
+    }
+}

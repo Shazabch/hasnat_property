@@ -72,42 +72,14 @@
                         <a href="{{ route('home') }}" class="nav-link mouse_go">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('about-us') }}" class="nav-link mouse_go">About Me</a>
+                        <a href="{{ route('about-us') }}" class="nav-link mouse_go">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('publications') }}" class="nav-link mouse_go">Publications</a>
+                        <a href="{{ route('properties') }}" class="nav-link mouse_go">Properties</a>
                     </li>
-
-                    <li class="drop_down">
-                        <a class="dropdown_toggle nav-link mouse_go">
-                            <span>Expertise</span>
-                            <i class="fa-solid fa-chevron-down text-secondary"></i>
-                        </a>
-                        <ul class="dropdown_menu">
-                            @foreach ($menu_expertises as $expertise_chunk)
-                                @foreach ($expertise_chunk as $expertise)
-                                    <li><a href="{{ route('expertise.detail', $expertise->slug) }}" class="mouse_go">{{ $expertise->title }}</a></li>
-                                @endforeach
-                            @endforeach
-                            <a href="{{ route('expertise') }}" class="mouse_go btn">View All</a>
-                        </ul>
-                    </li>
-                    
-                                                      
-                    <li class="drop_down">
-                        <a class="dropdown_toggle nav-link mouse_go">
-                            <span>Conditions</span>
-                            <i class="fa-solid fa-chevron-down text-secondary"></i>
-                        </a>
-                        <ul class="dropdown_menu">
-                            @foreach ($conditions_chunks as $condition_chunk)
-                                @foreach ($condition_chunk as $condition)
-                                    <li><a href="{{ route('conditions.detail', $condition->slug) }}" class="mouse_go">{{ $condition->title }}</a></li>
-                                @endforeach
-                            @endforeach
-                            <a href="{{ route('conditions') }}" class="mouse_go btn">View All</a>
-                        </ul>
-                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('publications') }}" class="nav-link mouse_go">Blogs</a>
+                    </li>                                  
                     <li class="nav-item">
                         <a href="{{ route('contact-us') }}" class="nav-link mouse_go">Contact Us</a>
                     </li>
