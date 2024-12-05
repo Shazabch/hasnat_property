@@ -46,20 +46,20 @@ class AppServiceProvider extends ServiceProvider
         // share with all views
         view()->composer('*', function ($view) {
            $phone1 = [
-            'label' => '+(44) 20 7034 8978',
-            'value' => '+442070348978',
+            'label' => '+(92) 321 7888807',
+            'value' => '+923217888807',
            ];
            $phone2 = [
             'label' => '',
             'value' => '',
            ];
 
-           $email1 = 'pa@mspine.uk';
-           $email2 = 'info@mspine.uk';
+           $email1 = 'hasnaatqureshi@gmail.com';
+           $email2 = 'info@hasnatproperties.com';
 
-           $address_line_1 = '110- Harley st,';
-           $address_line_2 = 'London';
-           $address_line_3 = '';
+           $address_line_1 = 'Plaza no,102-B First Floor,';
+           $address_line_2 = 'Sector C commerical,';
+           $address_line_3 = 'Bahria Town Lahore';
 
            $view->with('phone1', $phone1);
            $view->with('phone2', $phone2);
