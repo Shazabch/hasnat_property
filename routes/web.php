@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::view('/profile/change-password', 'auth.change-password')->name('profile.change-password');
     Route::get('/filters',[AdminPagesController::class,'getFilterResults'])->name('filters');
 
-    
+
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
@@ -93,7 +93,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/edit/{id}', [AdminPagesController::class, 'editWebPage'])->name('edit');
     });
 
-    
+    Route::prefix('properties')->name('properties.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'properties'])->name('index');
+        Route::get('/create', [AdminPagesController::class, 'createProperty'])->name('create');
+        Route::get('/edit/{id}', [AdminPagesController::class, 'editProperty'])->name('edit');
+        // Route::get('/preview/{id}', [AdminPagesController::class, 'previewProperty'])->name('preview');
+    });
+
 });
 
 require __DIR__.'/auth.php';

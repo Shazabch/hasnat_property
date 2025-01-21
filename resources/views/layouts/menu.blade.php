@@ -99,6 +99,12 @@
         "permissions" => [],
         "route" => "admin.web-pages.index"
     ],
+    [
+    "name" => "Properties",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.properties.index"
+    ],
 ];
 
 @endphp

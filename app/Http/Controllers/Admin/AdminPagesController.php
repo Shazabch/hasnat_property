@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Condition;
 use App\Models\Expertise;
+use App\Models\Properties;
 use App\Models\Publication;
 use App\Models\PublicationTopic;
 use App\Models\Testimonial;
@@ -105,7 +106,7 @@ class AdminPagesController extends Controller
     public function webPages()
     {
         return view('admin.web-pages.index');
-    }   
+    }
 
     public function createWebPage()
     {
@@ -117,6 +118,21 @@ class AdminPagesController extends Controller
         $webPage = WebPage::findOrFail($id);
         return view('admin.web-pages.edit', compact('webPage'));
     }
+                public function properties()
+            {
+                return view('admin.properties.index');
+            }
+
+            public function createProperty()
+            {
+                return view('admin.properties.create');
+            }
+
+            public function editProperty($id)
+            {
+                $property = Properties::findOrFail($id);
+                return view('admin.properties.edit', compact('property'));
+            }
 
     public function getFilterResults(Request $request)
     {
@@ -129,7 +145,7 @@ class AdminPagesController extends Controller
                     'text'=>$result->name,
                 ];
             });
-            
+
         }else{
             $data=[];
         }

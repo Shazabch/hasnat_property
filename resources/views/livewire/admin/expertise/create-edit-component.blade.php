@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="row">
-                            
+
                             <div class="form-group col-md-12">
                                 <label>Title</label>
                                 <input wire:model.live.debounce.500ms="expertise.title" type="text" class="form-control @error('expertise.title') border border-danger @enderror">
@@ -19,7 +19,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            
+
                             <div class="form-group col-md-12">
                                 <label>Slug</label>
                                 <input wire:model="expertise.slug" type="text" class="form-control @error('expertise.slug') border border-danger @enderror">
@@ -131,8 +131,8 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                        
-                    
+
+
                         </div>
                     </div>
 
@@ -148,7 +148,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group col-md-6">
                                 <label>Published At</label>
                                 <input wire:model="expertise.published_at" type="datetime-local" class="form-control @error('expertise.published_at') border border-danger @enderror">
@@ -157,7 +157,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Image</label>
                             @if($image)
@@ -216,7 +216,7 @@
                             @enderror
                         </div> --}}
 
-                        
+
                     </div>
                     <div class="form-group col-md-12">
                         <button type="submit" class="btn btn-primary">Save</button>
