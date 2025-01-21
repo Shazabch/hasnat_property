@@ -21,6 +21,15 @@ class CreateEditComponent extends Component
         $this->isNew = $property ? false : true;
     }
 
+    /**
+     * Explicit edit method to load the property for editing
+     */
+    public function edit($id)
+    {
+        $this->property = Properties::findOrFail($id);
+        $this->isNew = false;
+    }
+
     public function rules()
     {
         return [
@@ -37,7 +46,6 @@ class CreateEditComponent extends Component
             'property.description' => 'nullable|string',
         ];
     }
-
 
     public function updatingPropertyTitle($value)
     {
@@ -73,7 +81,6 @@ class CreateEditComponent extends Component
         return redirect()->route('admin.properties.index');
     }
 
-
     public function render()
     {
         return view('livewire.admin.properties.create-edit-component');
@@ -90,6 +97,4 @@ class CreateEditComponent extends Component
         $this->property->update(['main_image' => null]);
         $this->dispatch('success-notification', message: 'Main image deleted successfully');
     }
-
-
 }

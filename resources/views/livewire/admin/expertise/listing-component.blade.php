@@ -10,7 +10,7 @@
                     <div class="col-2">
                         <button wire:click="toggleReorder" class="btn btn-primary btn-sm">{{ $enableReorder ? 'Back' : 'Reorder' }}</button>
                     </div>
-                    
+
                     <input type="text" wire:model.live.debounce="search" class="form-control"
                         placeholder="Search">
 

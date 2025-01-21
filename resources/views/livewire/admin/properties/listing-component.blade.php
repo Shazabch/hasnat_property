@@ -36,7 +36,7 @@
                 </div>
 
                 <!-- Properties Table -->
-                <div class="table-responsive">
+                <div>
                     <table class="table table-centered table-nowrap mb-0 rounded">
                         <thead class="thead-light">
                             <tr>
@@ -59,7 +59,7 @@
                         <tbody wire:sortable="updateOrder">
                             @forelse($properties as $property)
                                 <tr wire:sortable.item="{{ $property->id }}" wire:key="prop{{ $property->id }}">
-                                    <td>
+                                    <td class="d-flex align-items-center">
                                         <!-- Reorder Button -->
                                         <span wire:sortable.handle>
                                             @if ($enableReorder)
@@ -69,7 +69,7 @@
                                             @endif
                                         </span>
                                         <!-- Edit Button -->
-                                        <a href="{{ route('admin.properties.edit', $property->id) }}" class="btn btn-sm btn-info">
+                                        <a href="{{ route('admin.properties.edit', $property->id) }}" class="btn btn-sm btn-info m-2">
                                             <i class="fa fa-edit pr-0"></i>
                                         </a>
                                         <!-- Delete Button -->
