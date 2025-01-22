@@ -16,6 +16,13 @@ class ListingComponent extends Component
     public $status = '';
 
     protected $queryString = ['search', 'status'];
+    protected $listeners = ['propertySaved'];
+
+    public function propertySaved($message)
+    {
+        // Handle the message, e.g., show a success notification
+        $this->dispatch('success-notification', message: $message);
+    }
 
     public function delete($id)
     {
@@ -54,10 +61,10 @@ class ListingComponent extends Component
         // Apply search filters
         if ($this->search) {
             $query->where('title', 'like', '%' . $this->search . '%')
-                  ->orWhere('slug', 'like', '%' . $this->search . '%')
-                  ->orWhere('adress', 'like', '%' . $this->search . '%')
-                  ->orWhere('price', 'like', '%' . $this->search . '%')
-                  ->orWhere('area', 'like', '%' . $this->search . '%');
+                ->orWhere('slug', 'like', '%' . $this->search . '%')
+                ->orWhere('adress', 'like', '%' . $this->search . '%')
+                ->orWhere('price', 'like', '%' . $this->search . '%')
+                ->orWhere('area', 'like', '%' . $this->search . '%');
         }
 
         // Apply status filter
@@ -75,5 +82,4 @@ class ListingComponent extends Component
         // Return the view with the properties
         return view('livewire.admin.properties.listing-component', compact('properties'));
     }
-
 }

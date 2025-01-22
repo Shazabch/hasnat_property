@@ -36,7 +36,7 @@ class CreateEditComponent extends Component
             'property.title' => 'required',
             'property.slug' => 'required|unique:properties,slug,' . $this->property->id,
             'property.featured' => 'nullable|boolean',
-            'property.main_image' => 'nullable|image|max:2048',
+            // 'property.main_image' => 'nullable|image|max:2048',
             'property.price' => 'nullable|numeric',
             'property.adress' => 'nullable|string',
             'property.status' => 'nullable|in:0,1',
@@ -75,7 +75,7 @@ class CreateEditComponent extends Component
 
         // Dispatch a success message event
         $message = $this->isNew ? 'Property saved successfully' : 'Property updated successfully';
-        $this->dispatchBrowserEvent('success-box', ['message' => $message]);
+        $this->dispatch('success-box', ['message' => $message]);
 
         // Redirect to the list page
         return redirect()->route('admin.properties.index');

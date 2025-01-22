@@ -39,8 +39,8 @@
                     <div class="left">
                         <div class="anim-reveal-line mb-4 mb-md-0">
                             <h2 class="title text-secondary mb-2">
-                                <span class="text-white">Welcome to</span> <br> 
-                                HASNAT 
+                                <span class="text-white">Welcome to</span> <br>
+                                HASNAT
                                 <span class="text-white">Properties</span>
                             </h2>
                             <h4 class="mb-3">your trusted partner in real estate</h4>
@@ -232,7 +232,7 @@
                                     <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                                 </div>
                                 <h3 class="title">
-                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
                                 </h3>
                                 <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">
@@ -246,104 +246,11 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>		
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="product-custom">
-                        <div class="profile-widget">
-                            <div class="doc-img">
-                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                    <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
-                                </a>
-                                <div class="product-amount">
-                                    <span>$51,000</span>
-                                </div>
-                                <div class="feature-rating">
-                                    <div>
-                                        <div class="featured">
-                                            <span>Featured</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="rating">
-                                    <span class="rating-count">
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                                </div>
-                                <h3 class="title">
-                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
-                                </h3>
-                                <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                                <ul class="property-category d-flex justify-content-between mb-0">
-                                    <li>
-                                        <span class="list">Listed on : </span>
-                                        <span class="date">18 Jan 2023</span>
-                                    </li>
-                                    <li>
-                                        <span class="category list">Category : </span>
-                                        <span class="category-value date">Flats</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>		
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="product-custom">
-                        <div class="profile-widget">
-                            <div class="doc-img">
-                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                    <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
-                                </a>
-                                <div class="product-amount">
-                                    <span>$51,000</span>
-                                </div>
-                                <div class="feature-rating">
-                                    <div>
-                                        <div class="featured">
-                                            <span>Featured</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="rating">
-                                    <span class="rating-count">
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                                </div>
-                                <h3 class="title">
-                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
-                                </h3>
-                                <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                                <ul class="property-category d-flex justify-content-between mb-0">
-                                    <li>
-                                        <span class="list">Listed on : </span>
-                                        <span class="date">18 Jan 2023</span>
-                                    </li>
-                                    <li>
-                                        <span class="category list">Category : </span>
-                                        <span class="category-value date">Flats</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>		
+                        </div>
                     </div>
                 </div>
             </div>
+        
             <div class="row">
                 <div class="col-lg-12 my-4 text-center">
                     <a href="#" class="button smaller button_secondary mb-0">View All</a>
@@ -441,7 +348,7 @@
             <div class="row">
                 <div class="blogs-slider owl-carousel owl-theme">
                     {{-- @foreach ($publications as $publication)
-                    <div class="item" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100"> 
+                    <div class="item" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">
                         @include('website.publications.card', ['publication' => $publication])
                     </div>
                     @endforeach   --}}

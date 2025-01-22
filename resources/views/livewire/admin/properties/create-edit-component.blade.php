@@ -283,3 +283,14 @@
         </div>
     </div>
 </div>
+<script>
+    window.addEventListener('success-box', event => {
+				Swal.fire({
+				position: "center",
+				icon: "success",
+				title: 'data saved successfully',
+				showConfirmButton: false,
+				timer: 1500
+				});
+			})
+</script>
