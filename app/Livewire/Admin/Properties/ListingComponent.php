@@ -15,6 +15,7 @@ class ListingComponent extends Component
     public $enableReorder = false;
     public $status = '';
 
+
     protected $queryString = ['search', 'status'];
     protected $listeners = ['propertySaved'];
 
@@ -43,7 +44,18 @@ class ListingComponent extends Component
     {
         $this->enableReorder = !$this->enableReorder;
     }
-
+    public function toggleStatus($propertyId, $status)
+    {
+       if($status==1){
+        $status=0;
+       }else{
+        $status=1;
+       }
+       $property=Properties::find($propertyId);
+       $property->status=$status;
+       $property->save();
+       $this->dispatch('success-notification', message: 'Updated successfully');
+    }
     public function showOnDashboard($id, $value)
     {
         Properties::where('id', $id)->update(['show_on_dashboard' => $value]);

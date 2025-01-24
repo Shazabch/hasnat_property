@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Expertise;
+use App\Models\Properties;
 use App\Models\Publication;
 use App\Models\WebPage;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class PagesController extends Controller
         // $testimonials = \App\Models\Testimonial::published()->ordered()->get();
         $testimonials = \App\Models\Testimonial::published()->inRandomOrder()->take(6)->get();
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
-        return view('website.home', compact('testimonials', 'publications', 'pageData'));
+        $properties = Properties::where('status',1)->get();
+        return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties'));
     }
     public function conditionsListing()
     {
@@ -60,7 +62,7 @@ class PagesController extends Controller
     {
         $pageData = WebPage::getPageData('privacy-policy');
         return view('website.privacy-policy', compact('pageData'));
-    }   
+    }
     public function aboutUs()
     {
         $pageData = WebPage::getPageData('about-us');

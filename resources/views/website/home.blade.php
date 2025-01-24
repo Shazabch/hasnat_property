@@ -202,55 +202,56 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ( $properties as $property )
                 <div class="col-lg-4">
                     <div class="product-custom">
                         <div class="profile-widget">
                             <div class="doc-img">
+                                @if ($property->main_image)
                                 <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                    <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                                    <img src="{{ asset($property->main_image) }}" alt="Property Image"
+                                            style=" height: 320px; width: 480px">
                                 </a>
+                                    @else
+                                        <span class="text-muted">No Image</span>
+                                    @endif
+
                                 <div class="product-amount">
-                                    <span>$51,000</span>
+                                    <span>{{ $property->price }}</span>
                                 </div>
                                 <div class="feature-rating">
                                     <div>
                                         <div class="featured">
+                                            @if ($property->featured)
                                             <span>Featured</span>
+                                            @endif
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="pro-content">
-                                <div class="rating">
-                                    <span class="rating-count">
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star checked"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                                </div>
                                 <h3 class="title">
-                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">{{ $property->title }}</a>
                                 </h3>
-                                <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
+                                <p><i class="feather-map-pin"></i> {{ $property->adress }}</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">
                                     <li>
                                         <span class="list">Listed on : </span>
-                                        <span class="date">18 Jan 2023</span>
+                                        <span class="date">{{ $property->created_at->format('d-M-Y h:i a') }}</span>
                                     </li>
                                     <li>
                                         <span class="category list">Category : </span>
-                                        <span class="category-value date">Flats</span>
+                                        <span class="category-value date">{{ $property->categories }}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-        
+
             <div class="row">
                 <div class="col-lg-12 my-4 text-center">
                     <a href="#" class="button smaller button_secondary mb-0">View All</a>
