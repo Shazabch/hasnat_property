@@ -22,7 +22,7 @@ class WebPage extends Model
         });
     }
 
-    
+
     public static function getPageData($slug)
     {
         return self::where('slug', $slug)->with('schema')->first();

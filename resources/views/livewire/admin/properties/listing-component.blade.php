@@ -11,15 +11,22 @@
 
         <div class="card-body pt-3">
             <!-- Controls: Reorder, Search, and Filter -->
+<<<<<<< Updated upstream
             <div class="d-flex flex-wrap justify-content-between mb-3 align-items-center">
                 <!-- Reorder Button -->
                 <div class="mb-2 mb-md-0">
+=======
+            <div class="d-flex justify-content-between mb-3 align-items-center">
+                <!-- Reorder Button -->
+                <div class="col-auto">
+>>>>>>> Stashed changes
                     <button wire:click="toggleReorder" class="btn btn-primary btn-sm">
                         {{ $enableReorder ? 'Back' : 'Reorder' }}
                     </button>
                 </div>
 
                 <!-- Search Input -->
+<<<<<<< Updated upstream
                 <div class="flex-grow-1 mx-md-3 mb-2 mb-md-0">
                     <input type="text" wire:model.live.debounce.500ms="search" class="form-control"
                         placeholder="Search properties...">
@@ -33,6 +40,117 @@
                         <option value="0">Draft</option>
                     </select>
                 </div>
+=======
+                <div class="col">
+                    <input type="text" wire:model.live.debounce.500ms="search" class="form-control"
+                        placeholder="Search properties...">
+                </div>
+
+                <!-- Status Filter -->
+                <div class="col-auto">
+                    <select wire:model.live="status" class="form-control">
+                        <option value="">All</option>
+                        <option value="1">Published</option>
+                        <option value="0">Draft</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Properties Table -->
+            <div>
+                <table class="table table-centered table-nowrap mb-0 rounded">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Action(s)</th>
+                            <th>ID</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Area</th>
+                            <th>Slug</th>
+                            <th>Property Type</th>
+                            <th>Description</th>
+                            <th>Categories</th>
+                            <th>Featured</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody wire:sortable="updateOrder">
+                        @forelse($properties as $property)
+                            <tr wire:sortable.item="{{ $property->id }}" wire:key="prop{{ $property->id }}">
+                                <td class="d-flex align-items-center">
+                                    <!-- Reorder Button -->
+                                    @if ($enableReorder)
+                                        <span wire:sortable.handle class="btn btn-light btn-sm me-2">
+                                            <i class="fas fa-arrows-alt"></i>
+                                        </span>
+                                    @endif
+
+                                    <!-- Edit Button -->
+                                    <a href="{{ route('admin.properties.edit', $property->id) }}"
+                                        class="btn btn-sm btn-info me-2">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+
+                                    <!-- Delete Button -->
+                                    <button wire:click.prevent="delete('{{ $property->id }}')"
+                                        class="btn btn-sm btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td>{{ $property->id }}</td>
+                                <td>
+                                    @if ($property->main_image)
+                                        <a href="{{ asset($property->main_image) }}" target="_blank">
+                                            <img src="{{ asset($property->main_image) }}" alt="Property Image"
+                                                style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                        </a>
+                                    @else
+                                        <span class="text-muted">No Image</span>
+                                    @endif
+                                </td>
+                                <td>{{ $property->title }}</td>
+                                <td>{{ $property->price }}</td>
+                                <td>{{ $property->address }}</td>
+                                <td>
+                                    <span
+                                        class="badge {{ $property->status == 1 ? 'bg-success text-white' : 'bg-light' }}">
+                                        {{ $property->status == 1 ? 'Published' : 'Draft' }}
+                                    </span>
+                                </td>
+                                <td>{{ $property->area }}</td>
+                                <td>{{ $property->slug }}</td>
+                                <td>{{ $property->property_type }}</td>
+                                <td>{{ Str::limit($property->description, 50) }}</td>
+                                <td>{{ $property->categories }}</td>
+                                <td>
+                                    <label class="checkbox checkbox-success">
+                                        <input type="checkbox" {{ $property->featured ? 'checked' : '' }}
+                                            wire:change="toggleFeatured('{{ $property->id }}', $event.target.checked)">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>{{ $property->created_at->format('d-M-Y h:i a') }}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="100">
+                                    <div class="alert alert-secondary text-center">No Data Found</div>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div>
+                @if (!$enableReorder)
+                    {{ $properties->links() }}
+                @endif
+>>>>>>> Stashed changes
             </div>
 
             <!-- Properties Table -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expertise;
 use App\Models\Properties;
 use App\Models\Publication;
+use App\Models\Properties;
 use App\Models\WebPage;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,14 @@ class PagesController extends Controller
         $pageData = WebPage::getPageData('home');
         // $testimonials = \App\Models\Testimonial::published()->ordered()->get();
         $testimonials = \App\Models\Testimonial::published()->inRandomOrder()->take(6)->get();
+        $properties = Properties::take(6)->get();
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
+<<<<<<< Updated upstream
         $properties = Properties::where('status',1)->get();
         return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties'));
+=======
+        return view('website.home', compact('testimonials', 'publications', 'pageData','properties'));
+>>>>>>> Stashed changes
     }
     public function conditionsListing()
     {

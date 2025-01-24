@@ -1,26 +1,28 @@
 @extends('layouts.master')
 
-@section('meta_title', $pageData->meta_title ?? "")
-@section('meta_description', $pageData->meta_description ?? "")
+@section('meta_title', $pageData->meta_title ?? '')
+@section('meta_description', $pageData->meta_description ?? '')
 
 @section('content')
-@if ($pageData && $pageData->schema)
-    @include('website.common.scheme', ['schema' => $pageData->schema])
-@endif
+    @if ($pageData && $pageData->schema)
+        @include('website.common.scheme', ['schema' => $pageData->schema])
+    @endif
     <!-- BANNER NEW -->
     <section class="home-banner p-0">
         <div id="themeSlider" class="carousel slide pointer-event" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="banner_img" alt="">
+                    <img src="{{ asset('assets/media/banners/home-1.jpg') }}" class="banner_img" alt="">
                     <div class="caption-head">
                         <div class="carousel-caption">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="content_box_wrapper text-center">
-                                            <h1>Find Your Dream Property with <span class="text-secondary">Hasnat Properties</span></h1>
-                                            <p>From luxurious homes to investment opportunities, we help you discover the perfect property tailored to your needs.</p>
+                                            <h1>Find Your Dream Property with <span class="text-secondary">Hasnat
+                                                    Properties</span></h1>
+                                            <p>From luxurious homes to investment opportunities, we help you discover the
+                                                perfect property tailored to your needs.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +47,9 @@
                             </h2>
                             <h4 class="mb-3">your trusted partner in real estate</h4>
                             <p class="text-white">
-                                With a commitment to excellence, we specialize in providing top-notch property solutions tailored to your needs. Whether you're buying, selling, or renting, our team ensures a seamless and satisfying experience. Let us help you find your dream property today.
+                                With a commitment to excellence, we specialize in providing top-notch property solutions
+                                tailored to your needs. Whether you're buying, selling, or renting, our team ensures a
+                                seamless and satisfying experience. Let us help you find your dream property today.
                             </p>
                             <a href="" class="button smaller button_secondary mb-0">LEARN MORE</a>
                         </div>
@@ -53,7 +57,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
                     <div class="img-wrap">
-                        <img src="{{asset('assets/media/home/the-concept.webp')}}" alt="">
+                        <img src="{{ asset('assets/media/home/the-concept.webp') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -196,12 +200,15 @@
                         <p class="after-circle text-thin after-circle mx-auto text-white">Expert and Comprehensive</p>
                         <h2 class="text-center text-secondary">Properties</h2>
                         <p class="text-white">
-                            Discover exceptional property solutions in Bahria Town Lahore with Hasnat Properties. Whether you’re buying, selling, or renting, our dedicated team ensures a smooth and customer-focused experience. Let us help you find the perfect property with ease.
+                            Discover exceptional property solutions in Bahria Town Lahore with Hasnat Properties. Whether
+                            you’re buying, selling, or renting, our dedicated team ensures a smooth and customer-focused
+                            experience. Let us help you find the perfect property with ease.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="row">
+<<<<<<< Updated upstream
                 @foreach ( $properties as $property )
                 <div class="col-lg-4">
                     <div class="product-custom">
@@ -250,6 +257,60 @@
                     </div>
                 </div>
                 @endforeach
+=======
+                @foreach ($properties as $property)
+                    <div class="col-lg-4">
+                        <div class="product-custom">
+                            <div class="profile-widget">
+                                <div class="doc-img">
+                                    <a href="{{ route('properties-detail') }}" class="property-img mouse_go">
+                                        <img class="img-fluid" alt="Property Image"
+                                            src="{{ asset('assets/media/banners/home-1.jpg') }}">
+                                    </a>
+                                    <div class="product-amount">
+                                        <span>51000$</span>
+                                    </div>
+                                    <div class="feature-rating">
+                                        <div>
+                                            <div class="featured">
+                                                <span>Featured</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="rating">
+                                        <span class="rating-count">
+                                            <i class="fa-solid fa-star checked"></i>
+                                            <i class="fa-solid fa-star checked"></i>
+                                            <i class="fa-solid fa-star checked"></i>
+                                            <i class="fa-solid fa-star checked"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
+                                    </div>
+                                    <h3 class="title">
+                                        <a href="{{ route('properties-detail') }}" tabindex="-1"
+                                            class="mouse_go">Minimalist and bright flat</a>
+                                    </h3>
+                                    <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
+                                    <ul class="property-category d-flex justify-content-between mb-0">
+                                        <li>
+                                            <span class="list">Listed on : </span>
+                                            <span class="date">18 Jan 2023</span>
+                                        </li>
+                                        <li>
+                                            <span class="category list">Category : </span>
+                                            <span class="category-value date">Flats</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+>>>>>>> Stashed changes
             </div>
 
             <div class="row">
@@ -310,7 +371,8 @@
                 <div class="col-lg-12">
                     <div class="section-title no-after pt-0 ps-0 text-center">
                         <p class="after-circle text-thin after-circle mx-auto text-white">Client Success Stories</p>
-                        <h2 class="text-center text-white">Our <span>Happy Clients </span> Are <br> Sharing Something Awesome</h2>
+                        <h2 class="text-center text-white">Our <span>Happy Clients </span> Are <br> Sharing Something
+                            Awesome</h2>
                     </div>
                 </div>
             </div>
@@ -341,7 +403,10 @@
                         <p class="after-circle text-thin after-circle mx-auto text-white">Research and Market Insights</p>
                         <h2 class="text-center text-secondary">Blogs</h2>
                         <p class="text-white text-center">
-                            Hasnat Properties is your go-to source for insightful real estate blogs. We regularly publish updates on the latest market trends, investment opportunities, and expert advice for buying, selling, and renting properties in Bahria Town Lahore. Stay informed and make smart property decisions with our expert insights.
+                            Hasnat Properties is your go-to source for insightful real estate blogs. We regularly publish
+                            updates on the latest market trends, investment opportunities, and expert advice for buying,
+                            selling, and renting properties in Bahria Town Lahore. Stay informed and make smart property
+                            decisions with our expert insights.
                         </p>
                     </div>
                 </div>
