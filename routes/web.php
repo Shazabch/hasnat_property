@@ -112,6 +112,17 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/edit/{id}', [AdminPagesController::class, 'editRate'])->name('edit');
     });
 
+    Route::prefix('specifications')->name('specifications.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'specifications'])->name('index');
+
+    });
+    Route::prefix('amenetise')->name('amenetise.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'amenetise'])->name('index');
+
+    });
+
+
+
 });
 
 require __DIR__.'/auth.php';

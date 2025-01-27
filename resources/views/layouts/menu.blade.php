@@ -75,6 +75,24 @@
         "permissions" => [],
         "route" => "admin.publications.index"
     ],
+    [
+        "name" => "Publication Types",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.publications.types.index"
+    ],
+    [
+        "name" => "Publication Authors",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.publications.authors.index"
+    ],
+    [
+        "name" => "Topics",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.publications.topics.index"
+    ],
 
     [
         "name" => "Web pages",
@@ -89,6 +107,7 @@
     "route" => "admin.properties.index"
     ],
     [
+<<<<<<< HEAD
     "name" => "Projects",
     "icon" => "fas fa-building",
     "permissions" => [],
@@ -99,6 +118,18 @@
     "icon" => "fas fa-building",
     "permissions" => [],
     "route" => "admin.rates.index"
+=======
+        "name" => "Specifications",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.specifications.index"
+    ],
+    [
+        "name" => "Amenetise",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.amenetise.index"
+>>>>>>> 622f8a37c86526cd2fee669a5fe8aa774a3fb6e4
     ],
 ];
 
