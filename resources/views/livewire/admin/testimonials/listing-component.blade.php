@@ -1,6 +1,6 @@
 <div>
     <div class="bg-info-o-40 p-2 rounded text-center text-white text-info mb-1">
-        <h3 class="mb-0">Testimonials</h3>
+        <h3 class="mb-0">Reviews</h3>
     </div>
     <div class="card">
         <x-full-page-loader wire:loading.delay />
@@ -47,13 +47,13 @@
                                                 </span>
                                             @endif
                                         </span>
-                                        
+
                                         <a href="{{ route('admin.testimonials.edit', $testimonial->id) }}"
                                             class="btn btn-sm btn-info"><i class="fa fa-edit pr-0"></i></a>
                                         <a :key="{{ $testimonial->id }}" type="button"
                                             wire:confirm="Are you sure?" wire:click="delete('{{ $testimonial->id }}')"
                                             class="btn btn-sm btn-danger"><i class="fa fa-trash pr-0"></i></a>
-                                        
+
                                     </td>
                                     <td>{{ $testimonial->id }}</td>
                                     <td>

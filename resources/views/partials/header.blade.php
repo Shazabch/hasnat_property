@@ -60,6 +60,9 @@
                             <a href="{{ route('publications') }}" class="nav-link mouse_go">Blogs</a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('reviews') }}" class="nav-link mouse_go">Reviews</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('contact-us') }}" class="nav-link mouse_go">Contact Us</a>
                         </li>
                     </ul>
