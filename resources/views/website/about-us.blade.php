@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="py-5 px-4 text-center rounded what-we-do bg-dark"> 
+                    <div class="py-5 px-4 text-center rounded what-we-do bg-dark">
                         <i class="fa-solid fa-chart-line text-secondary"></i>
                         <h5 class="text-secondary hover-text-primary py-3 m-0">
                             Increase Value
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="py-5 px-4 text-center rounded what-we-do"> 
+                    <div class="py-5 px-4 text-center rounded what-we-do">
                         <i class="fa-solid fa-money-bill-wave text-secondary"></i>
                         <h5 class="text-secondary hover-text-primary py-3 m-0">
                             Passive Cashflow
@@ -207,7 +207,7 @@
                     </div>
                 </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -227,10 +227,10 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -250,10 +250,10 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -273,10 +273,10 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -296,10 +296,10 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -319,10 +319,10 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">                           
+                <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
                             <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
@@ -342,7 +342,7 @@
                                 Mike Rutter
                             </h6>
                             <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>	
+                        </div>
                     </div>
                 </div>
             </div>

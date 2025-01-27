@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="shape-bg">
-        <img class="shape" src="{{ asset($rate->image) }}">
+    <img class="shape" src="{{ asset('front/assets/img/banners/hero-bg.webp') }}">
     </div>
 </section>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Testimonial')
+@section('title', 'Edit Review')
 
 @section('content')
 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
@@ -8,19 +8,19 @@
         <!--begin::Info-->
         <div class="d-flex align-items-center flex-wrap mr-2">
             <!--begin::Page Title-->
-            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Testimonials</h5>
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Reviews</h5>
             <!--end::Page Title-->
             <!--begin::Actions-->
             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-            <span class=" font-weight-bold mr-4">Edit Testimonial</span>
+            <span class=" font-weight-bold mr-4">Edit Review</span>
             {{-- <a href="#" class="btn btn-light-warning font-weight-bolder btn-sm">User Management</a> --}}
             <!--end::Actions-->
         </div>
         <!--end::Info-->
         <!--begin::Toolbar-->
         <div class="d-flexs align-items-center">
-            <a href="{{ route('admin.testimonials.index') }}" class="btn btn-light-warning font-weight-bolder btn-sm">Go To Testimonials</a>
-            <a href="{{ route('admin.testimonials.create') }}" class="btn btn-light-success font-weight-bolder btn-sm">Create Testimonial</a>
+            <a href="{{ route('admin.testimonials.index') }}" class="btn btn-light-warning font-weight-bolder btn-sm">Go To Reviews</a>
+            <a href="{{ route('admin.testimonials.create') }}" class="btn btn-light-success font-weight-bolder btn-sm">Create Review</a>
         </div>
         <!--end::Toolbar-->
     </div>
