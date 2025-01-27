@@ -93,6 +93,7 @@
         "permissions" => [],
         "route" => "admin.publications.topics.index"
     ],
+
     [
         "name" => "Web pages",
         "icon" => "far fa-id-card",
@@ -104,6 +105,18 @@
     "icon" => "fas fa-building",
     "permissions" => [],
     "route" => "admin.properties.index"
+    ],
+    [
+        "name" => "Specifications",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.specifications.index"
+    ],
+    [
+        "name" => "Amenetise",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.amenetise.index"
     ],
 ];
 

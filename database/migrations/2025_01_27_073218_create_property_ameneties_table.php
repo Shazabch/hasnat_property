@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('property_ameneties', function (Blueprint $table) {
             $table->id();
+            $table->string('property_id')->nullable();
+            $table->string('amenetise_id')->nullable();
+            $table->string('distance')->nullable();
             $table->timestamps();
         });
     }

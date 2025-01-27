@@ -41,6 +41,14 @@ class AdminPagesController extends Controller
     {
         return view('admin.expertise.index');
     }
+    public function specifications()
+    {
+        return view('admin.specifications.index');
+    }
+    public function amenetise()
+    {
+        return view('admin.amenetise.index');
+    }
 
     public function createExpertise()
     {

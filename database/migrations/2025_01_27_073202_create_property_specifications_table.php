@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('property_specifications', function (Blueprint $table) {
             $table->id();
+            $table->string('property_id')->nullable();
+            $table->string('specification_id')->nullable();
+            $table->string('value')->nullable();
             $table->timestamps();
         });
     }
