@@ -3,7 +3,11 @@
 namespace App\Livewire\Admin\Properties;
 
 use App\Models\Properties;
+use App\Models\Specification;
+use App\Models\PropertySpecification;
+use App\Models\Amenities;
 use Livewire\Component;
+
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 
@@ -14,11 +18,22 @@ class CreateEditComponent extends Component
     public $property;
     public $isNew = false;
     public $main_image;
+    public $specifications;
+    public $amenities;
+    public $specificationsCount = [];
 
     public function mount($property = null)
     {
         $this->property = $property ?? new Properties(['status' => '0']);
         $this->isNew = $property ? false : true;
+        $this->specifications = Specification::all();
+        $this->amenities = Amenities::all();
+        $propertySpecifications = PropertySpecification::where('property_id', $this->property->id)->get();
+        foreach ($this->specifications as $index => $specification) {
+            $this->specificationsCount[$index] = $propertySpecifications->where('specification_id', $specification->id)->first()->available_count ?? "0";
+        }
+
+
     }
 
     /**
@@ -72,6 +87,18 @@ class CreateEditComponent extends Component
 
         // Save the property
         $this->property->save();
+         #delete all existing specifications for this property
+         PropertySpecification::where('property_id', $this->property->id)->delete();
+         #save new property specifications
+         foreach ($this->specificationsCount as $index => $s_count) {
+             PropertySpecification::create([
+                 'property_id' => $this->property->id,
+                 'specification_id' => $this->specifications[$index]['id'],
+                 'value' => $s_count,
+             ]);
+         }
+
+
 
         // Dispatch a success message event
         $message = $this->isNew ? 'Property saved successfully' : 'Property updated successfully';
