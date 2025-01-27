@@ -47,8 +47,7 @@ class CreateEditComponent extends Component
             'publication.meta_description' => 'nullable',
             'publication.image_alt' => 'nullable',
             'publication.image' => 'nullable',
-            'publication.author_id' => 'nullable',
-            'publication.type_id' => 'nullable',
+
         ];
     }
 
@@ -94,7 +93,7 @@ class CreateEditComponent extends Component
         // remove duplicates
         $existingTopics = $existingTopics->unique();
 
-       
+
 
         if($this->isNew){
             $this->publication->created_by_user = auth()->user()->id;

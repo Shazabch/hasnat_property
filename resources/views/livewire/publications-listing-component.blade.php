@@ -25,8 +25,8 @@
                         </div>
                     </div>
                 </div>
-            </div>  
-            <div class="col-lg-12">                  
+            </div>
+            <div class="col-lg-12">
                 <div class="row p-0">
                     <div class="col-12 filters-col">
                         <div class="box">
@@ -40,7 +40,7 @@
                                                 <span>All</span>
                                             </label>
                                         </div>
-                                        @foreach ($types as $type)  
+                                        @foreach ($types as $type)
                                         <div class="cat">
                                             <label class="{{ $selectedType == $type->id ? 'active' : '' }}">
                                                 <input type="checkbox" wire:click="$set('selectedType', {{ $type->id }})" value="{{ $type->id }}" id="type-{{ $type->id }}">
@@ -73,11 +73,11 @@
                         </div>
                     </div>
                 </div>
-            </div>                    
+            </div>
         </div>
         <div class="row">
             @foreach ($publications as $publication)
-            <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100"> 
+            <div class="col-lg-4 col-sm-6 mb-4" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">
                 @include('website.publications.card', ['publication' => $publication])
             </div>
             @endforeach

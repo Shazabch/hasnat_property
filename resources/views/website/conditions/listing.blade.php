@@ -14,7 +14,7 @@
                 <div class="section-title no-after pt-0 ps-0">
                     <p class="after-circle text-white text-thin after-circle mx-auto">Speciality</p>
                     <h2 class="text-center text-secondary">Conditions</h2>
-                    <p class="text-center text-white">Comprehensive care for a wide range of spinal conditions, from back pain and sciatica to complex injuries and disc herniations. Mr. Irfan Malik offers personalized treatments to restore your health and mobility.</p>
+                    <p class="text-center text-white">Comprehensive care for a wide range of spinal conditions, from back pain and sciatica to complex injuries and disc herniations. Mr.Hasnat Properties offers personalized treatments to restore your health and mobility.</p>
                 </div>
             </div>
         </div>

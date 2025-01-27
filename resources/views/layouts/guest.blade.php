@@ -4,7 +4,7 @@
 	<!--begin::Head-->
 	<head>
 		<meta charset="utf-8" />
-		<title>@yield('title') | DR Irfan Malik</title>
+		<title>@yield('title') | Hasnat Properties</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="{{asset('https://keenthemes.com/metronic')}}" />
@@ -38,7 +38,7 @@
 				<div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-image: url({{ asset('assets/media/bg/bg-4.jpg') }});">
 					<!--begin: Aside Container-->
 					<div class="align-items-center d-flex justify-content-center">
-						<img src="{{ asset('assets/media/bg/logo-white-gold-1.png') }}" class="max-h-300px" alt="Mr. Irfan Malik Logo" />
+						<img src="{{ asset('assets/media/bg/logo-white-gold-1.png') }}" class="max-h-300px" alt="Mr.Hasnat Properties Logo" />
 					</div>
 					<!--end: Aside Container-->
 				</div>

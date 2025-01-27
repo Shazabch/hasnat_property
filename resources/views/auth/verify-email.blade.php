@@ -13,7 +13,7 @@
                 A new verification link has been sent to the email address you provided during registration.
             </div>
             @endif
-            
+
             <!-- Validation Errors -->
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -31,16 +31,16 @@
             <!--begin::Form-->
             <form method="POST" action="{{ route('verification.send') }}" class="form" novalidate="novalidate" id="">
                 @csrf
-                
+
                 <!--begin::Action-->
                 <div class="form-group d-flex flex-wrap justify-content-between align-items-center">
                     <button type="submit" id="" class="btn btn-primary font-weight-bold px-9 py-4 my-3">Resend Verification Email</button>
-                    
+
                 </div>
                 <div class="form-group d-flex flex-wrap justify-content-end align-items-center">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-        
+
                         <button type="submit" class="btn btn-danger font-weight-bold px-9 py-4 my-3 w-100">
                             {{ __('Log Out') }}
                         </button>
@@ -52,12 +52,12 @@
             <!--end::Form-->
         </div>
         <!--end::Signin-->
-        
+
     </div>
     <!--end::Content body-->
     <!--begin::Content footer for mobile-->
     <div class="d-flex d-lg-none flex-column-auto flex-column flex-sm-row justify-content-between align-items-center mt-5 p-5">
-        <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© {{date('Y')}} Dr Irfan Malik</div>
+        <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© {{date('Y')}} DrHasnat Properties</div>
         <div class="d-flex order-1 order-sm-2 my-2">
             <a href="{{asset('#')}}" class="text-dark-75 text-hover-primary"></a>
         </div>

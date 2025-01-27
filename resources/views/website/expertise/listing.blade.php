@@ -14,7 +14,7 @@
                 <div class="section-title no-after pt-0 ps-0">
                     <p class="after-circle text-white text-thin after-circle mx-auto">Speciality</p>
                     <h2 class="text-center text-secondary">Expertise</h2>
-                    <p class="text-center text-white">Renowned for his exceptional skill, Mr. Irfan Malik is a leading consultant neurosurgeon and complex spinal surgeon with 30+ years of experience. His expertise spans Endoscopic, Minimally Invasive and Robotic Spine Surgery for various spinal conditions, including degenerative, traumatic, and malignant disorders.</p>
+                    <p class="text-center text-white">Renowned for his exceptional skill, Mr.Hasnat Properties is a leading consultant neurosurgeon and complex spinal surgeon with 30+ years of experience. His expertise spans Endoscopic, Minimally Invasive and Robotic Spine Surgery for various spinal conditions, including degenerative, traumatic, and malignant disorders.</p>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="col-lg-7 pe-lg-5">
                 <p class="mb-0 after-circle after-circle p-16">Ensure A Great Health through</p>
                 <h2 class="h2-lg text-primary">Collaborative care</h2>
-                <p>Mr. Irfan Malik, an esteemed spinal surgeon, prioritises patient-centric care through a collaborative model. This multidisciplinary approach ensures patients receive comprehensive, specialised attention, yielding optimal results and improved well-being.</p>
+                <p>Mr.Hasnat Properties, an esteemed spinal surgeon, prioritises patient-centric care through a collaborative model. This multidisciplinary approach ensures patients receive comprehensive, specialised attention, yielding optimal results and improved well-being.</p>
                 <ul>
                     <li><strong>Initial Assessment:</strong> Thorough patient evaluation and diagnosis</li>
                     <li><strong>Team Collaboration:</strong> Multidisciplinary discussion for tailored treatment plans</li>
@@ -63,7 +63,7 @@
                     <div class="carousel-item methodology-item active">
                         <h4>01</h4>
                         <h3>Diagnosis in Collaborative Care</h3>
-                        <p>In Mr. Irfan Malik's collaborative care model, diagnosis is a comprehensive and multidisciplinary process. This approach ensures accuracy, efficiency, and effective treatment planning.</p>
+                        <p>In Mr.Hasnat Properties's collaborative care model, diagnosis is a comprehensive and multidisciplinary process. This approach ensures accuracy, efficiency, and effective treatment planning.</p>
                         {{-- <a href="" class="theme_color bg-white btn-2 mt-4">DISCOVER MORE</a> --}}
                     </div>
                     <div class="carousel-item methodology-item">

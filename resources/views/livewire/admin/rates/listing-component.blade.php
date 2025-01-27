@@ -1,6 +1,6 @@
 <div>
     <div class="bg-info-o-40 p-2 rounded text-center text-white text-info mb-1">
-        <h3 class="mb-0">Blogs</h3>
+        <h3 class="mb-0">Property Rates</h3>
     </div>
     <div class="card">
         <x-full-page-loader wire:loading.delay />
@@ -8,8 +8,12 @@
 
             <div>
                 <div class="d-flex justify-content-between mb-1 align-items-center">
+                    <div class="col-2">
+                        <button wire:click="toggleReorder" class="btn btn-primary btn-sm">{{ $enableReorder ? 'Back' : 'Reorder' }}</button>
+                    </div>
                     <input type="text" wire:model.live.debounce="search" class="form-control"
                         placeholder="Search">
+
                     <div class="col-3">
                         <select wire:model.live="status" class="form-control">
                             <option value="">All</option>
@@ -25,44 +29,51 @@
                             <th></th>
                             <th>ID</th>
                             <th>Image</th>
-                            <th>Title</th>
-                            <th>Slug</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Rating</th>
                             <th>Status</th>
-                            <th>Meta Title</th>
                             <th>Created At</th>
                         </thead>
-                        <tbody>
+                        <tbody wire:sortable="updateOrder">
 
-                            @forelse($publications as $publication)
-                                <tr wire:key="pub{{ $publication->id }}">
+                            @forelse($rates as $item)
+                                <tr :key="{{ $item->id }}" wire:sortable.item="{{ $item->id }}" wire:key="item{{ $item->id }}">
                                     <td>
-                                        <a href="{{ route('admin.publications.edit', $publication->id) }}"
+                                        <span wire:sortable.handle>
+                                            @if ($enableReorder)
+                                            <span class="btn btn-light btn-sm">
+                                                <i class="fas fa-arrows-alt"></i>
+                                                </span>
+                                            @endif
+                                        </span>
+
+                                        <a href="{{ route('admin.rates.edit', $item->id) }}"
                                             class="btn btn-sm btn-info"><i class="fa fa-edit pr-0"></i></a>
-                                        <a :key="{{ $publication->id }}" type="button"
-                                            wire:confirm="Are you sure?" wire:click="delete('{{ $publication->id }}')"
+                                        <a :key="{{ $item->id }}" type="button"
+                                            wire:confirm="Are you sure?" wire:click="delete('{{ $item->id }}')"
                                             class="btn btn-sm btn-danger"><i class="fa fa-trash pr-0"></i></a>
-                                        <a target="_blank" href="{{ route('admin.publications.preview', $publication->id) }}" title="Preview" class="btn btn-sm btn-outline-info"><i class="fa fa-eye"></i></a>
-                                        <button class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#schemaModal" wire:click="$dispatchTo('admin.schemas.create-edit-component', 'loadSchema', {schemaable_type: 'App\\Models\\Publication', schemaable_id:{{ $publication->id }} })">Schema</button>
+
                                     </td>
-                                    <td>{{ $publication->id }}</td>
+                                    <td>{{ $item->id }}</td>
                                     <td>
-                                        @if ($publication->image)
-                                            <a href="{{ asset($publication->image) }}" target="_blank">
+                                        @if ($item->image)
+                                            <a href="{{ asset($item->image) }}" target="_blank">
                                                 <i class="fa fa-eye text-info"></i>
                                             </a>
                                         @endif
                                     </td>
                                     </td>
-                                    <td>{{ $publication->title }}</td>
-                                    <td>{{ $publication->slug }}</td>
-                                    <td>@if ($publication->status == 1)
+                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->description }}</td>
+                                    <td>{{ $item->rating }}</td>
+                                    <td>@if ($item->status == 1)
                                             <span class="badge bg-success text-white">Published</span>
                                         @else
                                             <span class="badge bg-light">Draft</span>
                                         @endif
                                     </td>
-                                    <td>{{ $publication->meta_title }}</td>
-                                    <td>{{ $publication->created_at->format('d-M-Y h:i a') }}</td>
+                                    <td>{{ $item->created_at->format('d-M-Y h:i a') }}</td>
 
                                 </tr>
                             @empty
@@ -76,7 +87,9 @@
                     </table>
                 </div>
                 <div>
-                    {{ $publications->links() }}
+                    @if (!$enableReorder)
+                        {{ $rates->links() }}
+                    @endif
                 </div>
             </div>
         </div>

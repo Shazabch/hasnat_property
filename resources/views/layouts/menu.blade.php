@@ -64,35 +64,18 @@
         "route" => "admin.expertise.index"
     ],
     [
-        "name" => "Testimonials",
+        "name" => "Reviews",
         "icon" => "far fa-id-card",
         "permissions" => [],
         "route" => "admin.testimonials.index"
     ],
     [
-        "name" => "Publications",
+        "name" => "Blogs",
         "icon" => "far fa-id-card",
         "permissions" => [],
         "route" => "admin.publications.index"
     ],
-    [
-        "name" => "Publication Types",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.types.index"
-    ],
-    [
-        "name" => "Publication Authors",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.authors.index"
-    ],
-    [
-        "name" => "Topics",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.topics.index"
-    ],
+
     [
         "name" => "Web pages",
         "icon" => "far fa-id-card",
@@ -104,6 +87,18 @@
     "icon" => "fas fa-building",
     "permissions" => [],
     "route" => "admin.properties.index"
+    ],
+    [
+    "name" => "Projects",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.projects.index"
+    ],
+    [
+    "name" => "Property Rates",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.rates.index"
     ],
 ];
 

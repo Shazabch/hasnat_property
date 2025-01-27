@@ -13,7 +13,7 @@
             <div class="col-lg-8">
                 <div class="section-title no-after pt-0 ps-0">
                     <p class="after-circle text-white text-thin after-circle mx-auto">Research and Insights</p>
-                    <h2 class="text-center text-secondary">Publications</h2>
+                    <h2 class="text-center text-secondary">Blogs</h2>
                     <p class="text-center text-white">Explore a collection of our research and scholarly articles. Each publication reflects our commitment to advancing knowledge and contributing to the field.</p>
                 </div>
             </div>

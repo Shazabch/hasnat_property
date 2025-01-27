@@ -43,7 +43,7 @@
 		@stack('styles')
 		<script src="{{ asset('front/assets/ck-editor/ckeditor.js') }}"></script>
 		@livewireStyles
-		
+
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -53,7 +53,7 @@
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
 			<a href="{{ route('dashboard') }}">
-				Irfan Malik | Admin
+				Hasnat Properties| Admin
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
@@ -96,7 +96,7 @@
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
 						<a href="{{ route('dashboard') }}" class="brand-logo">
-							Irfan Malik | Admin
+							Hasnat Properties| Admin
 						</a>
 						<!--end::Logo-->
 						<!--begin::Toggle-->
@@ -140,7 +140,7 @@
 								<!--begin::Header Menu-->
 								<div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
 									<div class="d-flex flex-center">
-										<h3 class="font-size-h1 font-weight-boldest text-primary">Dr Irfan Malik</h3>
+										<h3 class="font-size-h1 font-weight-boldest text-primary">Hasnat Properties</h3>
 									</div>
 									<!--begin::Header Nav-->
 									<ul class="menu-nav"></ul>
@@ -180,13 +180,13 @@
 							<!--begin::Copyright-->
 							<div class="text-dark order-2 order-md-1">
 								<span class="text-muted font-weight-bold mr-2">{{ now()->format('Y') }}©</span>
-								<a href="javascript:void(0)" class="text-dark-75 text-hover-primary">Irfan</a>
+								<a href="javascript:void(0)" class="text-dark-75 text-hover-primary">Hasnat Properties</a>
 							</div>
 							<!--end::Copyright-->
 							<!--begin::Nav-->
 							<div class="nav nav-dark">
 								<!-- <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">About</a> -->
-								
+
 							</div>
 							<!--end::Nav-->
 						</div>
@@ -1401,8 +1401,8 @@
 		<form action="{{ route('logout') }}" method="post" id="logout-form">
 			@csrf
 		</form>
-		
-		
+
+
 		<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>

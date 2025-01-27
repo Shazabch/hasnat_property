@@ -19,15 +19,15 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group col-md-12">
                                 <label>Slug</label>
                                 <input id="{{ $publication->slug }}" wire:model.live.debounce.500ms="publication.slug" type="text" class="form-control @error('publication.slug') border border-danger @enderror">
                                 @error('publication.slug')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                            </div>      
-    
+                            </div>
+
                             <div class="form-group col-md-12">
                                 <label>Status</label>
                                 <select wire:model="publication.status" class="form-control form-select @error('publication.status') border border-danger @enderror">
@@ -38,7 +38,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group col-md-12">
                                 <label>Published At</label>
                                 <input wire:model="publication.published_at" type="date" class="form-control @error('publication.published_at') border border-danger @enderror">
@@ -47,18 +47,7 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group col-md-12">
-                                <label>Type</label>
-                                <select wire:model="publication.type_id" class="form-control form-select @error('publication.type_id') border border-danger @enderror">
-                                    <option value="">Select Type</option>
-                                    @foreach($types as $type)
-                                        <option value="{{ $type->id }}">{{ $type->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('publication.type_id')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
+
 
                         </div>
 
@@ -87,13 +76,13 @@
                                         allowFileSizeValidation maxFileSize="20mb" id="pub_image" />
                                     </div>
                                 </div>
-                                
-                               
+
+
                                 @error('image')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group col-md-12">
                                 <label>Image Alt</label>
                                 <input wire:model="publication.image_alt" type="text" class="form-control @error('publication.image_alt') border border-danger @enderror">
@@ -101,7 +90,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
+
                             <div class="form-group col-md-12">
                                 <label>Meta Title</label>
                                 <input wire:model="publication.meta_title" type="text" class="form-control @error('publication.meta_title') border border-danger @enderror">
@@ -109,7 +98,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            
+
                             <div class="form-group col-md-12">
                                 <label>Meta Description</label>
                                 <textarea wire:model="publication.meta_description" class="form-control @error('publication.meta_description') border border-danger @enderror"></textarea>
@@ -117,28 +106,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-    
-                            
-                            <div class="form-group col-md-12">
-                                <label>Author</label>
-                                <select wire:model="publication.author_id" class="form-control form-select @error('publication.author_id') border border-danger @enderror">
-                                    <option value="">Select Author</option>
-                                    @foreach($authors as $author)
-                                        <option value="{{ $author->id }}">{{ $author->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('publication.author_id')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
 
-                            <div class="form-group col-md-12">
-                                <label>Topics</label>
-                                <x-dropdown-multiple wire:model="selectedTopics" type="topics" id="selectedTopics" class="form-control form-control-sm" />
-                                @error('selectedTopics')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
 
                         </div>
 
@@ -150,15 +118,6 @@
             </div>
         </div>
 
-    </div>
-
-    {{-- Content Sections --}}
-    <div class="mt-2">
-        @if(!$isNew)
-            <div>
-                @livewire('admin.content-section.listing-component', ['contentable_type' => 'App\Models\Publication', 'contentable_id' => $publication->id,'showInCard' => true], key('publication-content-section-'.$publication->id))
-            </div>
-        @endif
     </div>
 
 </div>

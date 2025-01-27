@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Models\Project;
+use App\Models\Rate;
 
 
 function subMenuActiveBySegment($s2, $s3 = '', $s4 = '')
@@ -44,7 +46,16 @@ function activeByRoute($routeName)
     $currentRoute = Route::currentRouteName();
     return $currentRoute == $routeName ? 'menu-item-active' : '';
 }
-
+function ourProjects()
+{
+    $data = Project::where('status', 1)->get();
+    return $data;
+}
+function ourPropertyRates()
+{
+    $data = Rate::where('status', 1)->get();
+    return $data;
+}
 function openByRoute($routeName)
 {
     $currentRoute = Route::currentRouteName();

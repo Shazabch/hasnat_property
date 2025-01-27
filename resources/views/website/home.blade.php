@@ -68,7 +68,7 @@
                         <div class="section-title no-after pt-0 ps-0 mb-0 text-center">
                             <p class="after-circle text-thin after-circle mx-auto text-primary">Speciality</p>
                             <h2>Expertise</h2>
-                            <p class="mt-2 mb-4">Renowned for his exceptional skill, Mr. Irfan Malik is a leading consultant spinal neurosurgeon with 30+ years of experience. His expertise spans Endoscopic, Robotic Spine and Sports Injuries procedures for various spinal conditions, including degenerative, traumatic, and malignant disorders.</p>
+                            <p class="mt-2 mb-4">Renowned for his exceptional skill, Mr.Hasnat Properties is a leading consultant spinal neurosurgeon with 30+ years of experience. His expertise spans Endoscopic, Robotic Spine and Sports Injuries procedures for various spinal conditions, including degenerative, traumatic, and malignant disorders.</p>
                         </div>
                     </div>
                 </div>

@@ -107,7 +107,7 @@
                 <h4 class="mt-4">9. Contact Us</h4>
                 <p>If you have any questions or concerns about how we handle your personal information or if you wish to exercise any of your rights, please contact us at:</p>
                 <ul class="list-unstyled">
-                    <li><strong>Mr. Irfan Malik – Spinal Neurosurgeon</strong></li>
+                    <li><strong>Mr.Hasnat Properties – Spinal Neurosurgeon</strong></li>
                     <li>London, United Kingdom</li>
                     <li>Email: <a href="mailto:info@mspine.uk">info@mspine.uk</a></li>
                     <li>Phone: <a href="tel:+442070348978">+(44) 20 7034 8978</a></li>

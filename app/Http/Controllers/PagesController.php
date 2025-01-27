@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Expertise;
 use App\Models\Properties;
 use App\Models\Publication;
+use \App\Models\Project;
+use \App\Models\Rate;
 use App\Models\WebPage;
 use Illuminate\Http\Request;
 
@@ -107,6 +109,16 @@ class PagesController extends Controller
     public function properties()
     {
         return view('website.properties.index');
+    }
+    public function projects($slug)
+    {
+        $project = Project::where('slug', $slug)->firstOrFail();
+        return view('website.projects.index', compact('project'));
+    }
+    public function rates($slug)
+    {
+        $rate = Rate::where('slug', $slug)->firstOrFail();
+        return view('website.rates.index', compact('rate'));
     }
     public function propertiesDetail()
     {

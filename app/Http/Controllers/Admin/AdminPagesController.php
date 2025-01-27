@@ -10,6 +10,8 @@ use App\Models\Properties;
 use App\Models\Publication;
 use App\Models\PublicationTopic;
 use App\Models\Testimonial;
+use App\Models\Project;
+use App\Models\Rate;
 use App\Models\WebPage;
 
 class AdminPagesController extends Controller
@@ -75,7 +77,34 @@ class AdminPagesController extends Controller
         $testimonial = Testimonial::findOrFail($id);
         return view('admin.testimonials.edit', compact('testimonial'));
     }
+    public function projects()
+    {
+        return view('admin.projects.index');
+    }
+    public function createProject()
+    {
+        return view('admin.projects.create');
+    }
+    public function editProject($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('admin.projects.edit', compact('project'));
+    }
 
+    ///////////////  Rates
+    public function rates()
+    {
+        return view('admin.rates.index');
+    }
+    public function createRate()
+    {
+        return view('admin.rates.create');
+    }
+    public function editRate($id)
+    {
+        $rate = Rate::findOrFail($id);
+        return view('admin.rates.edit', compact('rate'));
+    }
     public function publications()
     {
         return view('admin.publications.index');

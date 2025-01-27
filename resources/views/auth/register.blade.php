@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <input class="form-control form-control-solid h-auto py-5 px-6" type="password" placeholder="Password"  type="password" name="password_confirmation" required />
                 </div>
-                
+
                 <!--begin::Action-->
                 <div class="form-group d-flex flex-wrap justify-content-between align-items-center">
                     @if (Route::has('password.request'))
@@ -56,12 +56,12 @@
             <!--end::Form-->
         </div>
         <!--end::Signin-->
-        
+
     </div>
     <!--end::Content body-->
     <!--begin::Content footer for mobile-->
     <div class="d-flex d-lg-none flex-column-auto flex-column flex-sm-row justify-content-between align-items-center mt-5 p-5">
-        <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© {{date('Y')}} Dr Irfan Malik</div>
+        <div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© {{date('Y')}} DrHasnat Properties</div>
         <div class="d-flex order-1 order-sm-2 my-2">
             <a href="{{asset('#')}}" class="text-dark-75 text-hover-primary"></a>
         </div>

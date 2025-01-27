@@ -28,6 +28,8 @@ Route::get('/blogs/{slug}', [PagesController::class, 'publicationsDetail'])->nam
 Route::get('/terms-and-conditions', [PagesController::class, 'termsAndConditions'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [PagesController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/reviews', [PagesController::class, 'reviews'])->name('reviews');
+Route::get('/projects/{slug}', [PagesController::class, 'projects'])->name('projects');
+Route::get('/property-rates/{slug}', [PagesController::class, 'rates'])->name('rates');
 
 Route::get('/properties', [PagesController::class, 'properties'])->name('properties');
 Route::get('/properties/properties-detail', [PagesController::class, 'propertiesDetail'])->name('properties-detail');
@@ -98,6 +100,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/create', [AdminPagesController::class, 'createProperty'])->name('create');
         Route::get('/edit/{id}', [AdminPagesController::class, 'editProperty'])->name('edit');
         // Route::get('/preview/{id}', [AdminPagesController::class, 'previewProperty'])->name('preview');
+    });
+    Route::prefix('projects')->name('projects.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'projects'])->name('index');
+        Route::get('/create', [AdminPagesController::class, 'createProject'])->name('create');
+        Route::get('/edit/{id}', [AdminPagesController::class, 'editProject'])->name('edit');
+    });
+    Route::prefix('rates')->name('rates.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'rates'])->name('index');
+        Route::get('/create', [AdminPagesController::class, 'createRate'])->name('create');
+        Route::get('/edit/{id}', [AdminPagesController::class, 'editRate'])->name('edit');
     });
 
 });
