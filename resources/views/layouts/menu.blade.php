@@ -51,17 +51,37 @@
         "permissions" => [''],
         "is_section"=>"true",
     ],
+
+
     [
-        "name" => "Conditions",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.conditions.index"
+    "name" => "Properties",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.properties.index"
     ],
     [
-        "name" => "Expertise",
+        "name" => "Specifications",
         "icon" => "far fa-id-card",
         "permissions" => [],
-        "route" => "admin.expertise.index"
+        "route" => "admin.specifications.index"
+    ],
+    [
+        "name" => "Amenetise",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.amenetise.index"
+    ],
+    [
+    "name" => "Projects",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.projects.index"
+    ],
+    [
+    "name" => "Property Rates",
+    "icon" => "fas fa-building",
+    "permissions" => [],
+    "route" => "admin.rates.index"
     ],
     [
         "name" => "Reviews",
@@ -75,24 +95,7 @@
         "permissions" => [],
         "route" => "admin.publications.index"
     ],
-    [
-        "name" => "Publication Types",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.types.index"
-    ],
-    [
-        "name" => "Publication Authors",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.authors.index"
-    ],
-    [
-        "name" => "Topics",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.topics.index"
-    ],
+
 
     [
         "name" => "Web pages",
@@ -100,40 +103,26 @@
         "permissions" => [],
         "route" => "admin.web-pages.index"
     ],
-    [
-    "name" => "Properties",
-    "icon" => "fas fa-building",
-    "permissions" => [],
-    "route" => "admin.properties.index"
-    ],
-    [
-<<<<<<< HEAD
-    "name" => "Projects",
-    "icon" => "fas fa-building",
-    "permissions" => [],
-    "route" => "admin.projects.index"
-    ],
-    [
-    "name" => "Property Rates",
-    "icon" => "fas fa-building",
-    "permissions" => [],
-    "route" => "admin.rates.index"
-=======
-        "name" => "Specifications",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.specifications.index"
-    ],
-    [
-        "name" => "Amenetise",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.amenetise.index"
->>>>>>> 622f8a37c86526cd2fee669a5fe8aa774a3fb6e4
-    ],
 ];
 
 @endphp
+
+
+<!--
+[
+        "name" => "Conditions",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.conditions.index"
+    ],
+    [
+        "name" => "Expertise",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.expertise.index"
+    ], -->
+
+
 
 <ul class="menu-nav">
     @foreach ($menu as $menuItem)
