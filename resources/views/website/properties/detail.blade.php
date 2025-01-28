@@ -207,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /Enquiry -->                   
+                    <!-- /Enquiry -->
                 </div>
             </div>
         </div>
@@ -254,7 +254,7 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -268,7 +268,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -301,7 +301,7 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -315,7 +315,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -348,7 +348,7 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -362,7 +362,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
         </div>
