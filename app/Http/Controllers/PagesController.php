@@ -106,10 +106,30 @@ class PagesController extends Controller
         // dd($count, $each_part, $testimonials_part_1, $testimonials_part_2, $testimonials_part_3);
         return view('website.reviews', compact('pageData', 'testimonials_part_1', 'testimonials_part_2', 'testimonials_part_3'));
     }
-    public function properties()
+    public function properties(Request $request)
     {
         $propertyTypes = Properties::distinct('property_type')->pluck('property_type');
+        $query = Properties::query();
+        if ($request->has('keyword') && $request->keyword) {
+            $query->where(function ($q) use ($request) {
+                $q->where('id', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('featured', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('main_image', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('price', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('title', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('adress', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('status', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('area', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('slug', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('property_type', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('description', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('categories', 'LIKE', '%' . $request->keyword . '%');
+            });
+        }
+        $properties = $query->get();
         $properties = Properties::where('status',1)->get();
+
+
         return view('website.properties.index', compact('propertyTypes' , 'properties'));
     }
     public function projects($slug)

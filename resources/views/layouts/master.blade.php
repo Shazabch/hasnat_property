@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+
        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('front/assets/css/bootstrap.min.css') }}">
-        
+
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <!-- Owl Carousel CSS -->
         <link rel="stylesheet" href="{{ asset('front/assets/css/owl.carousel.min.css') }}">
@@ -46,9 +46,9 @@
         <meta name="google-site-verification" content="Nu8YejORF8UIxAJaipcyD0geKFnrTijfoXYYCQqf15k" />
 		@stack('styles')
         @livewireStyles
-    
+
     </head>
-    
+
     <body>
 
         <!-- Preloader -->
@@ -65,8 +65,8 @@
 		@include('partials.header')
 
         @yield('content')
-        
-       
+
+
 
         <!-- Footer -->
         @include('partials.footer')
@@ -84,11 +84,11 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
 
         <!-- Essential JS -->
         <script src="{{ asset('front/assets/js/jquery.min.js') }}"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="{{ asset('front/assets/js/bootstrap.bundle.min.js') }}"></script>
         <!-- Owl Carousel JS -->
         <script src="{{ asset('front/assets/js/owl.carousel.min.js') }}"></script>
@@ -123,7 +123,7 @@
          @stack('schemas')
          <script>
             $(document).ready(function() {
-                $('.testimonials .testimonial-description, .reviews-listing .testimonial-description').each(function() { 
+                $('.testimonials .testimonial-description, .reviews-listing .testimonial-description').each(function() {
                     const $this = $(this);
                     const fullText = $this.html();
                     const words = fullText.split(' ');
@@ -158,6 +158,6 @@
                     }
                 });
             });
-        </script>        
+        </script>
     </body>
 </html>

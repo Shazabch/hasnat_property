@@ -35,10 +35,18 @@
         <div class="row">
             <div class="section-search-widget py-5">
                 <div class="search-widget-wrap">
+                   <form action="#">
                     <div class="search-widget-inner row">
                         <div class="search-input col-lg-3">
                             <label for="keyword">Keyword</label>
-                            <input type="email" class="" id="keyword" placeholder="Enter Keyword...">
+                            <input
+                            type="text"
+                            class="form-control "
+                            name="keyword"
+                            id="keyword"
+                            placeholder="Search here."
+                            value="{{ request('keyword') }}"
+                        >
                         </div>
                         <div class="search-dropdown col-lg-3">
                             <label for="">Status</label>
@@ -58,11 +66,12 @@
                             </select>
                         </div>
                         <div class="search-btn col-lg-3">
-                            <a href="" class="th-btn md w-100">
+                            <button type="submit" class="th-btn md w-100">
                                 Search
-                            </a>
+                            </button>
                         </div>
                     </div>
+                   </form>
                 </div>
             </div>
         </div>
@@ -85,7 +94,7 @@
                                     @endif
 
                                 <div class="product-amount">
-                                    <span>{{ $property->price }}</span>
+                                    <span><b>PKR</b>: {{ $property->price }}</span>
                                 </div>
                                 <div class="feature-rating">
                                     <div>
