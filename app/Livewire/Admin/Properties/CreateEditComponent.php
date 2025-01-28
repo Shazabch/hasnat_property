@@ -8,6 +8,7 @@ use App\Models\PropertySpecification;
 use App\Models\Amenities;
 use App\Models\PropertyAmeneties;
 use Livewire\Component;
+use App\Models\PropertyImages;
 
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
@@ -18,6 +19,8 @@ class CreateEditComponent extends Component
 
     public $property;
     public $isNew = false;
+    public $photos = [];
+
     public $main_image;
     public $specifications;
     public $amenities;
@@ -36,7 +39,6 @@ class CreateEditComponent extends Component
         }
 
         $propertyAmenities = PropertyAmeneties::where('property_id', $this->property->id)->get();
-
         foreach ($this->amenities as $index => $amenities) {
 
             $this->amenitiesCount[$index] = $propertyAmenities->where('amenetise_id', $amenities->id)->first()->distance ?? "0";
@@ -117,7 +119,20 @@ class CreateEditComponent extends Component
                 'distance' => $s_count,
             ]);
         }
-
+        if (!empty($this->photos)) {
+            foreach ($this->photos as $photo) {
+                #move photo to property folder
+                $saved_photo_path = 'storage/' . $photo->store('properties/' . $this->property->id . '/photos', 'public');
+                #save photo path to db
+                PropertyImages::create([
+                    'property_id' => $this->property->id,
+                    'image_name' => $saved_photo_path,
+                    'image_type' => '',
+                    'is_main' => '0',
+                ]);
+            }
+            $this->photos = [];
+        }
 
 
         // Dispatch a success message event
@@ -143,5 +158,17 @@ class CreateEditComponent extends Component
         deleteFile($this->property->main_image);
         $this->property->update(['main_image' => null]);
         $this->dispatch('success-notification', message: 'Main image deleted successfully');
+    }
+    public function removePhoto($id)
+    {
+
+        $photo = $this->property->photosExceptMain->where('id', $id)->first;
+        if ($photo) {
+            #delete photo
+            deleteFile($photo->image_name);
+            $photo->delete();
+            $this->property->load('photosExceptMain');
+            $this->dispatch('success-notification',  message: 'Image deleted successfully');
+        }
     }
 }

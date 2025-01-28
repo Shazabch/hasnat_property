@@ -33,6 +33,34 @@
     .card.border-warning {
         border: 2px solid #ffc107;
     }
+    .theme_img_box  {
+    width:  200px;
+    height:  112.5px;
+    margin:  5px;
+    position:  relative;
+    display:  inline-block;
+    background-color:  #eeeeee;
+}
+.theme_img_box img  {
+    max-width:  100%;
+    max-height:  100%;
+    width:  auto;
+    height:  auto;
+    object-fit:  cover;
+    top:  50%;
+    left:  50%;
+    transform:  translate(-50%,  -50%);
+    position:  absolute;
+}
+.theme_img_box button,  .theme_img_box button:focus,  .theme_img_box button:hover  {
+    position:  absolute;
+    background-color:  var(--theme-color-secondary);
+    top:  0;
+    right:  0;
+    outline:  none;
+    box-shadow:  none;
+    border:  none;
+}
     </style>
 
     <div class="card">
@@ -126,7 +154,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Main Image</label>
                             @if ($main_image)
@@ -157,7 +185,27 @@
                             @enderror
                         </div>
                     </div>
-
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Add Photos</label>
+                            <div>
+                                @foreach ($property->photosExceptMain as $photo)
+                                <div class="theme_img_box">
+                                    <img src="{{ asset($photo->image_name) }}" class="" alt=" " />
+                                    <button wire:click.prevent="removePhoto({{ $photo->id }})"
+                                     wire:confirm="Are you sure you want to delete this image?"
+                                        class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="col">
+                                <x-filepond-input wire:model="photos" multiple allowImagePreview
+                                    imagePreviewMaxHeight="200" allowFileTypeValidation
+                                    acceptedFileTypes="['image/jpeg', 'image/png','image/jpg']" allowFileSizeValidation
+                                    maxFileSize="20mb" id="property_all_image" />
+                            </div>
+                        </div>
+                    </div>
                     <!-- Property Type and Categories in one line -->
                     <!-- Categories and Property Type Selection -->
 
@@ -242,57 +290,57 @@
                     </div>
                     {{-- Specifications --}}
                     <div class="col-lg-12">
-                       <div class="card p-4 mb-3 mt-3">
-                        <p class="fs-18 mb-3 fw-500">Specifications</p>
-                        <div class="row">
-                            @foreach ($specifications as $index => $specification)
-                            <div class="col-lg-4 col-md-4">
-                                <div class="form-group">
-                                    <label for="spec{{ $index }}">{{ $specification->name }}</label>
-                                    <select class="form-control" id="spec{{ $index }}"
-                                        wire:model.defer="specificationsCount.{{ $index }}">
-                                        @if (in_array($specification->name, ['Garage']))
-                                        <option value="0">Select</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Double">Double</option>
-                                        <option value="No">No</option>
-                                        @elseif (in_array($specification->name, ['Balcony', 'Parking']))
-                                        <option value="0">Select</option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                        @else
+                        <div class="card p-4 mb-3 mt-3">
+                            <p class="fs-18 mb-3 fw-500">Specifications</p>
+                            <div class="row">
+                                @foreach ($specifications as $index => $specification)
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="form-group">
+                                        <label for="spec{{ $index }}">{{ $specification->name }}</label>
+                                        <select class="form-control" id="spec{{ $index }}"
+                                            wire:model.defer="specificationsCount.{{ $index }}">
+                                            @if (in_array($specification->name, ['Garage']))
+                                            <option value="0">Select</option>
+                                            <option value="Single">Single</option>
+                                            <option value="Double">Double</option>
+                                            <option value="No">No</option>
+                                            @elseif (in_array($specification->name, ['Balcony', 'Parking']))
+                                            <option value="0">Select</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            @else
                                             @for ($i = 0; $i < 11; $i++) <option value="{{ $i }}">{{ $i }}</option>
-                                            @endfor
-                                        @endif
-                                    </select>
+                                                @endfor
+                                                @endif
+                                        </select>
+                                    </div>
                                 </div>
+
+                                @endforeach
+
                             </div>
-
-                            @endforeach
-
                         </div>
-                       </div>
                     </div>
                     {{-- Amenities --}}
                     <div class="col-lg-12">
-                       <div class="card p-4 mt-3 mb-2">
-                        <p class="fs-18 mb-3 fw-500">Amenities</p>
-                        <div class="row">
-                            @foreach ($amenities as $index => $facility)
-                            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
-                                <div class="form-group">
-                                    <label for="facility-{{ $facility->id }}">{{ $facility->name }}</label>
-                                    <input type="number" min="0" step="0.1" class="form-control"
-                                        wire:model.defer="amenitiesCount.{{ $index }}"
-                                        id="facility-{{ $facility->id }}" placeholder="In Kms" />
+                        <div class="card p-4 mt-3 mb-2">
+                            <p class="fs-18 mb-3 fw-500">Amenities</p>
+                            <div class="row">
+                                @foreach ($amenities as $index => $facility)
+                                <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="facility-{{ $facility->id }}">{{ $facility->name }}</label>
+                                        <input type="number" min="0" step="0.1" class="form-control"
+                                            wire:model.defer="amenitiesCount.{{ $index }}"
+                                            id="facility-{{ $facility->id }}" placeholder="In Kms" />
+                                    </div>
+                                    @error('amenitiesCount.' . $index)
+                                    <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                                @error('amenitiesCount.' . $index)
-                                <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
-                       </div>
                     </div>
 
 

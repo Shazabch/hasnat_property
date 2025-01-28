@@ -39,9 +39,11 @@
                     <span class="appartment">Appartment</span>
                 </div>
                 <div class="page-title">
-                    <h3>Modern Apartment in the City Center<span><img src="{{asset('front/assets/img/location-icon.svg')}}" alt="Image"></span></h3>
+                    <h3>Modern Apartment in the City Center<span><img
+                                src="{{asset('front/assets/img/location-icon.svg')}}" alt="Image"></span></h3>
                     <p>
-                        <i class="fa-solid fa-location-dot"></i> 318-330 S Oakley Blvd, Chicago, IL 60612, USA</p>
+                        <i class="fa-solid fa-location-dot"></i> 318-330 S Oakley Blvd, Chicago, IL 60612, USA
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -135,6 +137,27 @@
                     </div>
                 </div>
                 <div class="default-box-white section-title no-after">
+                    <h2 class="mb-4 text-white">Property Amenities</h2>
+                    <div class="mb-4">
+                        @if(count($property->amenities) > 0)
+                        <div class="sub_div mt-3 px-0">
+                            <h3 class="mb-4">amenities</h3>
+                            <ul class="nearby_locations_ul">
+                                @foreach($property->amenities as $amenity)
+                                <li>
+                                    <div class="amenities_icon_box">
+                                        <img src="{{ asset($amenity->icon) }}" alt="">
+                                        <p>{{ $amenity->name }}</p>
+                                    </div>
+                                    <span><b>{{ $amenity->distance }}</b> kms</span>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="default-box-white section-title no-after">
                     <h2 class="mb-4 text-white">Property Description</h2>
                     <div class="mb-4">
                         <p>
@@ -160,7 +183,10 @@
                     <h2 class="text-white">Location</h2>
                     <div class="col-lg-12">
                         <div class="address-area-wrap mt-3">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54402.864383959684!2d74.24621677440891!3d31.546701143426986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903158ca766a7%3A0xe3dd62f16ee20e34!2sHaidri%20Shinwari%20Restaurant%20(Desi%20Food%20%26%20Fast%20Food)!5e0!3m2!1sen!2s!4v1717878828380!5m2!1sen!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54402.864383959684!2d74.24621677440891!3d31.546701143426986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903158ca766a7%3A0xe3dd62f16ee20e34!2sHaidri%20Shinwari%20Restaurant%20(Desi%20Food%20%26%20Fast%20Food)!5e0!3m2!1sen!2s!4v1717878828380!5m2!1sen!2s"
+                                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
@@ -207,7 +233,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /Enquiry -->                   
+                    <!-- /Enquiry -->
                 </div>
             </div>
         </div>
@@ -229,7 +255,8 @@
                     <div class="profile-widget">
                         <div class="doc-img">
                             <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                                <img class="img-fluid" alt="Property Image"
+                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
                             </a>
                             <div class="product-amount">
                                 <span>$51,000</span>
@@ -254,7 +281,8 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and
+                                    bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -268,7 +296,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -276,7 +304,8 @@
                     <div class="profile-widget">
                         <div class="doc-img">
                             <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                                <img class="img-fluid" alt="Property Image"
+                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
                             </a>
                             <div class="product-amount">
                                 <span>$51,000</span>
@@ -301,7 +330,8 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and
+                                    bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -315,7 +345,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -323,7 +353,8 @@
                     <div class="profile-widget">
                         <div class="doc-img">
                             <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                                <img class="img-fluid" alt="Property Image"
+                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
                             </a>
                             <div class="product-amount">
                                 <span>$51,000</span>
@@ -348,7 +379,8 @@
                                 <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                             </div>
                             <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
+                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and
+                                    bright flat</a>
                             </h3>
                             <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
                             <ul class="property-category d-flex justify-content-between mb-0">
@@ -362,7 +394,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
             </div>
         </div>
