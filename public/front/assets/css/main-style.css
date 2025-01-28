@@ -2643,7 +2643,7 @@ form fieldset {
     color: #fff;
 }
 .sideby-section.bg_light h1, .sideby-section.bg_light h2, .sideby-section.bg_light h3, .sideby-section.bg_light h4, .sideby-section.bg_light h5, .sideby-section.bg_light h6{
-    color: var(--theme-color) 
+    color: var(--theme-color)
 }
 .sideby-section.bg_light p, .sideby-section.bg_light span, .sideby-section.bg_light ul li, .sideby-section.bg_light b, .sideby-section.bg_light strong{
     color: #333;
