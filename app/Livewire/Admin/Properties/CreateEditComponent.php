@@ -6,6 +6,7 @@ use App\Models\Properties;
 use App\Models\Specification;
 use App\Models\PropertySpecification;
 use App\Models\Amenities;
+use App\Models\PropertyAmeneties;
 use Livewire\Component;
 
 use Illuminate\Support\Str;
@@ -21,6 +22,7 @@ class CreateEditComponent extends Component
     public $specifications;
     public $amenities;
     public $specificationsCount = [];
+    public $amenitiesCount = [];
 
     public function mount($property = null)
     {
@@ -30,9 +32,15 @@ class CreateEditComponent extends Component
         $this->amenities = Amenities::all();
         $propertySpecifications = PropertySpecification::where('property_id', $this->property->id)->get();
         foreach ($this->specifications as $index => $specification) {
-            $this->specificationsCount[$index] = $propertySpecifications->where('specification_id', $specification->id)->first()->available_count ?? "0";
+            $this->specificationsCount[$index] = $propertySpecifications->where('specification_id', $specification->id)->first()->value ?? "0";
         }
 
+        $propertyAmenities = PropertyAmeneties::where('property_id', $this->property->id)->get();
+
+        foreach ($this->amenities as $index => $amenities) {
+
+            $this->amenitiesCount[$index] = $propertyAmenities->where('amenetise_id', $amenities->id)->first()->distance ?? "0";
+        }
 
     }
 
@@ -41,7 +49,9 @@ class CreateEditComponent extends Component
      */
     public function edit($id)
     {
+
         $this->property = Properties::findOrFail($id);
+
         $this->isNew = false;
     }
 
@@ -87,16 +97,26 @@ class CreateEditComponent extends Component
 
         // Save the property
         $this->property->save();
-         #delete all existing specifications for this property
-         PropertySpecification::where('property_id', $this->property->id)->delete();
-         #save new property specifications
-         foreach ($this->specificationsCount as $index => $s_count) {
-             PropertySpecification::create([
-                 'property_id' => $this->property->id,
-                 'specification_id' => $this->specifications[$index]['id'],
-                 'value' => $s_count,
-             ]);
-         }
+        #delete all existing specifications for this property
+        PropertySpecification::where('property_id', $this->property->id)->delete();
+        #save new property specifications
+        foreach ($this->specificationsCount as $index => $s_count) {
+            PropertySpecification::create([
+                'property_id' => $this->property->id,
+                'specification_id' => $this->specifications[$index]['id'],
+                'value' => $s_count,
+            ]);
+        }
+        #delete all existing specifications for this property
+        PropertyAmeneties::where('property_id', $this->property->id)->delete();
+        #save new property specifications
+        foreach ($this->amenitiesCount as $index => $s_count) {
+            PropertyAmeneties::create([
+                'property_id' => $this->property->id,
+                'amenetise_id' => $this->amenities[$index]['id'],
+                'distance' => $s_count,
+            ]);
+        }
 
 
 

@@ -242,6 +242,7 @@
                     </div>
                     {{-- Specifications --}}
                     <div class="col-lg-12">
+                       <div class="card p-4 mb-3 mt-3">
                         <p class="fs-18 mb-3 fw-500">Specifications</p>
                         <div class="row">
                             @foreach ($specifications as $index => $specification)
@@ -265,13 +266,16 @@
                                         @endif
                                     </select>
                                 </div>
+                            </div>
 
                             @endforeach
 
                         </div>
+                       </div>
                     </div>
                     {{-- Amenities --}}
                     <div class="col-lg-12">
+                       <div class="card p-4 mt-3 mb-2">
                         <p class="fs-18 mb-3 fw-500">Amenities</p>
                         <div class="row">
                             @foreach ($amenities as $index => $facility)
@@ -279,15 +283,16 @@
                                 <div class="form-group">
                                     <label for="facility-{{ $facility->id }}">{{ $facility->name }}</label>
                                     <input type="number" min="0" step="0.1" class="form-control"
-                                        wire:model.defer="facilitiesDistance.{{ $index }}"
+                                        wire:model.defer="amenitiesCount.{{ $index }}"
                                         id="facility-{{ $facility->id }}" placeholder="In Kms" />
                                 </div>
-                                @error('facilitiesDistance.' . $index)
+                                @error('amenitiesCount.' . $index)
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                             @endforeach
                         </div>
+                       </div>
                     </div>
 
 
