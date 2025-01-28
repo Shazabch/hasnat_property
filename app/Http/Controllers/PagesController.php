@@ -146,6 +146,7 @@ class PagesController extends Controller
     public function propertiesDetail($id)
     {
         $property = Properties::where('id',$id)->where('status',1)->with('specifications')->with('amenities')->first();
+        $properties = Properties::where('status',1)->take(3)->get();
 
         return view('website.properties.detail', compact('property'));
     }
