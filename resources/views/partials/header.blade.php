@@ -116,9 +116,46 @@
                     <li class="nav-item">
                         <a href="{{ route('properties') }}" class="nav-link mouse_go">Properties</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('publications') }}" class="nav-link mouse_go">Blogs</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle mouse_go text-light"
+                                data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                Projects
+                            </a>
+                            <!-- Submenu -->
+                            <ul class="dropdown-menu bg-dark">
+                                @if(ourProjects()->count() > 0)
+                                @foreach(ourProjects() as $project)
+                                <li><a href="{{ route('projects', $project->slug) }}"
+                                        class="dropdown-item text-light">{{ $project->title }}</a>
+                                </li>
+                                @endforeach
+                                @endif
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle mouse_go text-light"
+                                data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                                Property Rates
+                            </a>
+                            <!-- Submenu -->
+                            <ul class="dropdown-menu bg-dark">
+                                @if(ourPropertyRates()->count() > 0)
+                                @foreach(ourPropertyRates() as $item)
+                                <li><a href="{{ route('rates', $item->slug) }}"
+                                        class="dropdown-item text-light">{{ $item->title }}</a>
+                                </li>
+                                @endforeach
+                                @endif
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('publications') }}" class="nav-link mouse_go">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('reviews') }}" class="nav-link mouse_go">Reviews</a>
+                        </li>
                     <li class="nav-item">
                         <a href="{{ route('contact-us') }}" class="nav-link mouse_go">Contact Us</a>
                     </li>
