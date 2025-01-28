@@ -108,7 +108,9 @@ class PagesController extends Controller
     }
     public function properties()
     {
-        return view('website.properties.index');
+        $propertyTypes = Properties::distinct('property_type')->pluck('property_type');
+        $properties = Properties::where('status',1)->get();
+        return view('website.properties.index', compact('propertyTypes' , 'properties'));
     }
     public function projects($slug)
     {

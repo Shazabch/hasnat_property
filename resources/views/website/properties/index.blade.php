@@ -49,19 +49,12 @@
                             </select>
                         </div>
                         <div class="search-dropdown col-lg-3">
-                            <label for="">Type</label>
-                            <select class="js-select2 form-control" data-placeholder="All Type">
-                                <option value=""></option>
-                                <option value="apartment">Apartment</option>
-                                <option value="bar">Bar</option>
-                                <option value="cafe">Cafe</option>
-                                <option value="farm">Farm</option>
-                                <option value="house">House</option>
-                                <option value="luxury-homes">Luxury Homes</option>
-                                <option value="office">Office</option>
-                                <option value="single-family">Single Family</option>
-                                <option value="store">Store</option>
-                                <option value="villa">Villa</option>
+                            <label for="property_type">Type</label>
+                            <select class="js-select2 form-control" name="property_type" id="property_type" data-placeholder="All Type">
+                                <option value="" selected>All Type</option>
+                                @foreach ($propertyTypes as $type)
+                                    <option value="{{ strtolower($type) }}">{{ ucfirst($type) }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="search-btn col-lg-3">
@@ -76,147 +69,58 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="product-custom">
-                    <div class="profile-widget">
-                        <div class="doc-img">
-                            <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
+            <div class="row">
+                @foreach ( $properties as $property )
+                <div class="col-lg-4">
+                    <div class="product-custom">
+                        <div class="profile-widget">
+                            <div class="doc-img">
+                                @if ($property->main_image)
+                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
+                                    <img src="{{ asset($property->main_image) }}" alt="Property Image"
+                                            style=" height: 320px; width: 480px">
+                                </a>
+                                    @else
+                                        <span class="text-muted">No Image</span>
+                                    @endif
+
+                                <div class="product-amount">
+                                    <span>{{ $property->price }}</span>
+                                </div>
+                                <div class="feature-rating">
+                                    <div>
+                                        <div class="featured">
+                                            @if ($property->featured)
+                                            <span>Featured</span>
+                                            @endif
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
+                            <div class="pro-content">
+                                <h3 class="title">
+                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">{{ $property->title }}</a>
+                                </h3>
+                                <p><i class="feather-map-pin"></i> {{ $property->adress }}</p>
+                                <ul class="property-category d-flex justify-content-between mb-0">
+                                    <li>
+                                        <span class="list">Listed on : </span>
+                                        <span class="date">{{ $property->created_at->format('d-M-Y h:i a') }}</span>
+                                    </li>
+                                    <li>
+                                        <span class="category list">Category : </span>
+                                        <span class="category-value date">{{ $property->categories }}</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
                         </div>
-                    </div>		
+                    </div>
                 </div>
+                @endforeach
             </div>
-            <div class="col-lg-4">
-                <div class="product-custom">
-                    <div class="profile-widget">
-                        <div class="doc-img">
-                            <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                            </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>		
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="product-custom">
-                    <div class="profile-widget">
-                        <div class="doc-img">
-                            <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                            </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a> 
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>		
-                </div>
-            </div>
+
+
         </div>
     </div>
 </section>
