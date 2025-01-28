@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Ameneties;
+use App\Models\Amenities;
 
 class PropertyAmeneties extends Model
 {
@@ -12,6 +12,6 @@ class PropertyAmeneties extends Model
     protected $guarded = [];
     public function amenity()
     {
-        return $this->belongsTo(Ameneties::class, 'amenetise_id');
+        return $this->belongsTo(Amenities::class, 'amenetise_id');
     }
 }

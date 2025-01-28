@@ -4,13 +4,39 @@
 @section('meta_description', "Properties")
 
 @section('content')
+<style>
+.property_details_sec .nearby_locations_ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.property_details_sec .nearby_locations_ul li {
+    width: calc(33.46% - 15px);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    background: rgba(244, 244, 244, 0.09);
+    padding: 11px;
+    align-items: center;
+}
+
+
+.property_details_sec .nearby_locations_ul li span {
+    font-size: 15px;
+}
+
+.property_details_sec .nearby_locations_ul li span b {
+    font-weight: 600 !important;
+}
+</style>
 <section class="inner-banner">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="section-title no-after pt-0 ps-0">
                     <p class="after-circle text-white text-thin after-circle mx-auto">Property Detail</p>
-                    <h2 class="text-center text-secondary">My Property Name</h2>
+                    <h2 class="text-center text-secondary">{{ $property?->title}}</h2>
                     <div class="page-title-item mt-0 mx-auto">
                         <ul class="text-center">
                             <li>
@@ -36,7 +62,7 @@
             <div class="col-lg-8">
                 <div class="buy-btn">
                     <span class="buy">Buy</span>
-                    <span class="appartment">Appartment</span>
+                    <span class="appartment"></span>
                 </div>
                 <div class="page-title">
                     <h3>Modern Apartment in the City Center<span><img
@@ -60,36 +86,12 @@
                         <div class="property-detail-slider-wrap">
                             <div class="swiper property-detail-slider2 mb-20">
                                 <div class="swiper-wrapper">
+                                @foreach($property->photos as $image)
                                     <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" />
+                                        <img src="{{ asset($image->image_name) }}" />
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
+                                    @endforeach
+
                                 </div>
                                 <div class="swiper-pagination"></div>
                                 <div class="swiper-button-next">
@@ -101,53 +103,29 @@
                             </div>
                             <div thumbsSlider="" class="swiper property-detail-slider">
                                 <div class="swiper-wrapper">
+                                    @foreach($property->photos as $image)
                                     <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
+                                        <img src="{{ asset($image->image_name) }}" />
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="obj_fit" />
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="default-box-white section-title no-after">
+
+                <div class="default-box-white section-title no-after property_details_sec">
                     <h2 class="mb-4 text-white">Property Amenities</h2>
                     <div class="mb-4">
                         @if(count($property->amenities) > 0)
                         <div class="sub_div mt-3 px-0">
-                            <h3 class="mb-4">amenities</h3>
+
                             <ul class="nearby_locations_ul">
                                 @foreach($property->amenities as $amenity)
                                 <li>
                                     <div class="amenities_icon_box">
                                         <img src="{{ asset($amenity->icon) }}" alt="">
-                                        <p>{{ $amenity->name }}</p>
+                                        <p>{{ $amenity->amenity->name }}</p>
                                     </div>
                                     <span><b>{{ $amenity->distance }}</b> kms</span>
                                 </li>
@@ -239,6 +217,7 @@
         </div>
     </div>
 </section>
+{{--
 <section class="bg-dark2">
     <div class="container">
         <div class="row justify-content-center">
@@ -255,146 +234,146 @@
                     <div class="profile-widget">
                         <div class="doc-img">
                             <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image"
-                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                            </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
+<img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+</a>
+<div class="product-amount">
+    <span>$51,000</span>
+</div>
+<div class="feature-rating">
+    <div>
+        <div class="featured">
+            <span>Featured</span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="pro-content">
+    <div class="rating">
+        <span class="rating-count">
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star"></i>
+        </span>
+        <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
+    </div>
+    <h3 class="title">
+        <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
+    </h3>
+    <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
+    <ul class="property-category d-flex justify-content-between mb-0">
+        <li>
+            <span class="list">Listed on : </span>
+            <span class="date">18 Jan 2023</span>
+        </li>
+        <li>
+            <span class="category list">Category : </span>
+            <span class="category-value date">Flats</span>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+    <div class="product-custom">
+        <div class="profile-widget">
+            <div class="doc-img">
+                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
+                    <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                </a>
+                <div class="product-amount">
+                    <span>$51,000</span>
+                </div>
+                <div class="feature-rating">
+                    <div>
+                        <div class="featured">
+                            <span>Featured</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="product-custom">
-                    <div class="profile-widget">
-                        <div class="doc-img">
-                            <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image"
-                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                            </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="pro-content">
+                <div class="rating">
+                    <span class="rating-count">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="product-custom">
-                    <div class="profile-widget">
-                        <div class="doc-img">
-                            <a href="{{route('properties-detail')}}" class="property-img mouse_go">
-                                <img class="img-fluid" alt="Property Image"
-                                    src="{{asset('assets/media/banners/home-1.jpg')}}">
-                            </a>
-                            <div class="product-amount">
-                                <span>$51,000</span>
-                            </div>
-                            <div class="feature-rating">
-                                <div>
-                                    <div class="featured">
-                                        <span>Featured</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pro-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
-                            </div>
-                            <h3 class="title">
-                                <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright flat</a>
-                            </h3>
-                            <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
-                            <ul class="property-category d-flex justify-content-between mb-0">
-                                <li>
-                                    <span class="list">Listed on : </span>
-                                    <span class="date">18 Jan 2023</span>
-                                </li>
-                                <li>
-                                    <span class="category list">Category : </span>
-                                    <span class="category-value date">Flats</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="title">
+                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright
+                        flat</a>
+                </h3>
+                <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
+                <ul class="property-category d-flex justify-content-between mb-0">
+                    <li>
+                        <span class="list">Listed on : </span>
+                        <span class="date">18 Jan 2023</span>
+                    </li>
+                    <li>
+                        <span class="category list">Category : </span>
+                        <span class="category-value date">Flats</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+<div class="col-lg-4">
+    <div class="product-custom">
+        <div class="profile-widget">
+            <div class="doc-img">
+                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
+                    <img class="img-fluid" alt="Property Image" src="{{asset('assets/media/banners/home-1.jpg')}}">
+                </a>
+                <div class="product-amount">
+                    <span>$51,000</span>
+                </div>
+                <div class="feature-rating">
+                    <div>
+                        <div class="featured">
+                            <span>Featured</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-content">
+                <div class="rating">
+                    <span class="rating-count">
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star checked"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <p class="rating-review"><span>4.0</span>(13 Reviews)</p>
+                </div>
+                <h3 class="title">
+                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">Minimalist and bright
+                        flat</a>
+                </h3>
+                <p><i class="feather-map-pin"></i> 518-520 8th Ave, New York, NY 10018, USA</p>
+                <ul class="property-category d-flex justify-content-between mb-0">
+                    <li>
+                        <span class="list">Listed on : </span>
+                        <span class="date">18 Jan 2023</span>
+                    </li>
+                    <li>
+                        <span class="category list">Category : </span>
+                        <span class="category-value date">Flats</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 </section>
+--}}
 @endsection

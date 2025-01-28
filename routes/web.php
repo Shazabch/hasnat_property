@@ -32,7 +32,7 @@ Route::get('/projects/{slug}', [PagesController::class, 'projects'])->name('proj
 Route::get('/property-rates/{slug}', [PagesController::class, 'rates'])->name('rates');
 
 Route::get('/properties', [PagesController::class, 'properties'])->name('properties');
-Route::get('/properties/properties-detail', [PagesController::class, 'propertiesDetail'])->name('properties-detail');
+Route::get('/properties/properties-detail/{id}', [PagesController::class, 'propertiesDetail'])->name('properties-detail');
 
 //-----------------------Website Routes End-----------------------//
 

@@ -13,7 +13,7 @@ class Properties extends Model
     protected $guarded=[];
     public function photos()
     {
-        return $this->hasMany(PropertyImages::class);
+        return $this->hasMany(PropertyImages::class, 'property_id', 'id');
     }
     public function photosExceptMain()
     {
