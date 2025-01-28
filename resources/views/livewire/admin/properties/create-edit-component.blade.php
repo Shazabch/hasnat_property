@@ -308,6 +308,11 @@
                                             <option value="0">Select</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
+                                            @elseif (in_array($specification->name, ['Furnish Type']))
+                                            <option>Furnished</option>
+                                            <option>Partly Furnished</option>
+                                            <option>UnFurnished</option>
+
                                             @else
                                             @for ($i = 0; $i < 11; $i++) <option value="{{ $i }}">{{ $i }}</option>
                                                 @endfor

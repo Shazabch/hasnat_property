@@ -254,7 +254,7 @@
 
             <div class="row">
                 <div class="col-lg-12 my-4 text-center">
-                    <a href="#" class="button smaller button_secondary mb-0">View All</a>
+                    <a href="{{ route('properties') }}" class="button smaller button_secondary mb-0">View All</a>
                 </div>
             </div>
         </div>

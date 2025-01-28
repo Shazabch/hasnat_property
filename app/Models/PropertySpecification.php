@@ -10,7 +10,7 @@ class PropertySpecification extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function sepcification()
+    public function specification()
     {
         return $this->belongsTo(Specification::class, 'specification_id');
     }

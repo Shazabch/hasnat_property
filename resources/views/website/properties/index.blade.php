@@ -85,7 +85,7 @@
                         <div class="profile-widget">
                             <div class="doc-img">
                                 @if ($property->main_image)
-                                <a href="{{route('properties-detail')}}" class="property-img mouse_go">
+                                <a href="{{route('properties-detail', $property->id)}}" class="property-img mouse_go">
                                     <img src="{{ asset($property->main_image) }}" alt="Property Image"
                                             style=" height: 320px; width: 480px">
                                 </a>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="pro-content">
                                 <h3 class="title">
-                                    <a href="{{route('properties-detail')}}" tabindex="-1" class="mouse_go">{{ $property->title }}</a>
+                                    <a href="{{route('properties-detail', $property->id)}}" tabindex="-1" class="mouse_go">{{ $property->title }}</a>
                                 </h3>
                                 <p><i class="feather-map-pin"></i> {{ $property->adress }}</p>
                                 <ul class="property-category d-flex justify-content-between mb-0">

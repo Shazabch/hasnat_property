@@ -18,7 +18,7 @@ class PagesController extends Controller
         // $testimonials = \App\Models\Testimonial::published()->ordered()->get();
         $testimonials = \App\Models\Testimonial::published()->inRandomOrder()->take(6)->get();
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
-        $properties = Properties::where('status',1)->get();
+        $properties = Properties::where('status',1)->take(3)->get();
         return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties'));
     }
     public function conditionsListing()
@@ -126,11 +126,12 @@ class PagesController extends Controller
                   ->orWhere('categories', 'LIKE', '%' . $request->keyword . '%');
             });
         }
-        $properties = $query->get();
-        $properties = Properties::where('status',1)->get();
+        $properties = $query->where('status',1)->get();
+
+        $related_propertites = Properties::where('status',1)->take(3)->get();
 
 
-        return view('website.properties.index', compact('propertyTypes' , 'properties'));
+        return view('website.properties.index', compact('propertyTypes' , 'properties','related_propertites'));
     }
     public function projects($slug)
     {
@@ -144,7 +145,7 @@ class PagesController extends Controller
     }
     public function propertiesDetail($id)
     {
-        $property = Properties::where('id',$id)->where('status',1)->first();
+        $property = Properties::where('id',$id)->where('status',1)->with('specifications')->with('amenities')->first();
 
         return view('website.properties.detail', compact('property'));
     }

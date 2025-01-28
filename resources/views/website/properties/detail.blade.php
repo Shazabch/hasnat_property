@@ -20,7 +20,15 @@
     padding: 11px;
     align-items: center;
 }
-
+.property_details_sec .nearby_locations_ul.spec li {
+    width: calc(50% - 15px);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    background: rgba(244, 244, 244, 0.09);
+    padding: 11px;
+    align-items: center;
+}
 
 .property_details_sec .nearby_locations_ul li span {
     font-size: 15px;
@@ -65,17 +73,20 @@
                     <span class="appartment"></span>
                 </div>
                 <div class="page-title">
-                    <h3>Modern Apartment in the City Center<span><img
+                    <h3>{{ $property?->title}}<span><img
                                 src="{{asset('front/assets/img/location-icon.svg')}}" alt="Image"></span></h3>
                     <p>
-                        <i class="fa-solid fa-location-dot"></i> 318-330 S Oakley Blvd, Chicago, IL 60612, USA
+                        <i class="fa-solid fa-location-dot"></i> {{ $property?->adress}}
                     </p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="latest-update">
-                    <h5>Last Updated on : 15 Jan 2023</h5>
-                    <p>$4,000</p>
+                    <h5>Last Updated on : <span class="" style="font-size: 0.875rem;">
+                        <i class="bi bi-calendar-event"></i>
+                        {{ $property?->created_at->format('F d, Y') }}
+                    </span></h5>
+                    <p><b>PKR :</b> <span>{{ $property?->price }}</span></p>
                 </div>
             </div>
         </div>
@@ -86,6 +97,9 @@
                         <div class="property-detail-slider-wrap">
                             <div class="swiper property-detail-slider2 mb-20">
                                 <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset($property->main_image) }}" />
+                                    </div>
                                 @foreach($property->photos as $image)
                                     <div class="swiper-slide">
                                         <img src="{{ asset($image->image_name) }}" />
@@ -103,6 +117,9 @@
                             </div>
                             <div thumbsSlider="" class="swiper property-detail-slider">
                                 <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset($property->main_image) }}" />
+                                    </div>
                                     @foreach($property->photos as $image)
                                     <div class="swiper-slide">
                                         <img src="{{ asset($image->image_name) }}" />
@@ -113,16 +130,36 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="default-box-white section-title no-after property_details_sec">
-                    <h2 class="mb-4 text-white">Property Amenities</h2>
+                    <h2 class="mb-4 text-white"> Specifications</h2>
+                    <div class="mb-4">
+                        @if(count($property->specifications) > 0)
+                        <div class="sub_div mt-3 px-0">
+
+                            <ul class="nearby_locations_ul spec">
+                                @foreach($property->specifications as $specification)
+                                <li class="rounded">
+                                    <div class="amenities_icon_box">
+                                        <img src="{{ asset($specification->icon) }}" alt="">
+                                        <p>{{ $specification->specification->name }}</p>
+                                    </div>
+                                    <span><b>{{ $specification->value }}</b></span>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="default-box-white section-title no-after property_details_sec">
+                    <h2 class="mb-4 text-white"> Amenities</h2>
                     <div class="mb-4">
                         @if(count($property->amenities) > 0)
                         <div class="sub_div mt-3 px-0">
 
                             <ul class="nearby_locations_ul">
                                 @foreach($property->amenities as $amenity)
-                                <li>
+                                <li class="rounded">
                                     <div class="amenities_icon_box">
                                         <img src="{{ asset($amenity->icon) }}" alt="">
                                         <p>{{ $amenity->amenity->name }}</p>
@@ -135,26 +172,12 @@
                         @endif
                     </div>
                 </div>
+
+
                 <div class="default-box-white section-title no-after">
                     <h2 class="mb-4 text-white">Property Description</h2>
                     <div class="mb-4">
-                        <p>
-                            This 3-bed with a loft, 2-bath home in the gated community of The Hideout has it
-                            all. From the open floor plan to the
-                            abundance of light from the windows, this home is perfect for entertaining. The
-                            living room and dining room have vaulted
-                            ceilings and a beautiful fireplace. You will love spending time on the deck
-                            taking in the beautiful views. In the
-                            kitchen, you'll find stainless steel appliances and a tile backsplash, as well
-                            as a breakfast bar.
-                        </p>
-                        <p>
-                            Placeholder content for this accordion, which is intended to demonstrate the
-                            class. This is the first item's accordion
-                            body you get groundbreaking performance and amazing battery life. Add to that a
-                            stunning Liquid Retina XDR display, the
-                            best camera and audio ever in a Mac notebook, and all the ports you needs
-                        </p>
+                        {{ $property?->description }}
                     </div>
                 </div>
                 <div class="default-box-white section-title">
