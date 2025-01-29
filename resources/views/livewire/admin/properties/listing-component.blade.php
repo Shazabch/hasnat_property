@@ -105,7 +105,7 @@
                                 </div>
                                 <td>
                                     <span class="badge {{ $property->type === 'sale' ? 'badge-success' : 'badge-primary' }}">
-                                        {{ $property->type === 'sale' ? 'For Sale' : 'For Rent' }}
+                                        {{ $property->type === 'sale' ? 'For Sale' : 'To Rent' }}
                                     </span>
                                 </td>
 

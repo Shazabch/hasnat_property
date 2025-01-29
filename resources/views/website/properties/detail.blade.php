@@ -70,8 +70,9 @@
             <div class="row align-items-center page-head">
                 <div class="col-lg-8">
                     <div class="buy-btn">
-                        <span class="buy">Buy</span>
-                        <span class="appartment"></span>
+                        <span class="btn {{ $property->type === 'sale' ? 'bg-success' : 'bg-warning' }}">
+                            {{ $property->type === 'sale' ? 'For Sale' : 'To Rent' }}
+                        </span>
                     </div>
                     <div class="page-title">
                         <h3>{{ $property?->title }}<span><img src="{{ asset('front/assets/img/location-icon.svg') }}"
@@ -195,7 +196,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="right-sidebar">
-                        <a href="rental-order.html" class="btn btn-primary prop-book">
+                        <a href="#" class="btn btn-primary prop-book">
                             <i class="bx bx-calendar"></i>Book Property
                         </a>
                         <!-- Enquiry -->
