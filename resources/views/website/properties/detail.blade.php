@@ -178,7 +178,7 @@
                     <div class="default-box-white section-title no-after">
                         <h2 class="mb-4 text-white">Property Description</h2>
                         <div class="mb-4">
-                            {{ $property?->description }}
+                            {!! $property?->description !!}
                         </div>
                     </div>
                     <div class="default-box-white section-title">

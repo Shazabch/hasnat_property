@@ -31,7 +31,7 @@
     </div>
 </section>
 <section class="section-detail-content bg-cream">
-    <div class="container1650"> 
+    <div class="container1650">
         <div class="row">
             <div class="col-lg-4 d-lg-block d-none">
               <nav id="" class="h-100 flex-column align-items-stretch">
@@ -43,9 +43,9 @@
                     @endforeach
                     @if($publication->topics->count())
                     <div class="tags-box">
-                        <h5>Topics</h5> 
+                        <h5>Topics</h5>
                         @foreach ($publication->topics as $topic)
-                        <span>{{ $topic->name }}</span> 
+                        <span>{{ $topic->name }}</span>
                         @endforeach
                     </div>
                     @endif
@@ -67,14 +67,14 @@
                 </div>
                 @endforeach
                 {{-- <div class="content scrolling-active" id="item-1">
-                    <p>This year, Black Friday falls on the 29th November with Cyber Monday following on the 2nd December. In this article, we:</p> 
+                    <p>This year, Black Friday falls on the 29th November with Cyber Monday following on the 2nd December. In this article, we:</p>
                     <ul>
                         <li>
                             Review how sales revenues for brands and retailers are affected in the run-up to Black Friday and Cyber Monday and how that might feed through to 2024.
                         </li>
                         <li>
                             Explore which omnichannel consumer touchpoints brands can use to maximise sales.
-                        </li> 
+                        </li>
                         <li>
                             Forecast this year’s trends, ranging from who will spend the most to how consumers will pay for goods and services.
                         </li>
@@ -90,13 +90,13 @@
                         Black Friday has been a game-changer for retailers. Ever since its emergence in the U.S. and its later spread around the world, retailers have been keen to extend Black Friday’s impact. First, Black Friday became a weekend tail-ended by Cyber Monday. Today, that weekend is the finishing line of a prolonged discounting period that now often stretches all the way back to the start of October.
                     </p>
                     <p>
-                        This has somewhat diluted the uniqueness of Black Friday but retailers benefit from this longer sales cycle. Revenues are now higher in October as consumers begin shopping for bargains earlier, in anticipation of a discount. 
-                        <a href="https://www.mckinsey.com/industries/retail/our-insights/us-holiday-shopping-2023-consumer-caution-and-retailer-resilience" target="_blank" rel="noreferrer noopener"><u>McKinsey data</u></a> 
+                        This has somewhat diluted the uniqueness of Black Friday but retailers benefit from this longer sales cycle. Revenues are now higher in October as consumers begin shopping for bargains earlier, in anticipation of a discount.
+                        <a href="https://www.mckinsey.com/industries/retail/our-insights/us-holiday-shopping-2023-consumer-caution-and-retailer-resilience" target="_blank" rel="noreferrer noopener"><u>McKinsey data</u></a>
                         found that 56% of consumers began holiday shopping in October 2023, up 50% from the previous year.
                     </p>
                     <p>
-                        This gets more intense in November in the run up to Black Friday itself. For example, online retailer revenues in November 2022 were 304% higher than in October. Research from 
-                        <a href="https://www.thedrum.com/opinion/2021/10/13/thought-luxury-brands-weren-t-good-fit-black-friday-think-again" target="_blank" rel="noreferrer noopener"><u>The Drum</u></a> 
+                        This gets more intense in November in the run up to Black Friday itself. For example, online retailer revenues in November 2022 were 304% higher than in October. Research from
+                        <a href="https://www.thedrum.com/opinion/2021/10/13/thought-luxury-brands-weren-t-good-fit-black-friday-think-again" target="_blank" rel="noreferrer noopener"><u>The Drum</u></a>
                         in 2021 found that order volumes doubled in the week running up to Black Friday.
                     </p>
                     <p>
@@ -107,18 +107,18 @@
                     </p>
                     <img src="https://croud.com/site/assets/files/10725/ave-calvar-tuk2zojmcga-unsplash.1600x900.webp" alt="">
                     <p>
-                        This decline may have prompted some luxury manufacturers and retailers to discount - in the 
-                        <a href="https://www.harpersbazaar.com/fashion/trends/a45617905/black-friday-designer-deals-2023/" target="_blank" rel="noreferrer noopener"><u>2023 Black Friday period</u></a>, 
+                        This decline may have prompted some luxury manufacturers and retailers to discount - in the
+                        <a href="https://www.harpersbazaar.com/fashion/trends/a45617905/black-friday-designer-deals-2023/" target="_blank" rel="noreferrer noopener"><u>2023 Black Friday period</u></a>,
                         brands like SSENSE offered 50% discounts and Tory Burch 40% discounts.&nbsp;
                     </p>
                     <p>
-                        The impact of these discounts appears to have been significant. Adobe Analytics found, as reported in 
-                        <a href="https://www.fashiondive.com/news/early-holiday-2023-luxury-sales-slump-earnest/700737/" target="_blank" rel="noreferrer noopener"><u>Fashion Dive</u></a>, 
+                        The impact of these discounts appears to have been significant. Adobe Analytics found, as reported in
+                        <a href="https://www.fashiondive.com/news/early-holiday-2023-luxury-sales-slump-earnest/700737/" target="_blank" rel="noreferrer noopener"><u>Fashion Dive</u></a>,
                         that online apparel sales jumped 136% year on year on Black Friday and 154% on the following two days. This suggests that shoppers were waiting for the larger discounts to appear before making a purchase.
                     </p>
                     <p>
-                        Although wages 
-                        <a href="https://www.bbc.co.uk/news/business-12196322#:~:text=Are%20wages%20keeping%20up%20with%20inflation?" target="_blank" rel="noreferrer noopener"><u>are going up faster than the falling</u></a> 
+                        Although wages
+                        <a href="https://www.bbc.co.uk/news/business-12196322#:~:text=Are%20wages%20keeping%20up%20with%20inflation?" target="_blank" rel="noreferrer noopener"><u>are going up faster than the falling</u></a>
                         rate of inflation, aspirational consumers will probably still feel the pinch this year. For these consumers, discounting may be one approach to drive revenue and shift inventory.
                     </p>
                     <p>
@@ -130,10 +130,10 @@
                     <p>
                         Across both retail and online, the following strategies were successful in 2023 and may become more important this year:
                     </p>
-                    <ul> 
+                    <ul>
                         <li style="list-style-type:disc;">
                             <strong>Omnichannel marketing campaigns:</strong> Reach customers across multiple touchpoints including print media, in-store promotions, social media, email and via your website. Create a cohesive look and narrative to let customers know what to expect in terms of any Black Friday offers and incentives you’ll provide.
-                        </li> 
+                        </li>
                         <li style="list-style-type:disc;"><strong>Limited-time offers:</strong>
                              Although we’ve seen that revenues jump particularly on Black Friday Weekend, consider launching limited-time promotions in the run-up as well. The offers you run could be flash sales on a particular range of pieces or hourly deals on limited-edition items or stock you wish to clear. This will generate excitement and trigger FOMO vibes among your target consumers.
                         </li>
@@ -183,7 +183,7 @@
         <div class="row">
             <div class="blogs-slider owl-carousel owl-theme">
                 @foreach ($related_publications as $related_publication)
-                <div class="item" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100"> 
+                <div class="item" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">
                     @include('website.publications.card',['publication' => $related_publication])
                 </div>
                 @endforeach
