@@ -70,7 +70,8 @@ class CreateEditComponent extends Component
             'property.area' => 'nullable',
             'property.property_type' => 'nullable|string',
             'property.categories' => 'nullable|string',
-            'property.description' => 'nullable|string',
+            'property.description' => 'nullable',
+            'property.type' => 'nullable',
         ];
     }
 

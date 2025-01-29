@@ -123,8 +123,15 @@ class PagesController extends Controller
                   ->orWhere('slug', 'LIKE', '%' . $request->keyword . '%')
                   ->orWhere('property_type', 'LIKE', '%' . $request->keyword . '%')
                   ->orWhere('description', 'LIKE', '%' . $request->keyword . '%')
-                  ->orWhere('categories', 'LIKE', '%' . $request->keyword . '%');
+                  ->orWhere('categories', 'LIKE', '%' . $request->keyword . '%')
+                  ->orWhere('type', 'LIKE', '%' . $request->keyword . '%');
             });
+        }
+        if ($request->has('type') && $request->type) {
+            $query->where('type',$request->type);
+        }
+        if ($request->has('property_type') && $request->property_type) {
+            $query->where('property_type',$request->property_type);
         }
         $properties = $query->where('status',1)->get();
 

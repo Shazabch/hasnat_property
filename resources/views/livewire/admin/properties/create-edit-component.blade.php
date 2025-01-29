@@ -153,6 +153,19 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Property Type</label>
+                            <select wire:model="property.type" class="form-control @error('property.type') border border-danger @enderror">
+                                <option value="">Select</option>
+                                <option value="sale">For Sale</option>
+                                <option value="rent">For Rent</option>
+                            </select>
+                            @error('property.type')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
 
                     <div class="col-md-12">
                         <div class="form-group">

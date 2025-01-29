@@ -47,6 +47,7 @@
                             <th>Price</th>
                             <th>Address</th>
                             <th>Status</th>
+                            <th>Type</th>
                             <th>Area</th>
                             <th>Slug</th>
                             <th>Property Type</th>
@@ -102,6 +103,11 @@
 
 
                                 </div>
+                                <td>
+                                    <span class="badge {{ $property->type === 'sale' ? 'badge-success' : 'badge-primary' }}">
+                                        {{ $property->type === 'sale' ? 'For Sale' : 'For Rent' }}
+                                    </span>
+                                </td>
 
                                </td>
                                 <td>{{ $property->area }}</td>

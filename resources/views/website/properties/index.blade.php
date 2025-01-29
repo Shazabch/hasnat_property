@@ -49,16 +49,16 @@
                         >
                         </div>
                         <div class="search-dropdown col-lg-3">
-                            <label for="">Status</label>
-                            <select class="js-select2 form-control" data-placeholder="All Status">
+                            <label for="">Type</label>
+                            <select class="js-select2 form-control" name="type" data-placeholder="All Type">
                                 <option value=""></option>
-                                <option value="For Rent">For Rent</option>
-                                <option value="For Sale">For Sale</option>
+                                <option value="rent">To Rent</option>
+                                <option value="sale">For Sale</option>
                             </select>
                         </div>
                         <div class="search-dropdown col-lg-3">
-                            <label for="property_type">Type</label>
-                            <select class="js-select2 form-control" name="property_type" id="property_type" data-placeholder="All Type">
+                            <label for="property_type">Property Type</label>
+                            <select class="js-select2 form-control" name="property_type" id="property_type" data-placeholder="All Property Type">
                                 <option value="" selected>All Type</option>
                                 @foreach ($propertyTypes as $type)
                                     <option value="{{ strtolower($type) }}">{{ ucfirst($type) }}</option>
