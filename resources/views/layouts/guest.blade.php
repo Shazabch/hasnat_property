@@ -35,13 +35,23 @@
 			<!--begin::Login-->
 			<div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
 				<!--begin::Aside-->
-				<div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-image: url({{ asset('assets/media/bg/bg-4.jpg') }});">
-					<!--begin: Aside Container-->
-					<div class="align-items-center d-flex justify-content-center">
-						<img src="{{ asset('assets/media/bg/logo-white-gold-1.png') }}" class="max-h-300px" alt="Mr.Hasnat Properties Logo" />
-					</div>
-					<!--end: Aside Container-->
-				</div>
+				<div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-color: #1a1a1a;">
+                    <!--begin: Aside Container -->
+                    <div class="align-items-center d-flex justify-content-center">
+                        <!-- Logo with Text and Icon -->
+                        <div class="d-flex align-items-center logo-container">
+                            <!-- Icon (Replace with your preferred icon) -->
+                            <span class="material-icons-outlined text-white me-3" style="font-size: 4rem; color: #ffd700; transition: transform 0.3s ease;">🏠</span>
+                            <!-- Text -->
+                            <div class="text-white">
+                                <h1 class="mb-0" style="font-size: 2.8rem; font-weight: 700; letter-spacing: 1.5px; color: #ffd700; font-family: 'Poppins', sans-serif;">HASNAT PROPERTY</h1>
+                                <p class="mb-0" style="font-size: 1.1rem; font-weight: 300; color: #ffffff; font-family: 'Poppins', sans-serif;">Your Trusted Real Estate Partner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end: Aside Container -->
+                </div>
+
 				<!--begin::Aside-->
 				<!--begin::Content-->
 				@yield('content')
@@ -65,3 +75,25 @@
 	</body>
 	<!--end::Body-->
 </html>
+<style>
+    .logo-container {
+        transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+        transform: scale(1.05);
+    }
+
+    .logo-container:hover .material-icons-outlined {
+        animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+</style>

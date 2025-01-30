@@ -200,42 +200,7 @@
                             <i class="bx bx-calendar"></i>Book Property
                         </a>
                         <!-- Enquiry -->
-                        <div class="sidebar-card">
-                            <div class="sidebar-card-title">
-                                <h5>Request Info</h5>
-                            </div>
-                            <form action="#">
-                                <div class="review-form">
-                                    <input type="text" class="form-control" placeholder="Your Name">
-                                </div>
-                                <div class="review-form">
-                                    <input type="email" class="form-control" placeholder="Your Email">
-                                </div>
-                                <div class="review-form">
-                                    <input type="text" class="form-control" placeholder="Your Phone Number">
-                                </div>
-                                <div class="review-form">
-                                    <textarea rows="5" placeholder="Yes, I'm Interested"></textarea>
-                                </div>
-                                <div class="review-form submit-btn">
-                                    <button type="submit" class="btn-primary">Send Email</button>
-                                </div>
-                            </form>
-                            <div class="connect-us row g-2">
-                                <div class="col-md-6">
-                                    <a href="javascript:void(0);">
-                                        <i class="fa-solid fa-phone"></i>
-                                        Call Us
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="javascript:void(0);">
-                                        <i class="fa-brands fa-whatsapp"></i>
-                                        Whatsapp
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                          @livewire('admin.property_enquiry.property-enquiry-management-component',['property_id' => $property->id])
                         <!-- /Enquiry -->
                     </div>
                 </div>

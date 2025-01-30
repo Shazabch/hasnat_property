@@ -3,7 +3,7 @@
         <div class="profile-widget">
             <div class="doc-img">
                 @if ($property->main_image)
-                    <a href="{{ route('properties-detail', $property->id) }}" class="property-img mouse_go">
+                    <a href="{{ route('properties-detail', $property->slug) }}" class="property-img mouse_go">
                         <img src="{{ asset($property->main_image) }}" alt="Property Image"
                             style=" height: 320px; width: 480px">
                     </a>

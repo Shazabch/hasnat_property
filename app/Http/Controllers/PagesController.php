@@ -150,9 +150,9 @@ class PagesController extends Controller
         $rate = Rate::where('slug', $slug)->firstOrFail();
         return view('website.rates.index', compact('rate'));
     }
-    public function propertiesDetail($id)
+    public function propertiesDetail($slug)
     {
-        $property = Properties::where('id',$id)->where('status',1)->with('specifications')->with('amenities')->first();
+        $property = Properties::where('slug',$slug)->where('status',1)->with('specifications')->with('amenities')->first();
         $properties = Properties::where('status',1)->take(3)->get();
 
         return view('website.properties.detail', compact('property'));

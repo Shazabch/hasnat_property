@@ -10,7 +10,7 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/media/bg/hasnat-logo.svg') }}" alt="Mr.Hasnat Properties Logo">
+                    <img src="{{asset('assets/media/bg/hasnat-logo.svg')}}" alt="Mr.Hasnat Properties Logo" style="width: 100px; height: auto;">
                 </a>
 
                 <!-- Mobile Toggle Button -->
@@ -24,23 +24,23 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto align-items-center">
                         <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">Home</a>
+                            <a href="{{ route('home') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('about-us') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">About Us</a>
+                            <a href="{{ route('about-us') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('properties') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">Properties</a>
+                            <a href="{{ route('properties') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">Properties</a>
                         </li>
                         <!-- Projects Dropdown -->
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle mouse_go" data-bs-toggle="dropdown" role="button" style="font-size: 0.75rem;">
+                            <a href="#" class="nav-link dropdown-toggle mouse_go" data-bs-toggle="dropdown" role="button" style="font-size: 0.87rem;">
                                 Projects
                             </a>
                             <ul class="dropdown-menu bg-dark">
                                 @if(ourProjects()->count() > 0)
                                     @foreach(ourProjects() as $project)
-                                        <li><a href="{{ route('projects', $project->slug) }}" class="dropdown-item" style="font-size: 0.75rem;">
+                                        <li><a href="{{ route('projects', $project->slug) }}" class="dropdown-item" style="font-size: 0.87rem;">
                                             {{ $project->title }}
                                         </a></li>
                                     @endforeach
@@ -49,13 +49,13 @@
                         </li>
                         <!-- Property Rates Dropdown -->
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle mouse_go" data-bs-toggle="dropdown" role="button" style="font-size: 0.75rem;">
+                            <a href="#" class="nav-link dropdown-toggle mouse_go" data-bs-toggle="dropdown" role="button" style="font-size: 0.87rem;">
                                 Property Rates
                             </a>
                             <ul class="dropdown-menu bg-dark">
                                 @if(ourPropertyRates()->count() > 0)
                                     @foreach(ourPropertyRates() as $item)
-                                        <li><a href="{{ route('rates', $item->slug) }}" class="dropdown-item" style="font-size: 0.75rem;">
+                                        <li><a href="{{ route('rates', $item->slug) }}" class="dropdown-item" style="font-size: 0.87rem;">
                                             {{ $item->title }}
                                         </a></li>
                                     @endforeach
@@ -63,13 +63,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('publications') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">Blogs</a>
+                            <a href="{{ route('publications') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">Blogs</a>
                         </li>
+                        {{-- <li class="nav-item">
+                            <a href="{{ route('reviews') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">Reviews</a>
+                        </li> --}}
                         <li class="nav-item">
-                            <a href="{{ route('reviews') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('contact-us') }}" class="nav-link mouse_go" style="font-size: 0.75rem;">Contact Us</a>
+                            <a href="{{ route('contact-us') }}" class="nav-link mouse_go" style="font-size: 0.87rem;">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -78,8 +78,8 @@
                 <div class="header-right d-flex align-items-center">
                     <!-- Book Appointment Button -->
                     <div class="me-3">
-                        <button class="btn btn-primary btn-sm px-4 py-2 rounded-pill shadow-sm"
-                                style="font-weight: bold;"
+                        <button class="btn btn-primary btn-sm p-3 rounded-pill shadow-sm"
+                                style="font-weight: bold; font-size: 0.875rem;"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Book Appointment
                         </button>

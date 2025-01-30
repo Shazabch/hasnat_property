@@ -45,6 +45,43 @@
             ],
         ]
     ],
+
+
+    [
+        "name" => "Property Management",
+        "icon" => "",
+        "permissions" => ['user-management','role-management'],
+        "is_section"=>"true",
+    ],[
+        "name" => "Property Management",
+        "icon" => "fas fa-users-cog",
+        "permissions" => ['user-management','role-management'],
+        "route" => "admin.system",
+        "submenu" => [
+            [
+            "name" => "Properties",
+            "icon" => "fas fa-building",
+            "permissions" => [],
+            "route" => "admin.properties.index"
+            ],
+            [
+                "name" => "Specifications",
+                "icon" => "far fa-id-card",
+                "permissions" => [],
+                "route" => "admin.specifications.index"
+            ],
+            [
+                "name" => "Amenetise",
+                "icon" => "far fa-id-card",
+                "permissions" => [],
+                "route" => "admin.amenetise.index"
+            ],
+        ]
+    ],
+
+
+
+
     [
         "name" => "Content Management",
         "icon" => "",
@@ -53,24 +90,7 @@
     ],
 
 
-    [
-    "name" => "Properties",
-    "icon" => "fas fa-building",
-    "permissions" => [],
-    "route" => "admin.properties.index"
-    ],
-    [
-        "name" => "Specifications",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.specifications.index"
-    ],
-    [
-        "name" => "Amenetise",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.amenetise.index"
-    ],
+
     [
     "name" => "Projects",
     "icon" => "fas fa-building",
