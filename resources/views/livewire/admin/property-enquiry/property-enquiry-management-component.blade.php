@@ -18,7 +18,7 @@
                 <textarea rows="5" class="input-field" wire:model="enquiry.message" placeholder="Yes, I'm Interested"></textarea>
             </div>
             <div class="review-form submit-btn">
-                <button type="submit" class="btn-primary">Send Email</button>
+                <button type="submit" class="btn-primary">Send Message</button>
             </div>
         </form>
         <div class="connect-us row g-2">
@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <a href="javascript:void(0);">
+                <a href="https://wa.me/923217888807" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
                     Whatsapp
                 </a>
