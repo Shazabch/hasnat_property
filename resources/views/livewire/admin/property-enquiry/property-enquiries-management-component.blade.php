@@ -11,7 +11,8 @@
         <div class="card-body pt-3">
             <!-- Controls: Search -->
             <div class="input-group mb-3">
-                <input type="text" wire:model.live="search" class="form-control rounded-start m-2" placeholder="Search enquiries...">
+                <input type="text" wire:model.live="search" class="form-control rounded-start m-2"
+                    placeholder="Search enquiries...">
                 <button class="btn btn-primary m-2" type="button">
                     <i class="fas fa-search"></i> Search
                 </button>
@@ -53,8 +54,8 @@
             </div>
 
             <!-- Pagination -->
-            <div class="mt-3 d-flex justify-content-center">
-                {{ $enquiries->links() }}
+            <div class="m-4 d-flex justify-content-center">
+                {{ $enquiries->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

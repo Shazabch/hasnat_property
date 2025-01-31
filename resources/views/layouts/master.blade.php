@@ -115,7 +115,16 @@
 
         <!-- Custom JS -->
         <script src="{{ asset('front/assets/js/custom.js') }}"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+          window.addEventListener('success-prompt', event => {
+				Swal.fire(
+					'Success!',
+					event.detail.message,
+					'success'
+				)
+			})
+        </script>
 		@stack('scripts')
 
         @livewireScripts

@@ -42,6 +42,7 @@
 		</style>
 		@stack('styles')
 		<script src="{{ asset('front/assets/ck-editor/ckeditor.js') }}"></script>
+
 		@livewireStyles
 
 	</head>
@@ -1429,6 +1430,7 @@
 		</script>
 		{{--begin::sweetalert--}}
 		<script src="{{ asset('assets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		{{--end::sweetalert--}}
 		<script>
 
@@ -1483,15 +1485,19 @@
 				)
 			})
 
-			window.addEventListener('success-box', event => {
-				Swal.fire({
-				position: "center",
-				icon: "success",
-				title: event.detail.message,
-				showConfirmButton: false,
-				timer: 1500
-				});
-			})
+
+                document.addEventListener('livewire:load', function () {
+                    Livewire.on('success-box', message => {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: message,
+                            timer: 3000,
+                            showConfirmButton: false
+                        });
+                    });
+                });
+
 
 			// close the modal with id schemaModal
 			window.addEventListener('close-schema-modal', event => {

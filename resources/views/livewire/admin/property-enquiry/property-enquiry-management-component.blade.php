@@ -18,7 +18,7 @@
                 <textarea rows="5" class="input-field" wire:model="enquiry.message" placeholder="Yes, I'm Interested"></textarea>
             </div>
             <div class="review-form submit-btn">
-                <button type="submit" class="btn-primary">Send Message</button>
+                <button type="submit" class="btn-primary">Send Email</button>
             </div>
         </form>
         <div class="connect-us row g-2">
@@ -48,22 +48,20 @@
             }
         </style>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let inputs = document.querySelectorAll(".input-field");
 
-                inputs.forEach(input => {
-                    input.addEventListener("blur", function() {
-                        if (this.value.trim() !== "") {
-                            this.style.color = "yellow"; // Jab input bhar jaye aur focus chala jaye
-                        } else {
-                            this.style.color = "white"; // Agar input empty ho to wapis white
-                        }
-                    });
-                });
+<script>
+    document.addEventListener('livewire:load', function () {
+        Livewire.on('success-box', message => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: message,
+                timer: 3000,
+                showConfirmButton: false
             });
-        </script>
-
+        });
+    });
+</script>
     </div>
 
 

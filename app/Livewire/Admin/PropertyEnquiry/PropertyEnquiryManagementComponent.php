@@ -33,8 +33,9 @@ class PropertyEnquiryManagementComponent extends Component
         $this->validate();
         $this->enquiry->property_id=$this->property_id;
         $this->enquiry->save();
+        $this->enquiry = new PropertyEnquiry();
 
-        $this->dispatch('success-box', message: 'Enquiry Sent successfully');
+        $this->dispatch('success-prompt', message: 'Thank you! Your enquiry has been successfully submitted. We will get back to you soon.');
     }
     public function render()
     {
