@@ -121,6 +121,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     });
 
+    Route::prefix('property-enquiries')->name('property-enquiries.')->group(function () {
+        Route::get('/', function () {
+            return view('admin.property-enquiry.property-enquiries');
+        })->name('property-enquiries');
+    });
 
 
 });

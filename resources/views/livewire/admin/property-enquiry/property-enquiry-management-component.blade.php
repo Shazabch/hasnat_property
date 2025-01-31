@@ -18,7 +18,7 @@
                 <textarea rows="5" class="input-field" wire:model="enquiry.message" placeholder="Yes, I'm Interested"></textarea>
             </div>
             <div class="review-form submit-btn">
-                <button type="submit" class="btn-primary">Send Email</button>
+                <button type="submit" class="btn-primary">Send Message</button>
             </div>
         </form>
         <div class="connect-us row g-2">

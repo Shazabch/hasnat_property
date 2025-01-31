@@ -52,77 +52,82 @@
         "icon" => "",
         "permissions" => ['user-management','role-management'],
         "is_section"=>"true",
-    ],[
-        "name" => "Property Management",
-        "icon" => "fas fa-users-cog",
-        "permissions" => ['user-management','role-management'],
-        "route" => "admin.system",
-        "submenu" => [
-            [
+    ],
+    [
+    "name" => "Property Management",
+    "icon" => "fas fa-tasks", // Settings/Management Icon
+    "permissions" => ['user-management', 'role-management'],
+    "route" => "admin.system",
+    "submenu" => [
+        [
             "name" => "Properties",
-            "icon" => "fas fa-building",
+            "icon" => "fas fa-building", // Building/Real Estate Icon
             "permissions" => [],
             "route" => "admin.properties.index"
-            ],
-            [
-                "name" => "Specifications",
-                "icon" => "far fa-id-card",
-                "permissions" => [],
-                "route" => "admin.specifications.index"
-            ],
-            [
-                "name" => "Amenetise",
-                "icon" => "far fa-id-card",
-                "permissions" => [],
-                "route" => "admin.amenetise.index"
-            ],
-        ]
-    ],
+        ],
+        [
+            "name" => "Specifications",
+            "icon" => "fas fa-list-ul", // List Icon for Specifications
+            "permissions" => [],
+            "route" => "admin.specifications.index"
+        ],
+        [
+            "name" => "Amenetise",
+            "icon" => "fas fa-concierge-bell", // Bell Icon for Amenities
+            "permissions" => [],
+            "route" => "admin.amenetise.index"
+        ],
+        [
+            "name" => "Property Enquiry",
+            "icon" => "fas fa-question-circle", // Question Icon for Enquiries
+            "permissions" => [],
+            "route" => "admin.property-enquiries.property-enquiries"
+        ],
+    ]
+],
 
 
-
-
-    [
-        "name" => "Content Management",
-        "icon" => "",
-        "permissions" => [''],
-        "is_section"=>"true",
-    ],
 
 
 
     [
+    "name" => "Content Management",
+    "icon" => "fas fa-folder-open", // Folder icon for content management
+    "permissions" => [''],
+    "is_section" => "true",
+],
+
+[
     "name" => "Projects",
-    "icon" => "fas fa-building",
+    "icon" => "fas fa-building", // Building icon for projects
     "permissions" => [],
     "route" => "admin.projects.index"
-    ],
-    [
+],
+[
     "name" => "Property Rates",
-    "icon" => "fas fa-building",
+    "icon" => "fas fa-money-bill-wave", // Money icon for property rates
     "permissions" => [],
     "route" => "admin.rates.index"
-    ],
-    [
-        "name" => "Reviews",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.testimonials.index"
-    ],
-    [
-        "name" => "Blogs",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.publications.index"
-    ],
+],
+[
+    "name" => "Reviews",
+    "icon" => "fas fa-star", // Star icon for reviews/testimonials
+    "permissions" => [],
+    "route" => "admin.testimonials.index"
+],
+[
+    "name" => "Blogs",
+    "icon" => "fas fa-blog", // Blog icon for publications
+    "permissions" => [],
+    "route" => "admin.publications.index"
+],
+[
+    "name" => "Web Pages",
+    "icon" => "fas fa-globe", // Globe icon for web pages
+    "permissions" => [],
+    "route" => "admin.web-pages.index"
+],
 
-
-    [
-        "name" => "Web pages",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.web-pages.index"
-    ],
 ];
 
 @endphp

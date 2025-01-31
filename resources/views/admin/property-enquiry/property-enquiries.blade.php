@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Properties')
+@section('title', 'Property Enquiry')
 
 @section('content')
 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
@@ -8,24 +8,24 @@
         <!--begin::Info-->
         <div class="d-flex align-items-center flex-wrap mr-2">
             <!--begin::Page Title-->
-            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Properties</h5>
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Property Enquiry</h5>
             <!--end::Page Title-->
             <!--begin::Actions-->
             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-            <span class="font-weight-bold mr-4">Properties</span>
+            <span class="font-weight-bold mr-4">Property Enquiry</span>
             <!--end::Actions-->
         </div>
         <!--end::Info-->
         <!--begin::Toolbar-->
-        <div class="d-flex align-items-center">
+        {{-- <div class="d-flex align-items-center">
             <a href="{{ route('admin.properties.create') }}" class="btn btn-light-warning font-weight-bolder btn-sm">Create New Property</a>
-        </div>
+        </div> --}}
         <!--end::Toolbar-->
     </div>
 </div>
     <div class="row mx-2">
         <div class="col-12">
-            @livewire('admin.properties.listing-component')
+            @livewire('admin.property-enquiry.property-enquiries-management-component')
         </div>
     </div>
 @endsection
