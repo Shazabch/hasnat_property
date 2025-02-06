@@ -116,6 +116,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/', [AdminPagesController::class, 'specifications'])->name('index');
 
     });
+
     Route::prefix('amenetise')->name('amenetise.')->group(function () {
         Route::get('/', [AdminPagesController::class, 'amenetise'])->name('index');
 
@@ -125,6 +126,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/', function () {
             return view('admin.property-enquiry.property-enquiries');
         })->name('property-enquiries');
+    });
+    Route::prefix('home-pages')->name('home-pages.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'homePages'])->name('index');
     });
 
 

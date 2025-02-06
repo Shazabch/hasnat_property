@@ -12,15 +12,15 @@
         <div id="themeSlider" class="carousel slide pointer-event" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('assets/media/banners/home-1.jpg')}}" class="banner_img" alt="">
+                    <img src="{{ $homeSections->image1 }}" class="banner_img" alt="">
                     <div class="caption-head">
                         <div class="carousel-caption">
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="content_box_wrapper text-center">
-                                            <h1>Find Your Dream Property with <span class="text-secondary">Hasnat Properties</span></h1>
-                                            <p>From luxurious homes to investment opportunities, we help you discover the perfect property tailored to your needs.</p>
+                                            <h1>{{ $homeSections->title1 }} <span class="text-secondary">{{$homeSections->sec_title1  }}</span></h1>
+                                            <p>{{ $homeSections->content1 }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -39,13 +39,12 @@
                     <div class="left">
                         <div class="anim-reveal-line mb-4 mb-md-0">
                             <h2 class="title text-secondary mb-2">
-                                <span class="text-white">Welcome to</span> <br>
-                                HASNAT
-                                <span class="text-white">Properties</span>
+                                <span class="text-white">{{ $homeSections->main_title2 }}</span> <br>
+                               {{ $homeSections->sub_title2 }}
                             </h2>
-                            <h4 class="mb-3">your trusted partner in real estate</h4>
+                            <h4 class="mb-3">{{ $homeSections->third_title2 }}</h4>
                             <p class="text-white">
-                                With a commitment to excellence, we specialize in providing top-notch property solutions tailored to your needs. Whether you're buying, selling, or renting, our team ensures a seamless and satisfying experience. Let us help you find your dream property today.
+                               {{ $homeSections->content2 }}
                             </p>
                             <a href="" class="button smaller button_secondary mb-0">LEARN MORE</a>
                         </div>
@@ -53,7 +52,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
                     <div class="img-wrap">
-                        <img src="{{asset('assets/media/home/the-concept.webp')}}" alt="">
+                        <img src="{{ $homeSections->image1 }}" alt="">
                     </div>
                 </div>
             </div>

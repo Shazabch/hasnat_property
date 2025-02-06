@@ -86,10 +86,6 @@
     ]
 ],
 
-
-
-
-
     [
     "name" => "Content Management",
     "icon" => "fas fa-folder-open", // Folder icon for content management
@@ -127,6 +123,20 @@
     "permissions" => [],
     "route" => "admin.web-pages.index"
 ],
+
+    [
+        "name" => "Web Pages",
+        "icon" => "",
+        "permissions" => ['user-management','role-management'],
+        "is_section"=>"true",
+    ],
+    [
+        "name" => "Home Pages",
+        "icon" => "fas fa-globe",
+        "permissions" => [],
+        "route" => "admin.home-pages.index"
+    ],
+
 
 ];
 

@@ -170,7 +170,10 @@ class AdminPagesController extends Controller
                 $property = Properties::findOrFail($id);
                 return view('admin.properties.edit', compact('property'));
             }
-
+            public function homePages()
+    {
+        return view('admin.home-pages.index');
+    }
     public function getFilterResults(Request $request)
     {
         $type=$request->type;
