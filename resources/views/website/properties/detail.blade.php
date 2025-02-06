@@ -163,8 +163,8 @@
                                         @foreach ($property->amenities as $amenity)
                                             <li class="rounded">
                                                 <div class="amenities_icon_box">
-                                                <i class="{{ $amenity->amenity->icon }} text-light fa-lg text-center"></i>
-                                                    <p>{{ $amenity->amenity->name }}</p>
+                                                <i class="{{ $amenity->icon }} text-light fa-lg text-center"></i>
+                                                    <p>{{ $amenity->name }}</p>
                                                 </div>
                                                 <span><b>{{ $amenity->distance }}</b> kms</span>
                                             </li>
