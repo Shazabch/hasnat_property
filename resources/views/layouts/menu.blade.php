@@ -45,7 +45,27 @@
             ],
         ]
     ],
+    [
+        "name" => "Web Pages",
+        "icon" => "",
+        "permissions" => ['user-management','role-management'],
+        "is_section"=>"true",
+    ],
+    [
+        "name" => "Web pages Management",
+        "icon" => "fas fa-laptop-code",
+        "permissions" => ['home-management','role-management'],
+        "route" => "admin.system",
+        "submenu" => [
+            [
+                "name" => "Home Pages",
+                "icon" => "fas fa-globe",
+                "permissions" => [],
+                "route" => "admin.home-pages.index"
+            ],
 
+        ]
+    ],
 
     [
         "name" => "Property Management",
@@ -124,18 +144,7 @@
     "route" => "admin.web-pages.index"
 ],
 
-    [
-        "name" => "Web Pages",
-        "icon" => "",
-        "permissions" => ['user-management','role-management'],
-        "is_section"=>"true",
-    ],
-    [
-        "name" => "Home Pages",
-        "icon" => "fas fa-globe",
-        "permissions" => [],
-        "route" => "admin.home-pages.index"
-    ],
+
 
 
 ];

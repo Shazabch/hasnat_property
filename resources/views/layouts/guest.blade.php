@@ -35,16 +35,16 @@
 			<!--begin::Login-->
 			<div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
 				<!--begin::Aside-->
-				<div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-color: #1a1a1a;">
+				<div class="login-aside d-flex flex-row-auto bgi-size-cover bgi-no-repeat p-10 p-lg-10" style="background-color: #000000; height: 100vh;">
                     <!--begin: Aside Container -->
-                    <div class="align-items-center d-flex justify-content-center">
-                        <!-- Logo with Text and Icon -->
-                        <div class="d-flex align-items-center logo-container">
-                            <!-- Icon (Replace with your preferred icon) -->
-                            <span class="material-icons-outlined text-white me-3" style="font-size: 4rem; color: #ffd700; transition: transform 0.3s ease;">🏠</span>
-                            <!-- Text -->
-                            <div class="text-white">
-                                <h1 class="mb-0" style="font-size: 2.8rem; font-weight: 700; letter-spacing: 1.5px; color: #ffd700; font-family: 'Poppins', sans-serif;">HASNAT PROPERTY</h1>
+                    <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                        <div class="text-center">
+                            <!-- Logo -->
+                            <div>
+                                <img src="{{ asset('assets/media/bg/hasnat-logo.svg.png') }}" alt="Hasnat Property Logo" style="max-width: 200px; height: auto;">
+                            </div>
+                            <!-- Text under the logo -->
+                            <div class="text-white ">
                                 <p class="mb-0" style="font-size: 1.1rem; font-weight: 300; color: #ffffff; font-family: 'Poppins', sans-serif;">Your Trusted Real Estate Partner</p>
                             </div>
                         </div>
