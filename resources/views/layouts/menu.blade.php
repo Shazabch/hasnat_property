@@ -58,7 +58,7 @@
         "route" => "admin.system",
         "submenu" => [
             [
-                "name" => "Home Pages",
+                "name" => "Home Page",
                 "icon" => "fas fa-globe",
                 "permissions" => [],
                 "route" => "admin.home-pages.index"

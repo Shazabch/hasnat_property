@@ -13,6 +13,8 @@ use App\Models\Testimonial;
 use App\Models\Project;
 use App\Models\Rate;
 use App\Models\WebPage;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class AdminPagesController extends Controller
 {
@@ -155,39 +157,60 @@ class AdminPagesController extends Controller
         $webPage = WebPage::findOrFail($id);
         return view('admin.web-pages.edit', compact('webPage'));
     }
-                public function properties()
-            {
-                return view('admin.properties.index');
-            }
+    public function properties()
+    {
+        return view('admin.properties.index');
+    }
 
-            public function createProperty()
-            {
-                return view('admin.properties.create');
-            }
+    public function createProperty()
+    {
+        return view('admin.properties.create');
+    }
+    public function upload(Request $request)
+    {
 
-            public function editProperty($id)
-            {
-                $property = Properties::findOrFail($id);
-                return view('admin.properties.edit', compact('property'));
-            }
-            public function homePages()
+        // Log the request to check if it's coming through
+        Log::info($request->all());
+
+        $request->validate([
+            'upload' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('upload')) {
+            $imagePath = $request->file('upload')->store('images', 'public');
+            Log::info('Image uploaded to: ' . $imagePath);
+        } else {
+            Log::error('No file uploaded.');
+        }
+
+        return response()->json([
+            'url' => asset('storage/' . $imagePath)
+        ]);
+    }
+
+
+    public function editProperty($id)
+    {
+        $property = Properties::findOrFail($id);
+        return view('admin.properties.edit', compact('property'));
+    }
+    public function homePages()
     {
         return view('admin.home-pages.index');
     }
     public function getFilterResults(Request $request)
     {
-        $type=$request->type;
-        $search=$request->search;
-        if($type == 'topics'){
-            $data = PublicationTopic::where('name', 'like', '%'.$search.'%')->take(10)->get()->map(function($result){
+        $type = $request->type;
+        $search = $request->search;
+        if ($type == 'topics') {
+            $data = PublicationTopic::where('name', 'like', '%' . $search . '%')->take(10)->get()->map(function ($result) {
                 return [
-                    'id'=>'id_'.$result->id,
-                    'text'=>$result->name,
+                    'id' => 'id_' . $result->id,
+                    'text' => $result->name,
                 ];
             });
-
-        }else{
-            $data=[];
+        } else {
+            $data = [];
         }
 
         return response()->json(['data' => $data]);

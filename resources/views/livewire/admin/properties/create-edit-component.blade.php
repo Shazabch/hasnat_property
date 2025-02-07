@@ -362,7 +362,7 @@
                     </div>
 
 
-                    <!-- Property Description -->
+                    {{-- <!-- Property Description -->
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Description</label>
@@ -390,6 +390,64 @@
                             </div>
                             @error('property.description')
                             <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div> --}}
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Content</label>
+                            <div wire:ignore>
+                                <div class="" x-data x-init="ClassicEditor
+                                    .create($refs.property_desc, {
+
+                                        toolbar: {
+                                            items: [
+                                                'heading',
+                                                '|',
+                                                'bold',
+                                                'italic',
+                                                'link',
+                                                'bulletedList',
+                                                'numberedList',
+                                                '|',
+                                                'outdent',
+                                                'indent',
+                                                '|',
+                                                'imageUpload',
+                                                'blockQuote',
+                                                'insertTable',
+                                                'mediaEmbed',
+                                                'undo',
+                                                'redo'
+                                            ]
+                                        },
+                                        simpleUpload: {
+                                            uploadUrl: '{{ route('admin.image.upload') }}',
+                                            headers: {
+                                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                            }
+                                        }
+                                    })
+                                    .then(editor => {
+                                        editor.model.document.on('change:data', () => {
+                                                @this.set('property.description', editor.getData(), true);
+                                            }),
+                                            editor.dataProcessor.writer.setRules('br', {
+                                                indent: false,
+                                                breakBeforeOpen: false,
+                                                breakAfterOpen: false,
+                                                breakBeforeClose: false,
+                                                breakAfterClose: false
+                                            });
+                                    })
+                                    .catch(error => {
+                                        console.error(error);
+                                    });" wire:ignore
+                                    x-ref="property_desc">{!! $property->description !!}</div>
+                            </div>
+                            @error('property.description')
+                                <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
                     </div>

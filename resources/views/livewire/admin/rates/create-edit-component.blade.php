@@ -42,33 +42,61 @@
                         <div class="col-12">
 
                             <!-- Property Description -->
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Content</label>
                                     <div wire:ignore>
-                                        <div class="" x-data x-init="
-                                    ClassicEditor
-                                    .create($refs.rate_content)
-                                    .then(editor => {
-                                        editor.model.document.on('change:data', () => {
-                                            @this.set('rate.content', editor.getData(), true);
-                                        }),
-                                        editor.dataProcessor.writer.setRules('br',
-                                        {
-                                            indent: false,
-                                            breakBeforeOpen: false,
-                                            breakAfterOpen: false,
-                                            breakBeforeClose: false,
-                                            breakAfterClose: false
-                                        });
-                                    })
-                                    .catch(error => {
-                                        console.error(error);
-                                    });
-                                " wire:ignore x-ref="rate_content">{!! $rate->content !!}</div>
+                                        <div class="" x-data x-init="ClassicEditor
+                                            .create($refs.rate_content, {
+
+                                                toolbar: {
+                                                    items: [
+                                                        'heading',
+                                                        '|',
+                                                        'bold',
+                                                        'italic',
+                                                        'link',
+                                                        'bulletedList',
+                                                        'numberedList',
+                                                        '|',
+                                                        'outdent',
+                                                        'indent',
+                                                        '|',
+                                                        'imageUpload',
+                                                        'blockQuote',
+                                                        'insertTable',
+                                                        'mediaEmbed',
+                                                        'undo',
+                                                        'redo'
+                                                    ]
+                                                },
+                                                simpleUpload: {
+                                                    uploadUrl: '{{ route('admin.image.upload') }}',
+                                                    headers: {
+                                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                                    }
+                                                }
+                                            })
+                                            .then(editor => {
+                                                editor.model.document.on('change:data', () => {
+                                                        @this.set('rate.content', editor.getData(), true);
+                                                    }),
+                                                    editor.dataProcessor.writer.setRules('br', {
+                                                        indent: false,
+                                                        breakBeforeOpen: false,
+                                                        breakAfterOpen: false,
+                                                        breakBeforeClose: false,
+                                                        breakAfterClose: false
+                                                    });
+                                            })
+                                            .catch(error => {
+                                                console.error(error);
+                                            });" wire:ignore
+                                            x-ref="rate_content">{!! $rate->content !!}</div>
                                     </div>
                                     @error('rate.content')
-                                    <small class="text-danger">{{ $message }}</small>
+                                        <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
                             </div>

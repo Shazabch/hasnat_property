@@ -130,7 +130,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::prefix('home-pages')->name('home-pages.')->group(function () {
         Route::get('/', [AdminPagesController::class, 'homePages'])->name('index');
     });
-
+    Route::post('/upload-image', [AdminPagesController::class, 'upload'])->name('image.upload');
 
 });
 
