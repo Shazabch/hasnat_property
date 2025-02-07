@@ -21,6 +21,9 @@ class HomePageManagementComponent extends Component
     public $search = '';
     public $perPage = 10;
 
+    public $image_1_name;
+    public $image_2_name;
+
     public function rules()
     {
         return [
@@ -67,32 +70,32 @@ class HomePageManagementComponent extends Component
     {
         $this->validate();
 
-        $homePage = $this->homePageId ? HomePage::find($this->homePageId) : new HomePage();
-
+        $homePage = HomePage::latest()->first();
         // Section A
         $homePage->title1 = $this->title1;
         $homePage->sec_title1 = $this->sec_title1;
         $homePage->content1 = $this->content1;
-
-        if ($this->image1) {
-
-            $this->image1 = 'storage/' . $this->image1->store('uploads', 'public');
+        if ($this->image_1_name) {
+            $homePage->image1 =$this->image_1_name->store('uploads', 'public');
         }
-
 
         // Section B
         $homePage->main_title2 = $this->main_title2;
         $homePage->sub_title2 = $this->sub_title2;
         $homePage->third_title2 = $this->third_title2;
         $homePage->content2 = $this->content2;
-        if ($this->image2) {
-            $this->image2 = 'storage/' . $this->image2->store('uploads', 'public');
+        if ($this->image_2_name) {
+            $homePage->image2 =$this->image_2_name->store('uploads', 'public');
         }
 
         $homePage->save();
 
-        $this->resetInputFields();
-        session()->flash('message', 'Home Page section saved successfully.');
+        // $this->resetInputFields();
+            $message = $this->homePageId ? 'Home Page section updated successfully.' : 'Home Page section saved successfully.';
+        $this->dispatch('success-box', ['message' => $message]);
+
+        // Redirect to the desired page (e.g., HomePage listing page)
+        return redirect()->route('admin.home-pages.index');
     }
 
     private function resetInputFields()

@@ -71,7 +71,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Title</label>
-                            <input wire:model.live.debounce.500ms="property.title" type="text"
+                            <input wire:model.live.debounce.900ms="property.title" type="text"
                                 class="form-control @error('property.title') border border-danger @enderror">
                             @error('property.title')
                             <small class="text-danger">{{ $message }}</small>

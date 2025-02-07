@@ -12,7 +12,7 @@
         <div id="themeSlider" class="carousel slide pointer-event" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ $homeSections->image1 }}" class="banner_img" alt="">
+                    <img src="{{ asset('storage/' . $homeSections->image1) }}" class="banner_img" alt="">
                     <div class="caption-head">
                         <div class="carousel-caption">
                             <div class="container">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
                     <div class="img-wrap">
-                        <img src="{{ $homeSections->image1 }}" alt="">
+                        <img src="{{ asset('storage/' . $homeSections->image2) }}" alt="">
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{asset('assets/media/bg/hasnat-logo.svg')}}" alt="Mr.Hasnat Properties Logo" style="width: 100px; height: auto;">
+                    <img src="{{asset('assets/media/bg/hasnat-logo.svg.png')}}" alt="Mr.Hasnat Properties Logo" style="width: 100px; height: auto;">
                 </a>
 
                 <!-- Mobile Toggle Button -->
