@@ -18,7 +18,13 @@
                 <textarea rows="5" class="input-field" wire:model="enquiry.message" placeholder="Yes, I'm Interested"></textarea>
             </div>
             <div class="review-form submit-btn">
-                <button type="submit" class="btn-primary">Send Message</button>
+                <button type="submit" class="btn-primary" >Submit
+
+                    <div wire:loading wire:target="saveEnquiry">
+                        <span role="status"><i class="fa-solid fa-spinner fa-spin"></i></span>
+
+                    </div>
+                   </button>
             </div>
         </form>
         <div class="connect-us row g-2">

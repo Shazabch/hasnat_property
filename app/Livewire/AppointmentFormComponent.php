@@ -38,7 +38,7 @@ class AppointmentFormComponent extends Component
         $this->validate();
         $this->appointmentRequest->page = $this->fromPage;
         $this->appointmentRequest->save();
-        Mail::to('malikpa@hcaconsultant.co.uk')->cc('logs@mspine.uk')->send(new AppointmentAdminMail($this->appointmentRequest));
+        // Mail::to('malikpa@hcaconsultant.co.uk')->cc('logs@mspine.uk')->send(new AppointmentAdminMail($this->appointmentRequest));
         $this->appointmentRequest = new AppointmentRequest();
         $this->success = true;
     }
