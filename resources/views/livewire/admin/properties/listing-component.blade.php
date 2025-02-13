@@ -49,6 +49,7 @@
                             <th>Status</th>
                             <th>Type</th>
                             <th>Area</th>
+                            <th>Marla</th>
                             <th>Slug</th>
                             <th>Property Type</th>
                             <th>Description</th>
@@ -94,7 +95,7 @@
                                 </td>
                                 <td>{{ $property->title }}</td>
                                 <td class="text-end">{{ number_format($property->price, 2) }}</td>
-                                <td>{{ $property->address }}</td>
+                                <td>{{ $property->adress }}</td>
                                <td>
                                 <div>
                                     <span class="badge {{ $property->status == 1 ? 'bg-success text-white' : 'bg-light' }}">
@@ -111,6 +112,7 @@
 
                                </td>
                                 <td>{{ $property->area }}</td>
+                                <td>{{ $property->marla }}</td>
                                 <td>{{ $property->slug }}</td>
                                 <td>{{ $property->property_type }}</td>
                                 <td>{!! Str::limit($property->description, 30) !!}</td>

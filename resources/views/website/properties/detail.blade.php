@@ -73,6 +73,7 @@
                         <span class="btn {{ $property->type === 'sale' ? 'bg-success' : 'bg-warning' }}">
                             {{ $property->type === 'sale' ? 'For Sale' : 'To Rent' }}
                         </span>
+                        <div class="text-warning mx-3"><b>{{ $property->area }}</b><span class="text-white">{{ $property->marla }}</span> <hr></div>
                     </div>
                     <div class="page-title">
                         <h3>{{ $property?->title }}<span><img src="{{ asset('front/assets/img/location-icon.svg') }}"
@@ -82,6 +83,7 @@
                         </p>
                     </div>
                 </div>
+
                 <div class="col-lg-4">
                     <div class="latest-update">
                         <h5>Last Updated on : <span class="" style="font-size: 0.875rem;">

@@ -70,6 +70,19 @@
                     <!-- Property Title and Slug in one line -->
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label>Featured</label>
+                            <div class="checkbox-inline">
+                                <label class="checkbox checkbox-success">
+                                    <input type="checkbox" wire:model="property.featured"
+                                        {{ $property->featured ? 'checked' : '' }} />
+                                    <span></span>
+                                    Mark as Featured
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label>Title</label>
                             <input wire:model.live.debounce.900ms="property.title" type="text"
                                 class="form-control @error('property.title') border border-danger @enderror">
@@ -104,10 +117,24 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Area (in sq. ft.)</label>
-                            <input wire:model="property.area" type="text"
+                            <label>Area </label>
+                            <input wire:model="property.area" type="number"
                                 class="form-control @error('property.area') border border-danger @enderror">
                             @error('property.area')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="property-size">Property Size</label>
+                            <select wire:model="property.marla" id="property-size" class="form-control @error('property.marla') border border-danger @enderror">
+                                <option value="">Select Size</option>
+                                <option value="sq_ft">Square Feet</option>
+                                <option value="marla">Marla</option>
+                                <option value="kanal">Kanal</option>
+                            </select>
+                            @error('property.marla')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -125,19 +152,6 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Featured</label>
-                            <div class="checkbox-inline">
-                                <label class="checkbox checkbox-success">
-                                    <input type="checkbox" wire:model="property.featured"
-                                        {{ $property->featured ? 'checked' : '' }} />
-                                    <span></span>
-                                    Mark as Featured
-                                </label>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Property Status and Main Image in one line -->
                     <div class="col-md-6">
