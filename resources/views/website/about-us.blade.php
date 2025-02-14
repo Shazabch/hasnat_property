@@ -207,144 +207,25 @@
                     </div>
                 </div>
             <div class="row">
+                @foreach($teamData as $team)
                 <div class="col-lg-4 col-md-6">
                     <div class="agent-card card flex-fill">
                         <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
+                            @if($team->image)
+                        <img src="{{ asset('/' . $team->image) }}" alt="{{ $team->name }}" class="img-fluid">
+                    @else 
+                    <img src="default-image.jpg" alt="No Image" class="img-fluid">
+                    @endif
                         </div>
                         <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
                             <h6>
-                                Mike Rutter
+                              <b class="text-warning">Name :</b> {{$team->name }}
                             </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
+                            <p class="mb-0"><i class="bx bx-user-voice"></i><b>Designation :</b>  {{ $team->designation }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
-                        <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
-                        </div>
-                        <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
-                            <h6>
-                                Mike Rutter
-                            </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
-                        <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
-                        </div>
-                        <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
-                            <h6>
-                                Mike Rutter
-                            </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
-                        <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
-                        </div>
-                        <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
-                            <h6>
-                                Mike Rutter
-                            </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
-                        <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
-                        </div>
-                        <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
-                            <h6>
-                                Mike Rutter
-                            </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
-                        <div class="agent-img">
-                            <img class="img-fluid" alt="Property Image" src="https://dreamsestate.dreamstechnologies.com/html/assets/img/agents/agent-01.jpg">
-                        </div>
-                        <div class="agent-content">
-                            <div class="rating">
-                                <span class="rating-count">
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                    <i class="fa-solid fa-star checked"></i>
-                                </span>
-                                <p class="rating-review"><span>5.0</span>(20 Reviews)</p>
-                            </div>
-                            <h6>
-                                Mike Rutter
-                            </h6>
-                            <p class="mb-0"><i class="bx bx-user-voice"></i>Selling Agent</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

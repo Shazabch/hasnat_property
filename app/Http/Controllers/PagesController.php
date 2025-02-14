@@ -8,6 +8,7 @@ use App\Models\Properties;
 use App\Models\Publication;
 use \App\Models\Project;
 use \App\Models\Rate;
+use App\Models\TeamSection;
 use App\Models\WebPage;
 use Illuminate\Http\Request;
 
@@ -70,12 +71,13 @@ class PagesController extends Controller
     public function aboutUs()
     {
         $pageData = WebPage::getPageData('about-us');
-        return view('website.about-us', compact('pageData'));
+        $teamData = TeamSection::all();
+        return view('website.about-us', compact('pageData', 'teamData'));
     }
     public function contactUs()
     {
         $pageData = WebPage::getPageData('contact-us');
-        // dd($pageData);
+        
         return view('website.contact-us', compact('pageData'));
     }
     public function reviews()

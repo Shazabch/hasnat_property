@@ -1502,13 +1502,20 @@
 			// close the modal with id schemaModal
 			window.addEventListener('close-schema-modal', event => {
 				$('#schemaModal').modal('hide');
-			})
-
+			});
+            window.addEventListener('close-modal', event => {
+				$('#teamModal').modal('hide');
+			});
 			// open the modal with id schemaModal
 			window.addEventListener('open-schema-modal', event => {
 				$('#schemaModal').modal('show');
-			})
-
+			});
+            // window.addEventListener('open-modal', event => {
+			// 	$('#AddNewModal').modal('show');
+			// });
+            // window.addEventListener('close-modal', event => {
+			// 	$('#AddNewModal').modal('hide');
+			// });
 			$('.logout-button').on('click',function(e){
 				e.preventDefault();
 				submitLogoutForm();

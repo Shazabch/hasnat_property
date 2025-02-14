@@ -75,71 +75,79 @@
     ],
     [
     "name" => "Property Management",
-    "icon" => "fas fa-tasks", // Settings/Management Icon
+    "icon" => "fas fa-tasks",
     "permissions" => ['user-management', 'role-management'],
     "route" => "admin.system",
     "submenu" => [
         [
             "name" => "Properties",
-            "icon" => "fas fa-building", // Building/Real Estate Icon
+            "icon" => "fas fa-building",
             "permissions" => [],
             "route" => "admin.properties.index"
         ],
         [
             "name" => "Specifications",
-            "icon" => "fas fa-list-ul", // List Icon for Specifications
+            "icon" => "fas fa-list-ul",
             "permissions" => [],
             "route" => "admin.specifications.index"
         ],
         [
             "name" => "Amenetise",
-            "icon" => "fas fa-concierge-bell", // Bell Icon for Amenities
+            "icon" => "fas fa-concierge-bell",
             "permissions" => [],
             "route" => "admin.amenetise.index"
         ],
         [
             "name" => "Property Enquiry",
-            "icon" => "fas fa-question-circle", // Question Icon for Enquiries
+            "icon" => "fas fa-question-circle",
             "permissions" => [],
             "route" => "admin.property-enquiries.property-enquiries"
         ],
     ]
 ],
 
+
     [
     "name" => "Content Management",
-    "icon" => "fas fa-folder-open", // Folder icon for content management
+    "icon" => "fas fa-folder-open",
     "permissions" => [''],
     "is_section" => "true",
 ],
+[
+    "name" => "Team Management",
+    "icon" => "fas fa-users",
+    "permissions" => [],
+    "route" => "admin.team-section.team"
+],
+
 
 [
     "name" => "Projects",
-    "icon" => "fas fa-building", // Building icon for projects
+    "icon" => "fas fa-building",
     "permissions" => [],
     "route" => "admin.projects.index"
 ],
 [
     "name" => "Property Rates",
-    "icon" => "fas fa-money-bill-wave", // Money icon for property rates
+    "icon" => "fas fa-money-bill-wave",
     "permissions" => [],
     "route" => "admin.rates.index"
 ],
 [
     "name" => "Reviews",
-    "icon" => "fas fa-star", // Star icon for reviews/testimonials
+    "icon" => "fas fa-star",
     "permissions" => [],
     "route" => "admin.testimonials.index"
 ],
 [
     "name" => "Blogs",
-    "icon" => "fas fa-blog", // Blog icon for publications
+    "icon" => "fas fa-blog",
     "permissions" => [],
     "route" => "admin.publications.index"
 ],
 [
     "name" => "Web Pages",
-    "icon" => "fas fa-globe", // Globe icon for web pages
+    "icon" => "fas fa-globe",
     "permissions" => [],
     "route" => "admin.web-pages.index"
 ],

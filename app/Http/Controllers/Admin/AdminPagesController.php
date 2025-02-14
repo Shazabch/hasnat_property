@@ -198,6 +198,10 @@ class AdminPagesController extends Controller
     {
         return view('admin.home-pages.index');
     }
+    public function teamSection()
+    {
+        return view('admin.team.index');
+    }
     public function getFilterResults(Request $request)
     {
         $type = $request->type;

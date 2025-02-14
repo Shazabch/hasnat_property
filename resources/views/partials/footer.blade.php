@@ -33,12 +33,25 @@
                                 <div class="shareArticle">
                                     <div class="shareSocial">
                                         <ul class="socialList">
-                                            <li><a target="_blank" href="https://www.facebook.com/irfan.malik.neuro/"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                            <li><a target="_blank" href="https://www.linkedin.com/in/irfan-malik-6a941467/"><i class="fa-brands fa-linkedin"></i></a></li>
-                                            <li><a target="_blank" href="https://www.instagram.com/irfanmalikspine/"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li>
+                                                <a target="_blank" href="https://www.facebook.com/hasnatproperties">
+                                                    <i class="fa-brands fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://www.linkedin.com/in/hasnatproperties">
+                                                    <i class="fa-brands fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://www.instagram.com/hasnatproperties">
+                                                    <i class="fa-brands fa-instagram"></i>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
