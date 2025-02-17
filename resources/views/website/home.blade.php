@@ -59,7 +59,7 @@
         </div>
     </section>
     <!-- Expertise -->
-    {{-- <section class="speciality-area overflow-x py-1">
+     <section class="speciality-area overflow-x py-1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -89,9 +89,9 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
-    {{-- <section class="qualifications py-70">
+     {{-- <section class="qualifications py-70">
         <div class="container qualification-section">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -256,7 +256,7 @@
         </div>
     </section>
 
-    <section class="testimonials after-images bg-dark2">
+    {{-- <section class="testimonials after-images bg-dark2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -281,7 +281,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- Publications -->

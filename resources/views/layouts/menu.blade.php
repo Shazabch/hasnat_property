@@ -152,7 +152,12 @@
     "route" => "admin.web-pages.index"
 ],
 
-
+[
+        "name" => "Expertise",
+        "icon" => "far fa-id-card",
+        "permissions" => [],
+        "route" => "admin.expertise.index"
+    ],
 
 
 ];
@@ -167,13 +172,8 @@
         "permissions" => [],
         "route" => "admin.conditions.index"
     ],
-    [
-        "name" => "Expertise",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.expertise.index"
-    ], -->
 
+-->
 
 
 <ul class="menu-nav">

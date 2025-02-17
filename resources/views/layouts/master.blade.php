@@ -41,7 +41,7 @@
         <title>@yield('meta_title')</title>
         <meta name="description" content="@yield('meta_description')">
         <meta name="keywords" content="@yield('meta_keywords')">
-        <link rel="icon" type="image/png" href="{{ asset('front/assets/img/favicon.png') }}">
+        <link rel="icon" type="image" href="{{ asset('assets/media/bg/hasnat-logo.svg') }}">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="google-site-verification" content="Nu8YejORF8UIxAJaipcyD0geKFnrTijfoXYYCQqf15k" />
 		@stack('styles')
