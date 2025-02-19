@@ -58,135 +58,42 @@
             </div>
         </div>
     </section>
-    <!-- Expertise -->
-     <section class="speciality-area overflow-x py-1">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="speciality-left py-5 px-0">
-                        <div class="section-title no-after pt-0 ps-0 mb-0 text-center">
-                            <p class="after-circle text-thin after-circle mx-auto text-primary">Speciality</p>
-                            <h2>Expertise</h2>
-                            <p class="mt-2 mb-4">Renowned for his exceptional skill, Mr.Hasnat Properties is a leading consultant spinal neurosurgeon with 30+ years of experience. His expertise spans Endoscopic, Robotic Spine and Sports Injuries procedures for various spinal conditions, including degenerative, traumatic, and malignant disorders.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="speciality-item">
-                        <div class="row">
-                            @foreach ($dashboard_expertises as $expertise)
-                                @include('website.expertise.dashboard_card', ['expertise' => $expertise])
-                            @endforeach
-                        </div>
-                        <div class="row" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="300">
-                            <div class="col-lg-12 mt-4 text-center">
-                                <a href="{{ route('expertise') }}" class="button smaller mouse_go">View All</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-     {{-- <section class="qualifications py-70">
-        <div class="container qualification-section">
+    <section class="section-team bg-dark">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title no-after pt-0 ps-0 text-center">
                         <p class="after-circle text-thin after-circle mx-auto text-white">Expert and Comprehensive</p>
-                        <h2 class="text-center text-secondary">Services</h2>
+                        <h2 class="text-center text-secondary">Our Expert Team</h2>
                         <p class="text-white">
-                            For top real estate services in Bahria Town Lahore, trust Hasnat Properties. We specialize in buying, selling, and renting properties with unmatched expertise. Our team is dedicated to providing seamless, reliable, and customer-focused solutions to meet all your real estate needs.
+                            We listed our oppertunity and servies as a real estate company
                         </p>
                     </div>
                 </div>
-            </div>
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
+                @foreach($teamData as $team)
+                <div class="col-lg-4 col-md-6">
+                    <div class="agent-card card flex-fill">
+                        <div class="agent-img">
+                            @if($team->image)
+                        <img src="{{ asset('/' . $team->image) }}" alt="{{ $team->name }}" class="img-fluid">
+                    @else
+                    <img src="default-image.jpg" alt="No Image" class="img-fluid">
+                    @endif
                         </div>
-                        <div class="th-card-1-content">
-                            <h2>Property Buying</h2>
-                            <p class="disc">
-                                Find your dream home or investment property with our expert guidance in Bahria Town Lahore.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
-                        </div>
-                        <div class="th-card-1-content">
-                            <h2>Property Selling</h2>
-                            <p class="disc">
-                                Get the best value for your property with our hassle-free and professional selling services.
-                            </p>
+                        <div class="agent-content">
+                            <h6>
+                              <b class="text-warning">Name :</b> {{$team->name }}
+                            </h6>
+                            <p class="mb-0"><i class="bx bx-user-voice"></i><b>Designation :</b>  {{ $team->designation }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
-                        </div>
-                        <div class="th-card-1-content">
-                            <h2>Property Renting</h2>
-                            <p class="disc">
-                                Explore a wide range of rental options tailored to your preferences and budget.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
-                        </div>
-                        <div class="th-card-1-content">
-                            <h2>Real Estate Consultancy</h2>
-                            <p class="disc">
-                                Receive expert advice and market insights to make informed real estate decisions.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
-                        </div>
-                        <div class="th-card-1-content">
-                            <h2>Property Management</h2>
-                            <p class="disc">
-                                Trust us to handle your property maintenance and tenant management efficiently.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="th-card-1 shadow" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
-                        <div class="th-card-1-img">
-                            <img src="{{ asset('front/assets/img/hospital.png') }}" class="obj_fit" alt="">
-                        </div>
-                        <div class="th-card-1-content">
-                            <h2>Investment Opportunities</h2>
-                            <p class="disc">
-                                Discover lucrative real estate investments with guaranteed returns and growth potential.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </section> --}}
-
+    </section>
     <section class="section-properties bg-dark2">
         <div class="container">
             <div class="row justify-content-center">

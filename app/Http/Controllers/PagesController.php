@@ -17,12 +17,13 @@ class PagesController extends Controller
     public function home()
     {
         $pageData = WebPage::getPageData('home');
+        $teamData = TeamSection::all();
         // $testimonials = \App\Models\Testimonial::published()->ordered()->get();
         $testimonials = \App\Models\Testimonial::published()->inRandomOrder()->take(6)->get();
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
         $properties = Properties::where('status',1)->take(3)->get();
         $homeSections = HomePage::latest()->first();
-        return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties','homeSections'));
+        return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties','homeSections', 'teamData'));
     }
     public function conditionsListing()
     {
@@ -77,7 +78,7 @@ class PagesController extends Controller
     public function contactUs()
     {
         $pageData = WebPage::getPageData('contact-us');
-        
+
         return view('website.contact-us', compact('pageData'));
     }
     public function reviews()

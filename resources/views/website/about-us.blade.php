@@ -12,8 +12,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title no-after pt-0 ps-0">
-                        <p class="after-circle text-white text-thin after-circle mx-auto">About Hasnat Property Newtwork</p>
-                        <h2 class="text-center text-secondary">About Hasnat Property Newtwork</h2>
+                        <p class="after-circle text-white text-thin after-circle mx-auto">About Hasnat Properties</p>
+                        <h2 class="text-center text-secondary">About Hasnat Properties</h2>
                         <div class="page-title-item mt-0 mx-auto">
                             <ul class="text-center">
                                 <li>
@@ -22,7 +22,7 @@
                                 <li>
                                     <i class="icofont-simple-right"></i>
                                 </li>
-                                <li>About Hasnat Property Newtwork</li>
+                                <li>About Hasnat Properties</li>
                             </ul>
                         </div>
                     </div>
@@ -44,17 +44,17 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h2 class="title"><span>Hasnat</span> Property <br> Newtwork</h2>
+                    <h2 class="title"><span>Hasnat</span> Property <br> Network</h2>
                     <h3 class="dis1 pb-20">Your Trusted Partner in Real Estate Excellence</h3>
                     <p class="text-white">
-                        Welcome to Hasnat Property Network, your trusted partner in real estate. Based in Bahria Town
+                        Welcome to Hasnat Properties, your trusted partner in real estate. Based in Bahria Town
                         Lahore, we pride ourselves on delivering exceptional property solutions tailored to your needs.
                         Whether you’re looking to buy, sell, or rent, our experienced team combines local expertise with a
                         customer-first approach to ensure a seamless experience.
                     </p>
                     <div class="dis2 pb-50">
                         <p class="text-white">
-                            At Hasnat Property Network, we prioritize transparency, professionalism, and client
+                            At Hasnat Properties, we prioritize transparency, professionalism, and client
                             satisfaction. Our mission is to simplify the real estate journey by offering personalized
                             services, market insights, and unparalleled support.
                         </p>
@@ -213,7 +213,7 @@
                         <div class="agent-img">
                             @if($team->image)
                         <img src="{{ asset('/' . $team->image) }}" alt="{{ $team->name }}" class="img-fluid">
-                    @else 
+                    @else
                     <img src="default-image.jpg" alt="No Image" class="img-fluid">
                     @endif
                         </div>
