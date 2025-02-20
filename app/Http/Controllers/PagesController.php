@@ -23,7 +23,34 @@ class PagesController extends Controller
         $publications = \App\Models\Publication::with(['type'])->published()->latest()->take(3)->get();
         $properties = Properties::where('status',1)->take(3)->get();
         $homeSections = HomePage::latest()->first();
-        return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties','homeSections', 'teamData'));
+        $expertise= [
+            [ 'url' => '/assets/media/expertise/1.e.jpg','title' => 'Expertise1'],
+            [ 'url' => '/assets/media/expertise/2.e.jpg','title' => 'Expertise2'],
+            [ 'url' => '/assets/media/expertise/3.e.jpg','title' => 'Expertise3'],
+            [ 'url' => '/assets/media/expertise/4.e.jpg','title' => 'Expertise4'],
+            [ 'url' => '/assets/media/expertise/5.e.jpg','title' => 'Expertise5'],
+            [ 'url' => '/assets/media/expertise/1.e.jpg','title' => 'Expertise1'],
+            [ 'url' => '/assets/media/expertise/2.e.jpg','title' => 'Expertise2'],
+            [ 'url' => '/assets/media/expertise/3.e.jpg','title' => 'Expertise3'],
+            [ 'url' => '/assets/media/expertise/4.e.jpg','title' => 'Expertise4'],
+            [ 'url' => '/assets/media/expertise/5.e.jpg','title' => 'Expertise5'],
+            [ 'url' => '/assets/media/expertise/1.e.jpg','title' => 'Expertise1'],
+            [ 'url' => '/assets/media/expertise/2.e.jpg','title' => 'Expertise2'],
+            [ 'url' => '/assets/media/expertise/3.e.jpg','title' => 'Expertise3'],
+            [ 'url' => '/assets/media/expertise/4.e.jpg','title' => 'Expertise4'],
+            [ 'url' => '/assets/media/expertise/5.e.jpg','title' => 'Expertise5'],
+            [ 'url' => '/assets/media/expertise/1.e.jpg','title' => 'Expertise1'],
+            [ 'url' => '/assets/media/expertise/2.e.jpg','title' => 'Expertise2'],
+            [ 'url' => '/assets/media/expertise/3.e.jpg','title' => 'Expertise3'],
+            [ 'url' => '/assets/media/expertise/4.e.jpg','title' => 'Expertise4'],
+            [ 'url' => '/assets/media/expertise/5.e.jpg','title' => 'Expertise5'],
+
+
+
+
+        ];
+
+        return view('website.home', compact('testimonials', 'publications', 'pageData' , 'properties','homeSections', 'teamData','expertise'));
     }
     public function conditionsListing()
     {

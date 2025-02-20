@@ -74,7 +74,7 @@
             <div class="row">
                 @foreach($teamData as $team)
                 <div class="col-lg-4 col-md-6">
-                    <div class="agent-card card flex-fill">
+                    <div class="agent-card card ">
                         <div class="agent-img">
                             @if($team->image)
                         <img src="{{ asset('/' . $team->image) }}" alt="{{ $team->name }}" class="img-fluid">
@@ -189,9 +189,33 @@
             </div>
         </div>
     </section> --}}
+    <section class="section-team bg-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title no-after pt-0 ps-0 text-center">
+                        <p class="after-circle text-thin after-circle mx-auto text-white">Societies we have work with</p>
+                        <h2 class="text-center text-secondary">Our Associations</h2>
+                        {{-- <p class="text-white"></p> --}}
+                    </div>
+                </div>
+            </div>
 
+            <div class="marquee-carousel-container">
+                <div class="marquee-carousel d-flex">
+                    @foreach ($expertise as $item)
+                    <div class="expert-card card  text-center ">
+                        <div class="expert-img">
+                            <img src="{{ asset($item['url']) }}" alt="{{ $item['title'] }}" class="img-fluid ">
+                        </div>
+                    </div>
+                    @endforeach
 
-    <!-- Publications -->
+                </div>
+            </div>
+    </section>
+
+    <!-- publications -->
     <section class="blog-area bg-dark">
         <div class="container">
             <div class="row justify-content-center">
@@ -220,4 +244,36 @@
         </div>
     </section>
     @include('website.common.newsletter')
+    <style>
+        .marquee-carousel-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            height: 150px;
+        }
+        .marquee-carousel {
+            display: flex;
+            gap: 15px;
+            /* animation: marquee 30s linear infinite; */
+        }
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .expert-card {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .expert-img img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover; /* Ensures all images maintain aspect ratio and fill container */
+            border-radius: 10px;
+        }
+    </style>
 @endsection

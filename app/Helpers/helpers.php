@@ -102,4 +102,8 @@ function getQualifications(){
             'qualification' => 'FAMB BSRCS',
         ],
     ];
+    function getCurrency()
+    {
+        return 'PKR';
+    }
 }
