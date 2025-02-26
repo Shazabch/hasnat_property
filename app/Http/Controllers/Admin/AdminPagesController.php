@@ -202,6 +202,13 @@ class AdminPagesController extends Controller
     {
         return view('admin.team.index');
     }
+    public function tokenReceipt()
+    {
+        // If you need to fetch data, do it here
+        // Example: $tokenReceipts = TokenReceipt::all();
+
+        return view('admin.tokens.index'); // Make sure this file exists
+    }
     public function getFilterResults(Request $request)
     {
         $type = $request->type;

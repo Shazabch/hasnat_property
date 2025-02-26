@@ -134,6 +134,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::prefix('team-section')->name('team-section.')->group(function () {
         Route::get('/', [AdminPagesController::class, 'teamSection'])->name('team');
     });
+    Route::prefix('token-receipt')->name('token-receipt.')->group(function () {
+        Route::get('/', [AdminPagesController::class, 'tokenReceipt'])->name('token');
+    });
+
 });
 
 require __DIR__.'/auth.php';

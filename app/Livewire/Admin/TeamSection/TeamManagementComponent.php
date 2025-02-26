@@ -75,7 +75,7 @@ class TeamManagementComponent extends Component
         $this->resetInputFields();
         $this->dispatch('close-modal');
         $this->dispatch('success-box', ['message' => $message]);
-        
+
     }
 
     public function resetInputFields()

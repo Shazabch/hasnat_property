@@ -105,7 +105,12 @@
         ],
     ]
 ],
-
+[
+    "name" => "Token Receipt Management",
+    "icon" => "fas fa-receipt",
+    "permissions" => [],
+    "route" => "admin.token-receipt.token",
+],
 
     [
     "name" => "Content Management",

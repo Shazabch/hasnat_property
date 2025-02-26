@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h2 class="title"><span>Hasnat</span> Property <br> Network</h2>
+                    <h2 class="title"><span class="text-warning">Hasnat</span> Properties </h2>
                     <h3 class="dis1 pb-20">Your Trusted Partner in Real Estate Excellence</h3>
                     <p class="text-white">
                         Welcome to Hasnat Properties, your trusted partner in real estate. Based in Bahria Town

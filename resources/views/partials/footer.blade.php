@@ -26,8 +26,11 @@
                                     </li>
                                     <li>
                                         <i class="icofont-location-pin"></i>
-                                        <a href="https://maps.app.goo.gl/MpQDCuD1KVC5LLUZ6" target="_blank"> {{ $address_line_1 }} {{ $address_line_2 }}<br> {{ $address_line_3 }}</a>
+                                        <a href="https://maps.app.goo.gl/VawBGXtFt1pyJzSs7" target="_blank">
+                                            {{ $address_line_1 }} {{ $address_line_2 }}<br> {{ $address_line_3 }}
+                                        </a>
                                     </li>
+
                                 </ul>
                                 <h3 class="mt-5">Social Links</h3>
                                 <div class="shareArticle">
@@ -39,8 +42,8 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a target="_blank" href="https://www.linkedin.com/in/hasnatproperties">
-                                                    <i class="fa-brands fa-linkedin"></i>
+                                                <a target="_blank" href="#">
+                                                    <i class="fa-brands fa-youtube"></i>
                                                 </a>
                                             </li>
                                             <li>
@@ -51,7 +54,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -82,7 +85,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="footer-item">
                             <div class="footer-quick">
-                                <h3>Our Expertise</h3>
+                                {{-- <h3>Our Expertise</h3>
                                 <ul>
                                     @foreach ($dashboard_expertises as $expertise)
                                         <li>
@@ -92,7 +95,7 @@
                                     <li>
                                         <a class="text-secondary" href="{{ route('expertise') }}">View ALL</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                     </div>
@@ -104,7 +107,10 @@
         <div class="copyright-area">
             <div class="container">
                 <div class="copyright-item">
-                    <p>Copyright © {{ date('Y') }} All rights reserved <span class="text-secondary">Hasnat Properties</span></p>
+                    <p>Copyright © {{ date('Y') }} All rights reserved
+                        <span class="text-secondary">Hasnat Properties</span> |
+                        Developed by <span class="text-warning">Majestic Softs</span>
+                    </p>
                 </div>
             </div>
         </div>
