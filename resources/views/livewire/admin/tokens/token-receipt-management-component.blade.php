@@ -32,7 +32,7 @@
 
         <div class="col-md-4 mb-3">
             <label for="agent" class="fw-bold">Select Agent</label>
-            <select wire:model="selectedAgent" id="agent" class="form-control search-dropdown">
+            <select wire:model="tokenReceipt.agent_id" id="agent" class="form-control search-dropdown">
                 <option value="">-- Choose an Agent --</option>
                 @foreach ($agents as $agent)
                     <option value="{{ $agent->id }}">{{ $agent->name }}</option>
@@ -42,7 +42,7 @@
 
         <div class="col-md-4 mb-3">
             <label for="property" class="fw-bold">Select Property</label>
-            <select wire:model="selectedProperty" id="property" class="form-control search-dropdown">
+            <select wire:model="tokenReceipt.property_id" id="property" class="form-control search-dropdown">
                 <option value="">-- Choose a Property --</option>
                 @foreach ($properties as $property)
                     <option value="{{ $property->id }}">{{ $property->title }}</option>
@@ -67,6 +67,18 @@
         </div>
     </div>
 </div>
+<div>
+    <script>
+        window.addEventListener('success-box', event => {
+            Swal.fire({
+                title: 'Success!',
+                text: event.detail.message,
+                icon: 'success',
+            });
+        });
+    </script>
+</div>
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         new TomSelect("#property", {

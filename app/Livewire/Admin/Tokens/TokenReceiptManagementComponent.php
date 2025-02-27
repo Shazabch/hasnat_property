@@ -14,21 +14,22 @@ class TokenReceiptManagementComponent extends Component
     public $agents = [];
     public $properties = [];
     public $tokenReceipts = [];
-    public $tokenReceipt;
+    public TokenReipet $tokenReceipt;
     public $selectedAgent;
     public $selectedProperty;
+    public $editID;
 
     public function rules()
     {
         return [
-            'tokenReceipt.token_id' => 'required',
-            'tokenReceipt.token_amount' => 'required',
-            'tokenReceipt.seller_id' => 'required',
-            'tokenReceipt.buyer_id' => 'required',
-            'tokenReceipt.agent_id' => 'required',
-            'tokenReceipt.property_id' => 'required',
-            'tokenReceipt.start_date' => 'required|date',
-            'tokenReceipt.end_date' => 'required|date|after_or_equal:tokenReceipt.start_date',
+            'tokenReceipt.token_id' => 'nullable',
+            'tokenReceipt.token_amount' => 'nullable',
+            'tokenReceipt.seller_id' => 'nullable',
+            'tokenReceipt.buyer_id' => 'nullable',
+            'tokenReceipt.agent_id' => 'nullable',
+            'tokenReceipt.property_id' => 'nullable',
+            'tokenReceipt.start_date' => 'nullable|date',
+            'tokenReceipt.end_date' => 'nullable|date',
         ];
     }
     public function addNew()
@@ -37,6 +38,7 @@ class TokenReceiptManagementComponent extends Component
     }
     public function editItem($id)
     {
+        $this->editID = $id;
         $this->tokenReceipt = TokenReipet::find($id);
     }
 
@@ -45,29 +47,13 @@ class TokenReceiptManagementComponent extends Component
         $this->agents = TeamSection::where('designation', 'Agent')->get();
         $this->properties = Properties::all();
         $this->tokenReceipts = TokenReipet::all();
+        $this->tokenReceipt = TokenReipet::find($this->editID) ?? new TokenReipet();
     }
     public function addEntry()
     {
         $this->validate();
-
-        if ($this->tokenReceipt->id) {
-            $receipt = TokenReipet::find($this->tokenReceipt->id);
-            $message = 'Token Receipt updated successfully';
-        } else {
-            $receipt = new TokenReipet();
-            $message = 'Token Receipt added successfully';
-        }
-
-        $receipt->token_id = $this->tokenReceipt->token_id;
-        $receipt->token_amount = $this->tokenReceipt->token_amount;
-        $receipt->seller_id = $this->tokenReceipt->seller_id;
-        $receipt->buyer_id = $this->tokenReceipt->buyer_id;
-        $receipt->agent_id = $this->tokenReceipt->agent_id;
-        $receipt->property_id = $this->tokenReceipt->property_id;
-        $receipt->start_date = $this->tokenReceipt->start_date;
-        $receipt->end_date = $this->tokenReceipt->end_date;
-
-        $receipt->save();
+        $this->tokenReceipt->save();
+        $message = 'Token Receipt Saved successfully';
         $this->resetInputFields();
         $this->dispatch('success-box', ['message' => $message]);
     }
@@ -85,7 +71,10 @@ class TokenReceiptManagementComponent extends Component
 
         $this->tokenReceipts = $query->get();
     }
-
+    public function resetInputFields()
+    {
+        $this->tokenReceipt = new TokenReipet();
+    }
     public function render()
     {
         return view('livewire.admin.tokens.token-receipt-management-component' , [
