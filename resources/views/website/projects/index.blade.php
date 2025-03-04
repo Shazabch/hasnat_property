@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('meta_title', "{Projects}")
+@section('meta_title', "Projects")
 @section('meta_description', "Projects")
 
 @section('content')
