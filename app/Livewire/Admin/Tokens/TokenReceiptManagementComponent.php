@@ -22,10 +22,12 @@ class TokenReceiptManagementComponent extends Component
     public $editID;
     public $isSellerModalOpen = false;
     public $isBuyerModalOpen = false;
+    public $isPreviewModalOpen = false;
     public $sellers;
     public $buyers;
     public $seller_name, $seller_email, $seller_phone, $seller_cnic, $seller_adress;
     public $buyer_name, $buyer_email, $buyer_phone, $buyer_cnic, $buyer_adress;
+    public $selectedBuyer;
 
 
     public function rules()
@@ -39,6 +41,8 @@ class TokenReceiptManagementComponent extends Component
             'tokenReceipt.property_id' => 'nullable',
             'tokenReceipt.start_date' => 'nullable|date',
             'tokenReceipt.end_date' => 'nullable|date',
+            'tokenReceipt.token_type' => 'nullable',
+            'tokenReceipt.agent_comission' => 'nullable',
         ];
     }
     public function addNew()
@@ -46,6 +50,7 @@ class TokenReceiptManagementComponent extends Component
         $this->resetInputFields();
         $this->generateTokenID();
     }
+
     public function editItem($id)
     {
         $this->editID = $id;
@@ -71,9 +76,9 @@ class TokenReceiptManagementComponent extends Component
         $this->dispatch('success-box', ['message' => $message]);
     }
     public function generateTokenID()
-{
-    $this->tokenReceipt->token_id = 'HSP-' . strtoupper(uniqid());
-}
+    {
+        $this->tokenReceipt->token_id = 'HSP-' . strtoupper(uniqid());
+    }
 
     public function searchTokenReceipts()
     {
@@ -115,68 +120,82 @@ class TokenReceiptManagementComponent extends Component
 
 
     public function resetSellerFields()
-{
-    $this->seller_name = '';
-    $this->seller_email = '';
-    $this->seller_phone = '';
-    $this->seller_cnic = '';
-    $this->seller_adress = '';
-}
- public function resetBuyerFields()
- {
-     $this->buyer_name = '';
-     $this->buyer_email = '';
-     $this->buyer_phone = '';
-     $this->buyer_cnic = '';
-     $this->buyer_adress = '';
- }
-public function saveSeller()
-{
-    $this->validate([
-        'seller_name' => 'nullable|string|max:255',
-        'seller_email' => 'nullable',
-        'seller_phone' => 'nullable|string|max:20',
-        'seller_cnic' => 'nullable|string|max:20',
-        'seller_adress' => 'nullable|string|max:255',
-    ]);
-
-    $seller = Seller::create([
-        'seller_name' => $this->seller_name,
-        'seller_email' => $this->seller_email,
-        'seller_phone' => $this->seller_phone,
-        'seller_cnic' => $this->seller_cnic,
-        'seller_adress' => $this->seller_adress,
-    ]);
-    $this->tokenReceipt['seller_id'] = $seller->id;
-    $this->closeSellerModal();
-    $this->sellers = Seller::all();
-
-    session()->flash('message', 'Seller Added Successfully');
-}
-public function saveBuyer() {
-    $this->validate([
-        'buyer_name' => 'nullable|string|max:255',
-        'buyer_email' => 'nullable',
-        'buyer_phone' => 'nullable|string|max:20',
-        'buyer_cnic' => 'nullable|string|max:20',
-        'buyer_adress' => 'nullable|string|max:255',
-    ]);
-    $buyer = Buyer::create([
-        'buyer_name' => $this->buyer_name,
-        'buyer_email' => $this->buyer_email,
-        'buyer_phone' => $this->buyer_phone,
-        'buyer_cnic' => $this->buyer_cnic,
-        'buyer_adress' => $this->buyer_adress,
+    {
+        $this->seller_name = '';
+        $this->seller_email = '';
+        $this->seller_phone = '';
+        $this->seller_cnic = '';
+        $this->seller_adress = '';
+    }
+    public function resetBuyerFields()
+    {
+        $this->buyer_name = '';
+        $this->buyer_email = '';
+        $this->buyer_phone = '';
+        $this->buyer_cnic = '';
+        $this->buyer_adress = '';
+    }
+    public function saveSeller()
+    {
+        $this->validate([
+            'seller_name' => 'nullable|string|max:255',
+            'seller_email' => 'nullable',
+            'seller_phone' => 'nullable|string|max:20',
+            'seller_cnic' => 'nullable|string|max:20',
+            'seller_adress' => 'nullable|string|max:255',
         ]);
-        $this->tokenReceipt['buyer_id'] = $buyer->id;
+
+        $seller = Seller::create([
+            'seller_name' => $this->seller_name,
+            'seller_email' => $this->seller_email,
+            'seller_phone' => $this->seller_phone,
+            'seller_cnic' => $this->seller_cnic,
+            'seller_adress' => $this->seller_adress,
+        ]);
+        $this->tokenReceipt->seller_id = $seller->id;
+        $this->closeSellerModal();
+        $this->sellers = Seller::all();
+
+        session()->flash('message', 'Seller Added Successfully');
+    }
+    public function saveBuyer()
+    {
+        $this->validate([
+            'buyer_name' => 'nullable|string|max:255',
+            'buyer_email' => 'nullable',
+            'buyer_phone' => 'nullable|string|max:20',
+            'buyer_cnic' => 'nullable|string|max:20',
+            'buyer_adress' => 'nullable|string|max:255',
+        ]);
+        $buyer = Buyer::create([
+            'buyer_name' => $this->buyer_name,
+            'buyer_email' => $this->buyer_email,
+            'buyer_phone' => $this->buyer_phone,
+            'buyer_cnic' => $this->buyer_cnic,
+            'buyer_adress' => $this->buyer_adress,
+        ]);
+        $this->tokenReceipt->buyer_id = $buyer->id;
         $this->closeBuyerModal();
         $this->buyers = Buyer::all();
         session()->flash('message', 'Buyer Added Successfully');
     }
-        public function render()
+
+       public function openPreviewModal()
+       {
+        $this->isPreviewModalOpen = true;
+        $this->selectedBuyer = Buyer::find($this->tokenReceipt->buyer_id);
+
+       }
+       public function closePreviewModal()
+       {
+           $this->isPreviewModalOpen = false;
+           $this->dispatch('close-modal');
+       }
+
+    public function render()
     {
-        return view('livewire.admin.tokens.token-receipt-management-component' , [
-             'tokenReceipts' => TokenReipet::paginate(10)
+        return view('livewire.admin.tokens.token-receipt-management-component', [
+            'tokenReceipts' => TokenReipet::paginate(10)
         ]);
     }
 }
