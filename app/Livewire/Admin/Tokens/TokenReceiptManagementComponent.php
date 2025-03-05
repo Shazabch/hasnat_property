@@ -28,6 +28,9 @@ class TokenReceiptManagementComponent extends Component
     public $seller_name, $seller_email, $seller_phone, $seller_cnic, $seller_adress;
     public $buyer_name, $buyer_email, $buyer_phone, $buyer_cnic, $buyer_adress;
     public $selectedBuyer;
+    public $selectedSeller;
+
+
 
 
     public function rules()
@@ -184,6 +187,10 @@ class TokenReceiptManagementComponent extends Component
        {
         $this->isPreviewModalOpen = true;
         $this->selectedBuyer = Buyer::find($this->tokenReceipt->buyer_id);
+        $this->selectedSeller = Seller::find($this->tokenReceipt->seller_id);
+        $this->selectedAgent = TeamSection::find($this->tokenReceipt->agent_id);
+        $this->selectedProperty = Properties::find($this->tokenReceipt->property_id);
+
 
        }
        public function closePreviewModal()
