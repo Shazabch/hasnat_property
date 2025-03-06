@@ -9,6 +9,8 @@ use App\Models\TeamSection;
 use App\Models\TokenReipet;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 class TokenReceiptManagementComponent extends Component
 {
@@ -75,9 +77,45 @@ class TokenReceiptManagementComponent extends Component
         $this->validate();
         $this->tokenReceipt->save();
         $message = 'Token Receipt Saved successfully';
+        $this->generatePDF($this->tokenReceipt->id);
         $this->resetInputFields();
         $this->dispatch('success-box', ['message' => $message]);
     }
+    public function edit($id)
+{
+    $this->tokenReceipt = TokenReipet::find($id);
+}
+
+public function delete($id)
+{
+    TokenReipet::destroy($id);
+    session()->flash('message', 'Token Receipt Deleted Successfully!');
+    $this->mount(); // Data reload
+}
+
+public function generatePDF($id)
+{
+    $receipt = TokenReipet::find($id);
+    $selectedBuyer = Buyer::find($receipt->buyer_id);
+    $selectedSeller = Seller::find($receipt->seller_id);
+    $selectedAgent = TeamSection::find($receipt->agent_id);
+    $selectedProperty = Properties::find($receipt->property_id);
+
+    $pdf = Pdf::loadView('partials.token-invoice', [
+        'tokenReceipt' => $receipt,
+        'selectedBuyer' => $selectedBuyer,
+        'selectedSeller' => $selectedSeller,
+        'selectedAgent' => $selectedAgent,
+        'selectedProperty' => $selectedProperty
+    ]);
+
+    $filename = 'token_receipt_' . $id . '.pdf';
+    $path = 'token_receipts/' . $filename;
+
+    Storage::put($path, $pdf->output());
+    $receipt->pdf_url = $path;
+    $receipt->save();
+}
     public function generateTokenID()
     {
         $this->tokenReceipt->token_id = 'HSP-' . strtoupper(uniqid());
