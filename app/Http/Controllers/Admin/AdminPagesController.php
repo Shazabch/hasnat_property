@@ -204,10 +204,17 @@ class AdminPagesController extends Controller
     }
     public function tokenReceipt()
     {
-        // If you need to fetch data, do it here
-        // Example: $tokenReceipts = TokenReceipt::all();
+
 
         return view('admin.tokens.index'); // Make sure this file exists
+    }
+    public function tokenReceiptList()
+    {
+        return view('admin.tokens.list'); // Make sure this file exists
+    }
+    public function propertyHistory()
+    {
+        return view('admin.property-history.index'); // Make sure this file exists
     }
     public function getFilterResults(Request $request)
     {

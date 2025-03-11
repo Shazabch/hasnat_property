@@ -138,6 +138,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/', [AdminPagesController::class, 'tokenReceipt'])->name('token');
     });
 
+    Route::get('/token-receipt-list', [AdminPagesController::class, 'tokenReceiptList'])->name('token-receipt-list');
+    Route::get('/property-history', [AdminPagesController::class, 'propertyHistory'])
+    ->name('property-history');
+
 });
 
 require __DIR__.'/auth.php';

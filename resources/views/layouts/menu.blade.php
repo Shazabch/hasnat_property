@@ -103,6 +103,13 @@
             "permissions" => [],
             "route" => "admin.property-enquiries.property-enquiries"
         ],
+        [
+            "name" => "Property History",
+            "icon" => "fas fa-history",
+            "permissions" => [],
+            "route" => "admin.property-history"
+        ],
+
     ]
 ],
 [

@@ -1,6 +1,12 @@
 <div>
     <div class="container py-4">
-        <h4 class="mb-4 text-center text-primary">Token Receipt Management</h4>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="text-primary">Token Receipt Management</h4>
+
+            <a href="{{ route('admin.token-receipt-list') }}" class="btn btn-success">
+                View Token Receipt List
+            </a>
+        </div>
 
         @if (session()->has('message'))
             <div class="alert alert-success text-center">
