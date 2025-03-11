@@ -216,6 +216,10 @@ class AdminPagesController extends Controller
     {
         return view('admin.property-history.index'); // Make sure this file exists
     }
+    public function agentHistory()
+    {
+        return view('admin.team.agent-list');
+    }
     public function getFilterResults(Request $request)
     {
         $type = $request->type;

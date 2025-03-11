@@ -22,21 +22,21 @@
                     <thead class="bg-secondary text-dark fw-bold">
                         <tr>
                             <th>Token ID</th>
-                            <th>Seller</th>
-                            <th>Buyer</th>
                             <th>Agent</th>
                             <th>Property</th>
+                            {{-- <th>Seller</th>
+                            <th>Buyer</th> --}}
                             <th>Commission</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($propertyHistory as $receipt)
+                        @foreach($agentHistory as $receipt)
                             <tr>
                                 <td>{{ $receipt->token_id }}</td>
-                                <td>{{ $receipt->seller ? $receipt->seller->seller_name : 'N/A' }}</td>
-                                <td>{{ $receipt->buyer ? $receipt->buyer->buyer_name : 'N/A' }}</td>
-                                <td>{{ $receipt->agent ? $receipt->agent->name : 'N/A' }}</td>
-                                <td>{{ $receipt->property ? $receipt->property->title : 'N/A' }}</td>
+                               <td>  {{ $receipt->agent ? $receipt->agent->name : 'N/A' }}</p></td>
+                               <td>{{ $receipt->property ? $receipt->property->title : 'N/A' }}</td>
+                                {{-- <td>{{ $receipt->seller ? $receipt->seller->seller_name : 'N/A' }}</td>
+                                <td>{{ $receipt->buyer ? $receipt->buyer->buyer_name : 'N/A' }}</td> --}}
                                 <td>{{ $receipt->agent_comission }}</td>
                             </tr>
                         @endforeach
@@ -47,6 +47,6 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        {{ $propertyHistory->links() }} <!-- Pagination -->
+        {{ $agentHistory->links() }} <!-- Pagination -->
     </div>
 </div>

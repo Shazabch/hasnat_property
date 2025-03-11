@@ -129,8 +129,21 @@
     "name" => "Team Management",
     "icon" => "fas fa-users",
     "permissions" => [],
-    "route" => "admin.team-section.team"
+    "route" => null, // Set to null as it now has a dropdown
+    "submenu" => [
+        [
+            "name" => "Team Section",
+            "icon" => "fas fa-user-friends",
+            "route" => "admin.team-section.team",
+        ],
+        [
+            "name" => "Agent History",
+            "icon" => "fas fa-history",
+            "route" => "admin.agent-history",
+        ]
+    ]
 ],
+
 
 
 [
