@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Team Section')
+@section('title', 'Agent History')
 
 @section('content')
 <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
@@ -8,11 +8,11 @@
         <!--begin::Info-->
         <div class="d-flex align-items-center flex-wrap mr-2">
             <!--begin::Page Title-->
-            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Team Section</h5>
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Agent History</h5>
             <!--end::Page Title-->
             <!--begin::Actions-->
             <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-            <span class="font-weight-bold mr-4">Team Section</span>
+            <span class="font-weight-bold mr-4">Agent History</span>
             <!--end::Actions-->
         </div>
         <!--end::Info-->
