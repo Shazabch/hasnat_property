@@ -27,6 +27,11 @@
                         <p><strong>Property:</strong> {{ $receipt->property ? $receipt->property->title : 'N/A' }}</p>
                         <p><strong>Start Date:</strong> {{ $receipt->start_date }}</p>
                         <p><strong>End Date:</strong> {{ $receipt->end_date }}</p>
+                        {{-- @if($token->pdf_url)
+                    <a href="{{ asset($token->pdf_url) }}" class="text-blue-500" target="_blank">View PDF</a>
+                @else
+                    N/A
+                @endif --}}
                     </div>
                 </div>
             </div>
