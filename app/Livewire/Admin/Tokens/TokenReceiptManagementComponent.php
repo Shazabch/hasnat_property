@@ -82,40 +82,42 @@ class TokenReceiptManagementComponent extends Component
         $this->dispatch('success-box', ['message' => $message]);
     }
     public function edit($id)
-{
-    $this->tokenReceipt = TokenReipet::find($id);
-}
+    {
+        $this->tokenReceipt = TokenReipet::find($id);
+    }
 
-public function delete($id)
-{
-    TokenReipet::destroy($id);
-    session()->flash('message', 'Token Receipt Deleted Successfully!');
-    $this->mount(); // Data reload
-}
+    public function delete($id)
+    {
+        TokenReipet::destroy($id);
+        session()->flash('message', 'Token Receipt Deleted Successfully!');
+        $this->mount(); // Data reload
+    }
 
-public function generatePDF($id)
-{
-    $receipt = TokenReipet::find($id);
-    $selectedBuyer = Buyer::find($receipt->buyer_id);
-    $selectedSeller = Seller::find($receipt->seller_id);
-    $selectedAgent = TeamSection::find($receipt->agent_id);
-    $selectedProperty = Properties::find($receipt->property_id);
+    public function generatePDF($id)
+    {
+        $receipt = TokenReipet::find($id);
+        $selectedBuyer = Buyer::find($receipt->buyer_id);
+        $selectedSeller = Seller::find($receipt->seller_id);
+        $selectedAgent = TeamSection::find($receipt->agent_id);
+        $selectedProperty = Properties::find($receipt->property_id);
 
-    $pdf = Pdf::loadView('partials.token-invoice', [
-        'tokenReceipt' => $receipt,
-        'selectedBuyer' => $selectedBuyer,
-        'selectedSeller' => $selectedSeller,
-        'selectedAgent' => $selectedAgent,
-        'selectedProperty' => $selectedProperty
-    ]);
-
-    $filename = 'token_receipt_' . $id . '.pdf';
-    $path = 'token_receipts/' . $filename;
-
-    Storage::put($path, $pdf->output());
-    $receipt->pdf_url = $path;
-    $receipt->save();
-}
+        $pdf = Pdf::loadView('partials.token-invoice', [
+            'tokenReceipt' => $receipt,
+            'selectedBuyer' => $selectedBuyer,
+            'selectedSeller' => $selectedSeller,
+            'selectedAgent' => $selectedAgent,
+            'selectedProperty' => $selectedProperty
+        ]);
+        $directory = 'token_receipts';
+        if (!Storage::disk('public')->exists($directory)) {
+            Storage::disk('public')->makeDirectory($directory);
+        }
+        $filename = 'token_receipt_' . $id . '.pdf';
+        $filepath = $directory . '/' . $filename;
+        Storage::disk('public')->put($filepath, $pdf->output());
+        $receipt->pdf_url = $filepath;
+        $receipt->save();
+    }
     public function generateTokenID()
     {
         $this->tokenReceipt->token_id = 'HSP-' . strtoupper(uniqid());
@@ -221,21 +223,19 @@ public function generatePDF($id)
         session()->flash('message', 'Buyer Added Successfully');
     }
 
-       public function openPreviewModal()
-       {
+    public function openPreviewModal()
+    {
         $this->isPreviewModalOpen = true;
         $this->selectedBuyer = Buyer::find($this->tokenReceipt->buyer_id);
         $this->selectedSeller = Seller::find($this->tokenReceipt->seller_id);
         $this->selectedAgent = TeamSection::find($this->tokenReceipt->agent_id);
         $this->selectedProperty = Properties::find($this->tokenReceipt->property_id);
-
-
-       }
-       public function closePreviewModal()
-       {
-           $this->isPreviewModalOpen = false;
-           $this->dispatch('close-modal');
-       }
+    }
+    public function closePreviewModal()
+    {
+        $this->isPreviewModalOpen = false;
+        $this->dispatch('close-modal');
+    }
 
     public function render()
     {

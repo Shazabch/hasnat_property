@@ -80,7 +80,10 @@
                                         @if ($property->status == 1) Draft
                                         @else Publish @endif
                                     </button>
-
+                                    <a href="{{ route('admin.property-history', ['id' => $property->id]) }}"
+                                        class="btn btn-sm m-2">
+                                        <i class="fas fa-eye text-info"></i>
+                                    </a>
                                 </td>
                                 <td>{{ $property->id }}</td>
                                 <td>

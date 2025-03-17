@@ -14,11 +14,16 @@ class PropertyHistoryManagementComponent extends Component
     public $search = '';
     public $sortField = 'created_at';
     public $sortDirection = 'desc';
+    public $propertyId;
 
 
     public function searchRecords()
     {
         $this->resetPage();
+    }
+    public function mount($id){
+          $this->propertyId = $id;
+          $this->searchRecords();
     }
     public function updatedSearch(){
         $this->resetPage();
@@ -34,6 +39,7 @@ class PropertyHistoryManagementComponent extends Component
     {
         $propertyHistory = TokenReipet::query()
             ->with(['seller', 'buyer', 'agent', 'property'])
+            ->where('property_id', $this->propertyId)
             ->when($this->search, function ($query) {
                 $query->where('token_id', 'like', '%' . $this->search . '%')
                 ->orWhere('token_amount', 'like', "%{$this->search}%")

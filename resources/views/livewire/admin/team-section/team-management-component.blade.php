@@ -48,7 +48,11 @@
                                         <td>
                                             <i class="fas fa-edit text-primary cursor-pointer" wire:click="editItem({{ $team->id }})" data-toggle="modal" data-target="#teamModal"></i>
 
-                                            <i class="fas fa-trash text-danger cursor-pointer ml-2" wire:click="deleteTeam({{ $team->id }})"></i>
+                                            <i class="fas fa-trash text-danger cursor-pointer ml-1" wire:click="deleteTeam({{ $team->id }})"></i>
+
+                                            <a href="{{ route('admin.agent-history', ['id' => $team->id]) }}">
+                                                <i class="fas fa-eye text-info cursor-pointer ml-1"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -62,7 +66,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- Modal -->
     <div class="modal fade" id="teamModal" tabindex="-1" wire:ignore.self>
         <div class="modal-dialog modal-lg">
@@ -128,10 +132,10 @@
                     confirmButtonText: 'Okay'
                 });
             });
-           
+
         });
 
-      
-     
+
+
     </script>
 </div>

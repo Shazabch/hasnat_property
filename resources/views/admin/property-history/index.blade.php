@@ -25,7 +25,7 @@
 </div>
     <div class="row mx-2">
         <div class="col-12">
-            @livewire('admin.property-history.property-history-management-component')
+            @livewire('admin.property-history.property-history-management-component' , ['id' => request()->route('id')])
         </div>
     </div>
 @endsection

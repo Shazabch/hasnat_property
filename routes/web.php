@@ -139,9 +139,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     });
 
     Route::get('/token-receipt-list', [AdminPagesController::class, 'tokenReceiptList'])->name('token-receipt-list');
-    Route::get('/property-history', [AdminPagesController::class, 'propertyHistory'])
+    Route::get('/property-history/{id}', [AdminPagesController::class, 'propertyHistory'])
     ->name('property-history');
-    Route::get('/agent-history', [AdminPagesController::class, 'agentHistory'])
+    Route::get('/agent-history/{id}', [AdminPagesController::class, 'agentHistory'])
     ->name('agent-history');
 
 

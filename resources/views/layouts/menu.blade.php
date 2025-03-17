@@ -103,12 +103,12 @@
             "permissions" => [],
             "route" => "admin.property-enquiries.property-enquiries"
         ],
-        [
-            "name" => "Property History",
-            "icon" => "fas fa-history",
-            "permissions" => [],
-            "route" => "admin.property-history"
-        ],
+        // [
+        //     "name" => "Property History",
+        //     "icon" => "fas fa-history",
+        //     "permissions" => [],
+        //     "route" => "admin.property-history"
+        // ],
 
     ]
 ],
@@ -127,24 +127,10 @@
 ],
 [
     "name" => "Team Management",
-    "icon" => "fas fa-users",
+    "icon" => "fas fa-user-friends",
     "permissions" => [],
-    "route" => null, // Set to null as it now has a dropdown
-    "submenu" => [
-        [
-            "name" => "Team Section",
-            "icon" => "fas fa-user-friends",
-            "route" => "admin.team-section.team",
-        ],
-        [
-            "name" => "Agent History",
-            "icon" => "fas fa-history",
-            "route" => "admin.agent-history",
-        ]
-    ]
+    "route" => "admin.team-section.team",
 ],
-
-
 
 [
     "name" => "Projects",

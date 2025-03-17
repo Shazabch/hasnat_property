@@ -1,6 +1,6 @@
 <div>
     <div class="container py-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex card-header justify-content-between align-items-center mb-4">
             <h4 class="text-primary">Token Receipt Management</h4>
 
             <a href="{{ route('admin.token-receipt-list') }}" class="btn btn-success">
@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <div>
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
                     <label class="fw-bold">Token ID</label>
@@ -133,7 +133,7 @@
                 </div>
             </div>
 
-            <div class="col-12 text-end mt-5">
+            <div class="col-12 card-footer text-end mt-5">
                 <button wire:click="addEntry" class="btn btn-primary px-5">
                     <i class="fas fa-save"></i> Save Receipt
                 </button>

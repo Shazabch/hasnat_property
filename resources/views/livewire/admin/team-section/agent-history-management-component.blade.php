@@ -14,7 +14,7 @@
 
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
-            <h5 class="mb-0 text-center">Property History</h5>
+            <h5 class="mb-0 text-center">Agent History</h5>
         </div>
         <div class="card-body">
             <div class="table-responsive">

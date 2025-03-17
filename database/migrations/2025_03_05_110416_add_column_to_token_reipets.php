@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('token_reipets', function (Blueprint $table) {
-            $table->string('agent_comission')->nullable()->unique();
+            $table->string('agent_comission')->nullable();
         });
     }
 
