@@ -359,14 +359,14 @@
                 allowClear: true
             });
         });
-
         window.addEventListener('success-box', event => {
-            Swal.fire({
-                title: 'Success!',
-                text: event.detail.message,
-                icon: 'success',
-            });
-        });
+    Swal.fire({
+        title: 'Success!',
+        text: event.detail.message || 'Your Token Receipt has been generated successfully!',
+        icon: 'success',
+    });
+});
+
     </script>
     <script>
         window.addEventListener('close-modal', event => {
