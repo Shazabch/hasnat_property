@@ -1,9 +1,10 @@
-<div>
-    <div class="container py-4">
-        <div class="d-flex card-header justify-content-between align-items-center mb-4">
-            <h4 class="text-primary">Token Receipt Management</h4>
 
-            <a href="{{ route('admin.token-receipt-list') }}" class="btn btn-success">
+    <div class="container py-4">
+        <div class="card shadow-sm">
+        <div class="card-header bg-light text-white d-flex justify-content-between align-items-center">
+            <h4 class="text-info">Token Receipt Management</h4>
+
+            <a href="{{ route('admin.token-receipt-list') }}" class="btn btn-outline-info">
                 View Token Receipt List
             </a>
         </div>
