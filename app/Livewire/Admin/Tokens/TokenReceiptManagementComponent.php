@@ -39,15 +39,15 @@ class TokenReceiptManagementComponent extends Component
     {
         return [
             'tokenReceipt.token_id' => 'nullable|unique:token_reipets,token_id',
-            'tokenReceipt.token_amount' => 'nullable',
-            'tokenReceipt.seller_id' => 'nullable',
-            'tokenReceipt.buyer_id' => 'nullable',
-            'tokenReceipt.agent_id' => 'nullable',
-            'tokenReceipt.property_id' => 'nullable',
-            'tokenReceipt.start_date' => 'nullable|date',
-            'tokenReceipt.end_date' => 'nullable|date',
-            'tokenReceipt.token_type' => 'nullable',
-            'tokenReceipt.agent_comission' => 'nullable',
+            'tokenReceipt.token_amount' => 'required',
+            'tokenReceipt.seller_id' => 'required',
+            'tokenReceipt.buyer_id' => 'required',
+            'tokenReceipt.agent_id' => 'required',
+            'tokenReceipt.property_id' => 'required',
+            'tokenReceipt.start_date' => 'required|date',
+            'tokenReceipt.end_date' => 'required|date',
+            'tokenReceipt.token_type' => 'required',
+            'tokenReceipt.agent_comission' => 'required',
         ];
     }
     public function addNew()
