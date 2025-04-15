@@ -52,7 +52,7 @@
                         </i>
                     </label>
                     <div class="input-group">
-                        <select class="form-select  search-dropdown " wire:model.live="tokenReceipt.seller_id">
+                        <select class="form-select  " wire:model.live="tokenReceipt.seller_id">
                             <option value="">Select Seller</option>
                             @foreach ($sellers as $seller)
                                 <option value="{{ $seller->id }}">{{ $seller->seller_name }}</option>
@@ -73,7 +73,7 @@
                         </i>
                     </label>
                     <div class="input-group">
-                        <select wire:model="tokenReceipt.buyer_id" class="form-select  search-dropdown ">
+                        <select wire:model="tokenReceipt.buyer_id" class="form-select  ">
                             <option value="">Select Buyer</option>
                             @foreach ($buyers as $buyer)
                                 <option value="{{ $buyer->id }}">{{ $buyer->buyer_name }}</option>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-md-4 mt-5">
                     <label class="fw-bold">Select Agent</label>
-                    <select wire:model="tokenReceipt.agent_id" class="form-control  search-dropdown">
+                    <select wire:model="tokenReceipt.agent_id" class="form-control ">
                         <option value="">Choose an Agent </option>
                         @foreach ($agents as $agent)
                             <option value="{{ $agent->id }}">{{ $agent->name }}</option>
@@ -101,7 +101,7 @@
 
                 <div class="col-md-6">
                     <label class="fw-bold">Select Property</label>
-                    <select wire:model="tokenReceipt.property_id" class="form-control  search-dropdown">
+                    <select wire:model="tokenReceipt.property_id" class="form-control ">
                         <option value=""> Choose a Property </option>
                         @foreach ($properties as $property)
                             <option value="{{ $property->id }}">{{ $property->title }}</option>
