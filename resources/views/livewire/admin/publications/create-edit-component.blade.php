@@ -110,10 +110,68 @@
 
                         </div>
 
-                        <div class="form-group col-md-12">
+                        <div class="col-md-12">
+                            <label>Content</label>
+                            <div wire:ignore>
+                                <div wire:ignore>
+                                    <div class="" x-data x-init="ClassicEditor
+                                        .create($refs.publication_content, {
+
+                                            toolbar: {
+                                                items: [
+                                                    'heading',
+                                                    '|',
+                                                    'bold',
+                                                    'italic',
+                                                    'link',
+                                                    'bulletedList',
+                                                    'numberedList',
+                                                    '|',
+                                                    'outdent',
+                                                    'indent',
+                                                    '|',
+                                                    'imageUpload',
+                                                    'blockQuote',
+                                                    'insertTable',
+                                                    'mediaEmbed',
+                                                    'undo',
+                                                    'redo'
+                                                ]
+                                            },
+                                            simpleUpload: {
+                                                uploadUrl: '{{ route('admin.image.upload') }}',
+                                                headers: {
+                                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                                }
+                                            }
+                                        })
+                                        .then(editor => {
+                                            editor.model.document.on('change:data', () => {
+                                                    @this.set('publication.content', editor.getData(), true);
+                                                }),
+                                                editor.dataProcessor.writer.setRules('br', {
+                                                    indent: false,
+                                                    breakBeforeOpen: false,
+                                                    breakAfterOpen: false,
+                                                    breakBeforeClose: false,
+                                                    breakAfterClose: false
+                                                });
+                                        })
+                                        .catch(error => {
+                                            console.error(error);
+                                        });" wire:ignore
+                                        x-ref="publication_content">{!! $publication->content !!}</div>
+                                </div>
+                                @error('publication.content')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                        <div class="form-group col-md-12 mt-4">
                             <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:loading.class="opacity-50 cursor-not-allowed">Save</button>
                         </div>
                     </div>
+                    
                 </form>
             </div>
         </div>

@@ -45,6 +45,7 @@ class CreateEditComponent extends Component
             'publication.published_at' => 'nullable',
             'publication.meta_title' => 'nullable',
             'publication.meta_description' => 'nullable',
+            'publication.content' => 'nullable',
             'publication.image_alt' => 'nullable',
             'publication.image' => 'nullable',
 
@@ -61,6 +62,7 @@ class CreateEditComponent extends Component
 
     public function save()
     {
+       try{
         if($this->publication->type_id == ''){
             $this->publication->type_id = null;
         }
@@ -99,17 +101,20 @@ class CreateEditComponent extends Component
             $this->publication->created_by_user = auth()->user()->id;
             $this->publication->save();
             $this->publication->topics()->sync($existingTopics);
-            $this->dispatch('success-box', message: 'Publication saved successfully');
+            $this->dispatch('success-notification', message: 'Publication saved successfully!');
             return redirect()->route('admin.publications.edit', $this->publication->id);
         }else{
             $this->publication->updated_by_user = auth()->user()->id;
             $this->publication->save();
-            $this->publication->topics()->sync($existingTopics);
-            $this->dispatch('success-box', message: 'Publication updated successfully');
+            $this->dispatch('success-notification', message: 'Publication updated successfully!');
         }
 
 
         $this->image = null;
+       }
+       catch(\Exception $e){
+        dd($e->getMessage());
+        }
     }
 
     public function render()

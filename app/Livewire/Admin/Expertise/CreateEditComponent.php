@@ -32,6 +32,7 @@ class CreateEditComponent extends Component
             'expertise.published_at' => 'nullable|date',
             'expertise.meta_title' => 'nullable',
             'expertise.meta_description' => 'nullable',
+            'expertise.description' => 'nullable',
             'expertise.meta_keywords' => 'nullable',
             'expertise.image_alt' => 'nullable',
             'expertise.image' => 'nullable',
