@@ -227,15 +227,16 @@
                             Hasnat Properties is your go-to source for insightful real estate blogs. We regularly publish updates on the latest market trends, investment opportunities, and expert advice for buying, selling, and renting properties in Bahria Town Lahore. Stay informed and make smart property decisions with our expert insights.
                         </p>
                     </div>
+                    
                 </div>
             </div>
             <div class="row">
                 <div class="blogs-slider owl-carousel owl-theme">
-                    {{-- @foreach ($publications as $publication)
+                    @foreach ($publications as $publication)
                     <div class="item" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="100">
                         @include('website.publications.card', ['publication' => $publication])
                     </div>
-                    @endforeach   --}}
+                    @endforeach  
                 </div>
             </div>
             <div class="col-lg-12 mt-4 text-center">
