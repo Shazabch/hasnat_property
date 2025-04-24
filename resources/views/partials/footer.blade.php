@@ -42,7 +42,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a target="_blank" href="#">
+                                                <a target="_blank" href="https://www.youtube.com/@HasnatProperties">
                                                     <i class="fa-brands fa-youtube"></i>
                                                 </a>
                                             </li>
@@ -83,21 +83,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
-                        <div class="footer-item">
-                            <div class="footer-quick">
-                                {{-- <h3>Our Expertise</h3>
-                                <ul>
-                                    @foreach ($dashboard_expertises as $expertise)
-                                        <li>
-                                            <a href="{{ route('expertise.detail', $expertise->slug) }}">{{ $expertise->title }}</a>
-                                        </li>
-                                    @endforeach
-                                    <li>
-                                        <a class="text-secondary" href="{{ route('expertise') }}">View ALL</a>
-                                    </li>
-                                </ul> --}}
-                            </div>
-                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.5542122020306!2d74.18644227598911!3d31.37127865749347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469e246f562b4583%3A0xbaf80296bfe30046!2sHasnat%20Properties!5e0!3m2!1sen!2s!4v1745491159896!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -108,8 +94,8 @@
             <div class="container">
                 <div class="copyright-item">
                     <p>Copyright © {{ date('Y') }} All rights reserved
-                        <span class="text-secondary">Hasnat Properties</span> |
-                        Developed by <span class="text-warning">Majestic Softs</span>
+                        <span class="text-secondary">Hasnat Properties</span>  <br>
+                        Developed by <span class="text-warning"><a style="text-decoration: none" class="text-secondary" href="https://majesticsofts.com/">Majestic Softs</a></span>
                     </p>
                 </div>
             </div>

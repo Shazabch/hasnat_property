@@ -82,7 +82,7 @@
                         <p class="after-circle text-thin after-circle mx-auto text-white">Expert and Comprehensive</p>
                         <h2 class="text-center text-secondary">What We Do</h2>
                         <p class="text-white">
-                            We listed our oppertunity and servies as a real estate company
+                            Your one-stop solution for property needs in Bahria Town Lahore
                         </p>
                     </div>
                 </div>
@@ -92,11 +92,10 @@
                     <div class="py-5 px-4 text-center rounded what-we-do">
                         <i class="fa-solid fa-hand-holding-dollar text-secondary"></i>
                         <h5 class="text-secondary hover-text-primary py-3 m-0">
-                            Buy / Investment
+                            Property Buying & Selling
                         </h5>
                         <p>
-                            Quam vestibulum sociis libero, pellentes vel montes purus taciti vivamus sapien etiam montes.
-                            Nostra cras vulputate luctu ipsum, ullamcorper ridiculus porta.
+                            We help you buy and sell residential and commercial properties with ease. From consultation to closing, our experts guide you every step of the way.
                         </p>
                     </div>
                 </div>
@@ -104,11 +103,10 @@
                     <div class="py-5 px-4 text-center rounded what-we-do bg-dark">
                         <i class="fa-solid fa-chart-line text-secondary"></i>
                         <h5 class="text-secondary hover-text-primary py-3 m-0">
-                            Increase Value
+                            Rental Services
                         </h5>
                         <p>
-                            Quam vestibulum sociis libero, pellentes vel montes purus taciti vivamus sapien etiam montes.
-                            Nostra cras vulputate luctu ipsum, ullamcorper ridiculus porta.
+                            Looking to rent out or find a property for rent? We match tenants and landlords quickly with fair pricing and reliable contracts.
                         </p>
                     </div>
                 </div>
@@ -116,11 +114,10 @@
                     <div class="py-5 px-4 text-center rounded what-we-do">
                         <i class="fa-solid fa-money-bill-wave text-secondary"></i>
                         <h5 class="text-secondary hover-text-primary py-3 m-0">
-                            Passive Cashflow
+                            Investment Guidance
                         </h5>
                         <p>
-                            Quam vestibulum sociis libero, pellentes vel montes purus taciti vivamus sapien etiam montes.
-                            Nostra cras vulputate luctu ipsum, ullamcorper ridiculus porta.
+                            Our team provides market trends, ROI analysis, and expert recommendations to help you make smart, secure property investments.
                         </p>
                     </div>
                 </div>
@@ -133,9 +130,9 @@
                 <div class="col-lg-8">
                     <div class="section-title no-after pt-0 ps-0 text-center">
                         <p class="after-circle text-thin after-circle mx-auto text-white">Expert and Comprehensive</p>
-                        <h2 class="text-center text-secondary">What Choose Us</h2>
+                        <h2 class="text-center text-secondary">Why Choose Us</h2>
                         <p class="text-white">
-                            We listed our oppertunity and servies as a real estate company
+                            Delivering trust, value, and results with every transaction
                         </p>
                     </div>
                 </div>
@@ -143,38 +140,38 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Management Company</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">Local Expertise</h5>
+                        <p>With deep roots in Bahria Town Lahore, we offer unmatched insights into property trends and opportunities in the area.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Probublity Research</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">Personalized Service</h5>
+                        <p>Every client is different—so are our solutions. We tailor our approach to fit your goals and needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Due Diligence</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">Transparent Processes</h5>
+                        <p>We believe in open communication, honest deals, and clear documentation every step of the way.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Help Investor</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">Professional Team</h5>
+                        <p>Our experienced agents are dedicated, knowledgeable, and committed to delivering the best real estate experience.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Investment Analysis</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">Customer-First Approach</h5>
+                        <p>We prioritize your satisfaction and long-term success, not just the transaction.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="why-card">
-                        <h5 class="mb-3 text-secondary">Right Structure</h5>
-                        <p>Suspendisse nonummy pellentesq placerat. Malesuad aenean. Leo curabitur ementum ultr. Rhoncus fusce ac eu nunc euismod ad dignissim natoque. Penatib natoque arcu, sed sit.</p>
+                        <h5 class="mb-3 text-secondary">End-to-End Support</h5>
+                        <p>From the first inquiry to key handover (and beyond), we’re with you at every milestone of your real estate journey.</p>
                     </div>
                 </div>
             </div>
@@ -186,9 +183,8 @@
                 <div class="col-lg-8">
                     <div class="text-white">
                         <h2 class="text-white double-down-line-left position-relative pb-4 mb-5">
-                            <span class="h4 d-block">Start Study</span>Making your positive thinking</h2>
-                        <p>Malesuada hac lectus. Ligula donec. Sodales odio conubia facilisis, sagittis velit rutrum sodales, conubia. Curae; nunc conubia accumsan vitae congue ornare ultricies bibendum justo. Mus sit porta luctus ultricies platea duis
-                            cum aliquam tristique gravida accumsan orci velit lobortis posuere, eu ullamcorper quam eget. Tempor urna, luctus leo parturient augue.</p>
+                            <span class="h4 d-block"></span>Your Neighborhood Experts</h2>
+                        <p>With years of experience in Bahria Town Lahore, we know the streets, the trends, and the opportunities. Our local insight ensures you get the best value and the right advice every time.</p>
                     </div>
                 </div>
             </div>

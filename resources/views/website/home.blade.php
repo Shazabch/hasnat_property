@@ -126,7 +126,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="counter-item">
                         <h3>
-                            <span class="odometer" data-count="8000">00</span>
+                            <span class="odometer" data-count="{{$homeSections->properties_sold}}">00</span>
                             <span class="target">+</span>
                         </h3>
                         <p>Properties Sold</p>
@@ -135,7 +135,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="counter-item">
                         <h3>
-                            <span class="odometer" data-count="10000">00</span>
+                            <span class="odometer" data-count="{{$homeSections->happy_clients}}">00</span>
                             <span class="target">+</span>
                         </h3>
                         <p>Happy Clients</p>
@@ -144,7 +144,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="counter-item">
                         <h3>
-                            <span class="odometer" data-count="30">00</span>
+                            <span class="odometer" data-count="{{$homeSections->years_exp}}">00</span>
                             <span class="target">+</span>
                         </h3>
                         <p>Years of Experience</p>
@@ -153,7 +153,7 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="counter-item">
                         <h3>
-                            <span class="odometer" data-count="30">00</span>
+                            <span class="odometer" data-count="{{$homeSections->rented_properties}}">00</span>
                             <span class="target">+</span>
                         </h3>
                         <p>Properties Rent</p>

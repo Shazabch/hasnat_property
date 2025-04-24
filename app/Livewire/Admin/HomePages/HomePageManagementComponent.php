@@ -23,6 +23,10 @@ class HomePageManagementComponent extends Component
 
     public $image_1_name;
     public $image_2_name;
+    public $properties_sold;
+    public $happy_clients;
+    public $years_exp;
+    public $rented_properties;
 
     public function rules()
     {
@@ -36,6 +40,10 @@ class HomePageManagementComponent extends Component
             'third_title2' => 'nullable|string',
             'content2' => 'nullable|string',
             'image2' => 'nullable',
+            'properties_sold' => 'nullable|integer',
+            'happy_clients' => 'nullable|integer',
+            'years_exp' => 'nullable|integer',
+            'rented_properties' => 'nullable|integer',
         ];
     }
 
@@ -61,6 +69,10 @@ class HomePageManagementComponent extends Component
             $this->sub_title2 = $homePage->sub_title2;
             $this->third_title2 = $homePage->third_title2;
             $this->content2 = $homePage->content2;
+            $this->properties_sold = $homePage->properties_sold;
+            $this->happy_clients = $homePage->happy_clients;
+            $this->years_exp = $homePage->years_exp;
+            $this->rented_properties = $homePage->rented_properties;
             // $this->image2 = $homePage->image2;
         }
     }
@@ -75,6 +87,10 @@ class HomePageManagementComponent extends Component
         $homePage->title1 = $this->title1;
         $homePage->sec_title1 = $this->sec_title1;
         $homePage->content1 = $this->content1;
+        $homePage->properties_sold = $this->properties_sold;
+        $homePage->happy_clients = $this->happy_clients;
+        $homePage->years_exp = $this->years_exp;
+        $homePage->rented_properties = $this->rented_properties;
         if ($this->image_1_name) {
             $homePage->image1 =$this->image_1_name->store('uploads', 'public');
         }
@@ -92,7 +108,7 @@ class HomePageManagementComponent extends Component
 
         // $this->resetInputFields();
             $message = $this->homePageId ? 'Home Page section updated successfully.' : 'Home Page section saved successfully.';
-        $this->dispatch('success-box', ['message' => $message]);
+        $this->dispatch('success-notification', ['message' => $message]);
 
         // Redirect to the desired page (e.g., HomePage listing page)
         return redirect()->route('admin.home-pages.index');
@@ -107,6 +123,10 @@ class HomePageManagementComponent extends Component
         $this->main_title2 = $this->sub_title2 = $this->third_title2 = $this->content2 = $this->image2 = '';
 
         $this->homePageId = null;
+        $this->properties_sold = null;
+        $this->happy_clients = null;
+        $this->years_exp = null;
+        $this->rented_properties = null;
     }
 
     public function render()

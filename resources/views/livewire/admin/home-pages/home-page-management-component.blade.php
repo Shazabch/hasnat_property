@@ -13,101 +13,102 @@
         </div>
 
 <!-- Sections in Vertical Order -->
-<div class="row">
-    <!-- Section A Card -->
-    <div class="col-12">
-        <div class="card p-3 shadow-lg rounded mb-4">
-            <div class="card-header bg-white text-dark text-center">
-                <h5 class="mb-0">📌 Section A</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Title 1</th>
-                            <th>Section Title 1</th>
-                            <th>Description</th>
-                            <th>Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($homePages as $section)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $section->title1 }}</td>
-                                <td>{{ $section->sec_title1 }}</td>
-                                <td>{{ $section->content1 }}</td>
-                                <td>
-                                    @if ($section->image1)
-                                        <a href="{{ asset('storage/' . $section->image1) }}" target="_blank">
-                                            <img src="{{ asset('storage/' . $section->image1) }}"
-                                                 alt="Section A Image"
-                                                 class="img-thumbnail"
-                                                 style="width: 50px; height: 50px;">
-                                        </a>
-                                    @else
-                                        <span class="text-muted">No Image</span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer text-muted text-center">
-                Showing Section A
-            </div>
-        </div>
-    </div>
+            <div class="row">
+                <!-- Section A Card -->
+                <div class="col-12">
+                    <div class="card p-3 shadow-lg rounded mb-4">
+                        <div class="card-header bg-white text-dark text-center">
+                            <h5 class="mb-0">📌 Section A</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title 1</th>
+                                        <th>Section Title 1</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($homePages as $section)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $section->title1 }}</td>
+                                            <td>{{ $section->sec_title1 }}</td>
+                                            <td>{{ $section->content1 }}</td>
+                                            <td>
+                                                @if ($section->image1)
+                                                    <a href="{{ asset('storage/' . $section->image1) }}" target="_blank">
+                                                        <img src="{{ asset('storage/' . $section->image1) }}"
+                                                            alt="Section A Image"
+                                                            class="img-thumbnail"
+                                                            style="width: 50px; height: 50px;">
+                                                    </a>
+                                                @else
+                                                    <span class="text-muted">No Image</span>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            Showing Section A
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Section B Card -->
-    <div class="col-12">
-        <div class="card p-3 shadow-lg rounded">
-            <div class="card-header bg-white text-dark text-center">
-                <h5 class="mb-0">📌 Section B</h5>
+                <!-- Section B Card -->
+                <div class="col-12">
+                    <div class="card p-3 shadow-lg rounded">
+                        <div class="card-header bg-white text-dark text-center">
+                            <h5 class="mb-0">📌 Section B</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Main Title</th>
+                                        <th>Sub Title</th>
+                                        <th>Third Title</th>
+                                        <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($homePages as $section)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $section->main_title2 }}</td>
+                                            <td>{{ $section->sub_title2 }}</td>
+                                            <td>{{ $section->third_title2 }}</td>
+                                            <td>
+                                                @if ($section->image2)
+                                                    <a href="{{ asset('storage/' . $section->image2) }}" target="_blank">
+                                                        <img src="{{ asset('storage/' . $section->image2) }}"
+                                                            alt="Section B Image"
+                                                            class="img-thumbnail"
+                                                            style="width: 50px; height: 50px;">
+                                                    </a>
+                                                @else
+                                                    <span class="text-muted">No Image</span>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            Showing Section B
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Main Title</th>
-                            <th>Sub Title</th>
-                            <th>Third Title</th>
-                            <th>Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($homePages as $section)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $section->main_title2 }}</td>
-                                <td>{{ $section->sub_title2 }}</td>
-                                <td>{{ $section->third_title2 }}</td>
-                                <td>
-                                    @if ($section->image2)
-                                        <a href="{{ asset('storage/' . $section->image2) }}" target="_blank">
-                                            <img src="{{ asset('storage/' . $section->image2) }}"
-                                                 alt="Section B Image"
-                                                 class="img-thumbnail"
-                                                 style="width: 50px; height: 50px;">
-                                        </a>
-                                    @else
-                                        <span class="text-muted">No Image</span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer text-muted text-center">
-                Showing Section B
-            </div>
-        </div>
-    </div>
-</div>
+            
     </div>
     <!-- Modal -->
     <div class="modal fade" id="homePageModal" tabindex="-1" wire:ignore.self>
@@ -204,6 +205,25 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="properties_sold">Properties Sold</label>
+                                <input type="text" class="form-control" wire:model="properties_sold"> 
+                            </div>
+                            <div class="col-md-6">
+                                <label for="happy_clients">Happy Clients</label>
+                                <input type="text" class="form-control" wire:model="happy_clients">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="years_exp">Years Of Experience</label>
+                                <input type="text" class="form-control" wire:model="years_exp">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rented_properties">Rented Properties</label>
+                                <input type="text" class="form-control" wire:model="rented_properties"> 
                             </div>
                         </div>
 

@@ -169,7 +169,7 @@
 {{-- FAQS --}}
 {{-- @include('website.common.faqs') --}}
 <!-- Publications -->
-<section class="blog-area py-70">
+{{-- <section class="blog-area py-70">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -193,5 +193,5 @@
             <a href="{{ route('publications') }}" class="button smaller mouse_go">View All</a>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

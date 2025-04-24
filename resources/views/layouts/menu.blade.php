@@ -144,12 +144,12 @@
     "permissions" => [],
     "route" => "admin.rates.index"
 ],
-[
-    "name" => "Reviews",
-    "icon" => "fas fa-star",
-    "permissions" => [],
-    "route" => "admin.testimonials.index"
-],
+// [
+//     "name" => "Reviews",
+//     "icon" => "fas fa-star",
+//     "permissions" => [],
+//     "route" => "admin.testimonials.index"
+// ],
 [
     "name" => "Blogs",
     "icon" => "fas fa-blog",
@@ -163,12 +163,12 @@
     "route" => "admin.web-pages.index"
 ],
 
-[
-        "name" => "Expertise",
-        "icon" => "far fa-id-card",
-        "permissions" => [],
-        "route" => "admin.expertise.index"
-    ],
+// [
+//         "name" => "Expertise",
+//         "icon" => "far fa-id-card",
+//         "permissions" => [],
+//         "route" => "admin.expertise.index"
+//     ],
 
 
 ];
