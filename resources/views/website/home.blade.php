@@ -62,7 +62,7 @@
     <section class="section-team bg-dark">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                {{-- <div class="col-lg-8">
                     <div class="section-title no-after pt-0 ps-0 text-center">
                         <p class="after-circle text-thin after-circle mx-auto text-white">Expert and Comprehensive</p>
                         <h2 class="text-center text-secondary">Our Expert Team</h2>
@@ -70,7 +70,7 @@
                             We listed our oppertunity and servies as a real estate company
                         </p>
                     </div>
-                </div>
+                </div> --}}
             <div class="row">
                 @foreach($teamData as $team)
                 <div class="col-lg-4 col-md-6">
